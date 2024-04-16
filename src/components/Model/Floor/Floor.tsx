@@ -15,7 +15,7 @@ const Floor = () => {
     ]
   );
 
-  const scale = 4;
+  const scale = 12;
   const planeWidth = 250;
   const planeHeight = 250;
 

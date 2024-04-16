@@ -10,7 +10,7 @@ const Lighting = () => {
     directionalLightZ: 0,
 
     topSpotlightColor: WHITE,
-    topSpotlightIntensity: 60,
+    topSpotlightIntensity: 100,
     topSpotlightAngle: 1.2,
     topSpotlightPenumbra: 1.9,
     topSpotlightDistance: 29,
@@ -19,7 +19,7 @@ const Lighting = () => {
     topSpotlightZ: 0,
 
     frontSpotlightColor: WHITE,
-    frontSpotlightIntensity: 40,
+    frontSpotlightIntensity: 125,
     frontSpotlightAngle: 1,
     frontSpotlightPenumbra: 1,
     frontSpotlightDistance: 40,
@@ -28,7 +28,7 @@ const Lighting = () => {
     frontSpotlightZ: 29,
 
     rearSpotlightColor: WHITE,
-    rearSpotlightIntensity: 40,
+    rearSpotlightIntensity: 125,
     rearSpotlightAngle: 1,
     rearSpotlightPenumbra: 0.65,
     rearSpotlightDistance: 40,
@@ -37,7 +37,7 @@ const Lighting = () => {
     rearSpotlightZ: -29,
 
     rightSpotlightColor: WHITE,
-    rightSpotlightIntensity: 40,
+    rightSpotlightIntensity: 125,
     rightSpotlightAngle: 1,
     rightSpotlightPenumbra: 1,
     rightSpotlightDistance: 40,
@@ -46,7 +46,7 @@ const Lighting = () => {
     rightSpotlightZ: 0,
 
     leftSpotlightColor: WHITE,
-    leftSpotlightIntensity: 40,
+    leftSpotlightIntensity: 125,
     leftSpotlightAngle: 1,
     leftSpotlightPenumbra: 1,
     leftSpotlightDistance: 40,
@@ -94,7 +94,7 @@ const Lighting = () => {
         shadow-camera-far={29}
       />
 
-      {/* <SpotLight
+      <SpotLight
         color={spotlightParams.frontSpotlightColor}
         intensity={spotlightParams.frontSpotlightIntensity}
         distance={spotlightParams.frontSpotlightDistance}
@@ -168,7 +168,7 @@ const Lighting = () => {
         shadow-mapSize-height={128}
         shadow-camera-near={0.1}
         shadow-camera-far={25}
-      /> */}
+      />
     </>
   );
 };
