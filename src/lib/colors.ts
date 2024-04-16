@@ -1,32 +1,34 @@
 export const carColors = [
     {
-        id: 1,
+        name: "Arancio Borealis",
+        hexCode: "#FBA400"
+    },
+    {
         name: "Bianco Monocerus",
-        hexCode: "#E2E2DE"
+        hexCode: "#EDEDED"
     },
     {
-        id: 2,
-        name: "Nero Cangiante",
-        hexCode: "#26261C"
+        name: "Blu Caelum",
+        hexCode: "#054AE3"
     },
     {
-        id: 3,
-        name: "Rosso Mars",
-        hexCode: "#A30A08"
-    },
-    {
-        id: 4,
-        name: "Verde Mantis",
-        hexCode: "#7DC24B"
-    },
-    {
-        id: 5,
-        name: "Giallo Auge",
+        name: "Giallo Inti",
         hexCode: "#FEBE05"
     },
     {
-        id: 6,
         name: "Grigio Nimbus",
-        hexCode: "#A0A7AF"
-    }
+        hexCode: "#6B7278"
+    },
+    {
+        name: "Nero Noctis",
+        hexCode: "#292927"
+    },
+    {
+        name: "Rosso Mars",
+        hexCode: "#D40000"
+    },
+    {
+        name: "Verde Mantis",
+        hexCode: "#7DC23B"
+    },
 ]

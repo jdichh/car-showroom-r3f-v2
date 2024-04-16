@@ -1,15 +1,13 @@
-import { Box, Html, OrbitControls, PerspectiveCamera } from "@react-three/drei";
-import ModelView from "../Model/ModelView";
+import { Html, OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import Lighting from "../Lighting/Lighting";
 import { useState } from "react";
 import { carColors } from "../../lib/colors";
 import { CarModel } from "../Model/Car/CarModel";
-import * as THREE from "three";
 
 const Experience = () => {
   const [color, setColor] = useState({
-    name: "Bianco Monocerus",
-    hexCode: "#E2E2DE",
+    name: "Arancio Borealis",
+    hexCode: "#FBA400",
   });
 
   return (
@@ -22,22 +20,22 @@ const Experience = () => {
         enablePan={false}
         minPolarAngle={0.75}
         maxPolarAngle={Math.PI - 1.6}
-        enableZoom={false}
+        enableZoom={true}
       />
       <Lighting />
       {/* temporary lighting */}
       {/* <ambientLight intensity={1} /> */}
       <CarModel color={color} />
-      <Html fullscreen>
-        <div>
+      <Html fullscreen className="flex justify-end items-end border-white border">
+        <div className="outline outline-white max-w-[500px] p-2">
           <p className="text-white">
             <span>current color is: </span>
             <span className="font-bold text-xl">{color.name}</span>
           </p>
           <ul>
-            {carColors.map((color) => (
+            {carColors.map((color, index) => (
               <li
-                key={color.id}
+                key={index}
                 style={{ backgroundColor: color.hexCode }}
                 className="text-red-500 cursor-pointer"
                 onClick={() => setColor(color)}

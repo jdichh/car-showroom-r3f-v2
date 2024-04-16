@@ -7,11 +7,10 @@ Title: Lamborghini Huracan (Basic Edition)
 */
 
 import * as THREE from "three";
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import Floor from "../Floor/Floor";
-import { carColors } from "../../../lib/colors";
 
 type GLTFResult = GLTF & {
   nodes: {
