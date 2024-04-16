@@ -43,7 +43,7 @@ const Floor = () => {
       receiveShadow
       castShadow
       rotation-x={-Math.PI / 2}
-      position-y={-1.05}
+      position-y={-2}
     />
   );
 };

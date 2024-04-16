@@ -10,7 +10,6 @@ import * as THREE from "three";
 import { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import Floor from "../Floor/Floor";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -72,7 +71,7 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function CarModel(props: any) {
+export function Huracan(props: any) {
   const { nodes, materials } = useGLTF(
     "model/lamborghini_huracan_basic_edition.glb"
   ) as GLTFResult;
@@ -92,13 +91,15 @@ export function CarModel(props: any) {
       if (material[0] == "Paint1Mtl") {
         material[1].color = new THREE.Color(props.color.hexCode);
       }
+      if (material[0] == "LicensePlate2Mtl" ) {
+        material[1].color = new THREE.Color(props.color.hexCode);
+      }
       material[1].needsUpdate = true;
     });
   }, [materials, props]);
 
   return (
-    <group {...props} dispose={null} position={[0, -1, 0]}>
-      <Floor />
+    <group {...props} dispose={null} position={[0, -1, 0]} rotation={[0, 2.03, 0]}>
       <group
         rotation={[-Math.PI / 2, 0, 0]}
         position={[-86.5, -17.1, 355]}
