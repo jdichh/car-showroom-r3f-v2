@@ -1,13 +1,16 @@
-import { Box, OrbitControls } from "@react-three/drei";
+import { Box, OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import ModelView from "../Model/ModelView";
+
+import Lighting from "../Lighting/Lighting";
 
 const Experience = () => {
   return (
     <>
-      <ambientLight intensity={1} />
-      <OrbitControls autoRotate />
-      <Box args={[1, 1, 1]} position={[0, 0, 0]}>
-        <meshStandardMaterial color="red" />
-      </Box>
+      <OrbitControls makeDefault autoRotate autoRotateSpeed={0.75} />
+      {/* <Lighting /> */}
+      {/* temporary lighting */}
+      <ambientLight intensity={1}  /> 
+      <ModelView />
     </>
   );
 };
