@@ -1,4 +1,6 @@
 import { Canvas } from "@react-three/fiber";
+import { Html } from "@react-three/drei";
+import { Suspense } from "react";
 import Experience from "./components/Experience/Experience";
 
 const App = () => {
@@ -9,8 +11,19 @@ const App = () => {
         style={{ background: "#000" }}
         eventSource={document.getElementById("root") as HTMLElement}
       >
-        {/* suspense here */}
-        <Experience />
+        <Suspense
+          fallback={
+            <Html
+              fullscreen
+              style={{ backgroundColor: "black" }}
+              className="flex justify-center items-center"
+            >
+              <p className="text-white">LOADING</p>
+            </Html>
+          }
+        >
+          <Experience />
+        </Suspense>
       </Canvas>
     </>
   );
