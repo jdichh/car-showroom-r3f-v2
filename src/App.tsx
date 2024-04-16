@@ -1,7 +1,5 @@
 import { Canvas } from "@react-three/fiber";
 import Experience from "./components/Experience/Experience";
-import * as THREE from "three";
-
 
 const App = () => {
   return (
@@ -9,10 +7,7 @@ const App = () => {
       <Canvas
         shadows
         style={{ background: "#000" }}
-        gl={{
-          outputColorSpace: THREE.SRGBColorSpace,
-          toneMapping: THREE.ACESFilmicToneMapping,
-        }}
+        eventSource={document.getElementById("root") as HTMLElement}
       >
         {/* suspense here */}
         <Experience />

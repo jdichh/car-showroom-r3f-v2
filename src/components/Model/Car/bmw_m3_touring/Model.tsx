@@ -595,10 +595,10 @@ export function M3(props: any) {
   return (
     <group {...props} dispose={null}>
       <group
-        scale={0.04}
+        scale={0.035}
         ref={carModel}
-        position={[0, -1.3, 0]}
-        rotation={[0, -1.11, 0]}
+        position={[0, -1.75, 0]}
+        rotation={[0, -1.1075, 0]}
       >
         <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
           <mesh

@@ -1,7 +1,11 @@
-import { Lightformer, SpotLight } from "@react-three/drei";
+import { SpotLight } from "@react-three/drei";
 
 const Lighting = () => {
   const white = "#FFFFFF";
+  const lightIntensity = 250;
+  const lightDistance = 50;
+  const shadowResolution = 1024;
+  const shadowBias = -0.0012;
 
   const spotlightParams = {
     directionalLightIntensity: 0.0075,
@@ -10,46 +14,46 @@ const Lighting = () => {
     directionalLightZ: 0,
 
     topSpotlightColor: white,
-    topSpotlightIntensity: 80,
-    topSpotlightAngle: 1.2,
+    topSpotlightIntensity: lightIntensity,
+    topSpotlightAngle: 2.41,
     topSpotlightPenumbra: 1.9,
-    topSpotlightDistance: 30,
+    topSpotlightDistance: 45,
     topSpotlightX: 0,
     topSpotlightY: 12,
     topSpotlightZ: 0,
 
     frontSpotlightColor: white,
-    frontSpotlightIntensity: 125,
+    frontSpotlightIntensity: lightIntensity,
     frontSpotlightAngle: 1,
     frontSpotlightPenumbra: 1,
-    frontSpotlightDistance: 40,
+    frontSpotlightDistance: lightDistance,
     frontSpotlightX: -30,
     frontSpotlightY: 1,
     frontSpotlightZ: 15,
 
     rearSpotlightColor: white,
-    rearSpotlightIntensity: 125,
+    rearSpotlightIntensity: lightIntensity,
     rearSpotlightAngle: 1,
     rearSpotlightPenumbra: 0.65,
-    rearSpotlightDistance: 40,
+    rearSpotlightDistance: lightDistance,
     rearSpotlightX: 30,
     rearSpotlightY: 1,
     rearSpotlightZ: -15,
 
     rightSpotlightColor: white,
-    rightSpotlightIntensity: 125,
+    rightSpotlightIntensity: lightIntensity,
     rightSpotlightAngle: 1,
     rightSpotlightPenumbra: 1,
-    rightSpotlightDistance: 40,
+    rightSpotlightDistance: lightDistance,
     rightSpotlightX: -15,
     rightSpotlightY: 1,
     rightSpotlightZ: -30,
 
     leftSpotlightColor: white,
-    leftSpotlightIntensity: 125,
+    leftSpotlightIntensity: lightIntensity,
     leftSpotlightAngle: 1,
     leftSpotlightPenumbra: 1,
-    leftSpotlightDistance: 40,
+    leftSpotlightDistance: lightDistance,
     leftSpotlightX: 15,
     leftSpotlightY: 1,
     leftSpotlightZ: 30,
@@ -62,41 +66,32 @@ const Lighting = () => {
         {/* <ambientLight intensity={0.75} /> */}
 
         <directionalLight
-          castShadow
           intensity={spotlightParams.directionalLightIntensity}
           position={[
             spotlightParams.directionalLightX,
             spotlightParams.directionalLightY,
             spotlightParams.directionalLightZ,
           ]}
-          shadow-mapSize={[128, 128]}
-          shadow-camera-near={10}
-          shadow-camera-far={100}
-          shadow-camera-left={-50}
-          shadow-camera-right={50}
-          shadow-camera-top={50}
-          shadow-camera-bottom={-50}
-          shadow-bias={-0.0025}
+          castShadow
+          shadow-bias={shadowBias}
+          shadow-mapSize={[shadowResolution, shadowResolution]}
         />
-        
+
         <SpotLight
-        color={spotlightParams.topSpotlightColor}
-        intensity={spotlightParams.topSpotlightIntensity}
-        distance={spotlightParams.topSpotlightDistance}
-        angle={spotlightParams.topSpotlightAngle}
-        penumbra={spotlightParams.topSpotlightPenumbra}
-        position={[
-          spotlightParams.topSpotlightX,
-          spotlightParams.topSpotlightY,
-          spotlightParams.topSpotlightZ,
-        ]}
-        castShadow
-        shadow-bias={-0.001}
-        shadow-mapSize-width={512}
-        shadow-mapSize-height={512}
-        shadow-camera-near={0.1}
-        shadow-camera-far={30}
-      />
+          color={spotlightParams.topSpotlightColor}
+          intensity={spotlightParams.topSpotlightIntensity}
+          distance={spotlightParams.topSpotlightDistance}
+          angle={spotlightParams.topSpotlightAngle}
+          penumbra={spotlightParams.topSpotlightPenumbra}
+          position={[
+            spotlightParams.topSpotlightX,
+            spotlightParams.topSpotlightY,
+            spotlightParams.topSpotlightZ,
+          ]}
+          castShadow
+          shadow-bias={shadowBias}
+          shadow-mapSize={[shadowResolution, shadowResolution]}
+        />
 
         <SpotLight
           color={spotlightParams.frontSpotlightColor}
@@ -110,11 +105,8 @@ const Lighting = () => {
             spotlightParams.frontSpotlightZ,
           ]}
           castShadow
-          shadow-bias={-0.001}
-          shadow-mapSize-width={128}
-          shadow-mapSize-height={128}
-          shadow-camera-near={0.1}
-          shadow-camera-far={25}
+          shadow-bias={shadowBias}
+          shadow-mapSize={[shadowResolution, shadowResolution]}
         />
 
         <SpotLight
@@ -129,11 +121,8 @@ const Lighting = () => {
             spotlightParams.rearSpotlightZ,
           ]}
           castShadow
-          shadow-bias={-0.001}
-          shadow-mapSize-width={128}
-          shadow-mapSize-height={128}
-          shadow-camera-near={0.1}
-          shadow-camera-far={25}
+          shadow-bias={shadowBias}
+          shadow-mapSize={[shadowResolution, shadowResolution]}
         />
 
         <SpotLight
@@ -148,11 +137,8 @@ const Lighting = () => {
             spotlightParams.leftSpotlightZ,
           ]}
           castShadow
-          shadow-bias={-0.001}
-          shadow-mapSize-width={128}
-          shadow-mapSize-height={128}
-          shadow-camera-near={0.1}
-          shadow-camera-far={25}
+          shadow-bias={shadowBias}
+          shadow-mapSize={[shadowResolution, shadowResolution]}
         />
 
         <SpotLight
@@ -167,11 +153,8 @@ const Lighting = () => {
             spotlightParams.rightSpotlightZ,
           ]}
           castShadow
-          shadow-bias={-0.001}
-          shadow-mapSize-width={128}
-          shadow-mapSize-height={128}
-          shadow-camera-near={0.1}
-          shadow-camera-far={25}
+          shadow-bias={shadowBias}
+          shadow-mapSize={[shadowResolution, shadowResolution]}
         />
       </group>
     </>

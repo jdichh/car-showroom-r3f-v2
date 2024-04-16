@@ -37,7 +37,7 @@ export const cars = [
     colors: [
       {
         name: "Bianco Avus",
-        hexCode: "#BEC1AE",
+        hexCode: "#E1E2DA",
       },
       {
         name: "Giallo Modena",

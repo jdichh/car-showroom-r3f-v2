@@ -58,7 +58,7 @@ type GLTFResult = GLTF & {
     Disc1Mtl: THREE.MeshPhysicalMaterial;
     Hb1Mtl: THREE.MeshStandardMaterial;
     LicensePlate1Mtl: THREE.MeshPhysicalMaterial;
-    Meshpart14Mtl: THREE.MeshPhysicalMaterial;
+    Meshpart14Mtl: THREE.MeshPhysicalMaterial; // brake calipers
     Meshpart18Mtl: THREE.MeshStandardMaterial;
     Meshpart5Mtl: THREE.MeshStandardMaterial;
     Mirrorreflections1Mtl: THREE.MeshStandardMaterial;
@@ -91,15 +91,12 @@ export function Huracan(props: any) {
       if (material[0] == "Paint1Mtl") {
         material[1].color = new THREE.Color(props.color.hexCode);
       }
-      if (material[0] == "LicensePlate2Mtl" ) {
-        material[1].color = new THREE.Color(props.color.hexCode);
-      }
       material[1].needsUpdate = true;
     });
   }, [materials, props]);
 
   return (
-    <group {...props} dispose={null} position={[0, -1, 0]} rotation={[0, 2.03, 0]}>
+    <group {...props} dispose={null} position={[0, -1.56, 0.15]} rotation={[0, 2.03, 0]} scale={0.9}>
       <group
         rotation={[-Math.PI / 2, 0, 0]}
         position={[-86.5, -17.1, 355]}

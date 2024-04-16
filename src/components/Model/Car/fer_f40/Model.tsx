@@ -119,8 +119,8 @@ export function F40(props: any) {
   }, [materials, props]);
 
   return (
-    <group {...props} dispose={null} ref={carModel} scale={4}>
-      <group rotation={[-Math.PI / 2, 0, -1.12]} position={[0, -0.3, 0]}>
+    <group {...props} dispose={null} ref={carModel} scale={3.5}>
+      <group rotation={[-Math.PI / 2, 0, -1.105]} position={[0, -0.48, -0.005]}>
         <mesh
           castShadow
           receiveShadow
