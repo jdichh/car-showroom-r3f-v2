@@ -1,91 +1,106 @@
+import placeholderLoading from "/placeholder_loading.webp";
+import bmwLogo from "/logos/bmw_logo.webp";
+import toyotaLogo from "/logos/toyota_logo.webp";
+import nissanLogo from "/logos/nissan_logo.webp";
+
+export const loadingScreen = placeholderLoading;
+export const bmwLogo_2 = bmwLogo
+
 export const cars = [
   {
+    logo: bmwLogo,
     manufacturer: "BMW",
-    model: "M3 Competition Touring",
-    description: "test bmw",
-    colors: [
-        {
-            name: "Alpine White",
-            hexCode: "#FFFFFF"
-        },
-        {
-            name: "Black Sapphire",
-            hexCode: "#08070D"
-        },
-        {
-            name: "Brooklyn Gray",
-            hexCode: "#D6E0F8"
-        },
-        {
-            name: "Portimao Blue",
-            hexCode: "#202E84"
-        },
-        {
-            name: "Sao Paulo Yellow",
-            hexCode: "#D4F341"
-        },
-        {
-            name: "Toronto Red",
-            hexCode: "#C41C14"
-        },
-    ]
-  },
-  {
-    manufacturer: "Ferrari",
-    model: "F40",
-    description: "test ferrari",
+    model: "M3 Coupé",
+    description: "test bmw description",
     colors: [
       {
-        name: "Bianco Avus",
-        hexCode: "#E1E2DA",
+        name: "Alpine White",
+        hexCode: "#EDEBE8",
       },
       {
-        name: "Giallo Modena",
-        hexCode: "#EDCA16",
+        name: "Carbon Black",
+        hexCode: "#1A1412",
       },
       {
-        name: "Rosso Corsa",
-        hexCode: "#D40000",
+        name: "Imola Red",
+        hexCode: "#B72C24",
+      },
+      {
+        name: "Laguna Seca Blue",
+        hexCode: "#63A7F4",
+      },
+      {
+        name: "Phoenix Yellow",
+        hexCode: "#E4D676",
+      },
+      {
+        name: "Titanium Silver",
+        hexCode: "#CBD1D6",
       },
     ],
   },
   {
-    manufacturer: "Lamborghini",
-    model: "Huracan",
-    description: "test lamborghini",
+    logo: nissanLogo,
+    manufacturer: "Nissan",
+    model: "Skyline GT-R (R32)",
+    description: "test nissan description",
     colors: [
-        {
-            name: "Arancio Borealis",
-            hexCode: "#FBA400"
-        },
-        {
-            name: "Bianco Monocerus",
-            hexCode: "#EDEDED"
-        },
-        {
-            name: "Blu Caelum",
-            hexCode: "#054AE3"
-        },
-        {
-            name: "Giallo Inti",
-            hexCode: "#FEBE05"
-        },
-        {
-            name: "Grigio Nimbus",
-            hexCode: "#6B7278"
-        },
-        {
-            name: "Nero Noctis",
-            hexCode: "#292927"
-        },
-        {
-            name: "Rosso Mars",
-            hexCode: "#D40000"
-        },
-        {
-            name: "Verde Mantis",
-            hexCode: "#7DC23B"
-        },
-    ]
-  }
+      {
+        name: "Black",
+        hexCode: "#202020",
+      },
+      {
+        name: "Crystal White",
+        hexCode: "#C5C5BD",
+      },
+      {
+        name: "Dark Blue",
+        hexCode: "#181831",
+      },
+      {
+        name: "Grayish Blue",
+        hexCode: "#8B8B94",
+      },
+      {
+        name: "Gun Gray",
+        hexCode: "#393929",
+      },
+      {
+        name: "Red",
+        hexCode: "#621020",
+      },
+    ],
+  },
+  {
+    logo: toyotaLogo,
+    manufacturer: "Toyota",
+    model: "Supra RZ",
+    description: "test toyota description",
+    colors: [
+      {
+        name: "Black",
+        hexCode: "#202020",
+      },
+      {
+        name: "Blue Mica Metallic",
+        hexCode: "#18296A",
+      },
+      {
+        name: "Grayish Green Mica",
+        hexCode: "#7B7B7B",
+      },
+      {
+        name: "Super Bright Yellow",
+        hexCode: "#FFFF00",
+      },
+      {
+        name: "Super Red",
+        hexCode: "#830820",
+      },
+      {
+        name: "Super White",
+        hexCode: "#CDCDBD",
+      },
+    ],
+  },
 ];

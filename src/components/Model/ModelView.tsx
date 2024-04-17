@@ -1,12 +1,13 @@
 import { Suspense, useEffect, useState } from "react";
 import { Html } from "@react-three/drei";
-import { cars } from "../../lib/cars";
-import { F40 } from "./Car/fer_f40/Model";
-import { Huracan } from "../Model/Car/lam_huracan/Model";
-import { M3 } from "./Car/bmw_m3_touring/Model";
+import { bmwLogo_2, cars } from "../../lib/cars";
+import { E46M3 } from "./Car/m3_e46/Model";
+import { SupraRZ } from "./Car/supra_rz/Model";
+import { SkylineR32 } from "./Car/r32_gtr/Model";
 import Floor from "../Model/Floor/Floor";
 import Top from "../UI/top/Top";
 import Bottom from "../UI/bottom/Bottom";
+
 
 type CarColor = {
   name: string;
@@ -15,8 +16,8 @@ type CarColor = {
 
 const ModelView = () => {
   const [color, setColor] = useState({
-    name: "",
-    hexCode: "#FBA400",
+    name: "Alpine White",
+    hexCode: "#EDEBE8",
   });
 
   const [selectedCar, setSelectedCar] = useState<{
@@ -24,11 +25,13 @@ const ModelView = () => {
     model: string;
     description: string;
     colors: CarColor[];
+    logo: string;
   }>({
-    manufacturer: "Lamborghini",
-    model: "Huracan",
+    manufacturer: "BMW",
+    model: "M3 Coupé",
     description: "",
     colors: [],
+    logo: bmwLogo_2,
   });
 
   useEffect(() => {
@@ -39,91 +42,84 @@ const ModelView = () => {
 
   return (
     <>
-      {selectedCar.manufacturer === "Lamborghini" ? (
+      {selectedCar.manufacturer === "BMW" ? (
         <Suspense
           fallback={
             <Html
               fullscreen
               style={{ backgroundColor: "black" }}
-              className="flex justify-center items-center"
+              className="flex flex-col justify-center items-center"
             >
-              <p className="text-white">LOADING</p>
+              <img src={selectedCar.logo} width={250} height={250} />
             </Html>
           }
         >
-          <Huracan color={color} />
+          <E46M3 color={color} />
         </Suspense>
-      ) : selectedCar.manufacturer === "Ferrari" ? (
+      ) : selectedCar.manufacturer === "Nissan" ? (
         <Suspense
           fallback={
             <Html
               fullscreen
               style={{ backgroundColor: "black" }}
-              className="flex justify-center items-center"
+              className="flex flex-col justify-center items-center"
             >
-              <p className="text-white">LOADING</p>
+              <img src={selectedCar.logo} width={250} height={250} />
             </Html>
           }
         >
-          <F40 color={color} />
+          <SkylineR32 color={color} />
         </Suspense>
-      ) : selectedCar.manufacturer === "BMW" ? (
+      ) : selectedCar.manufacturer === "Toyota" ? (
         <Suspense
           fallback={
             <Html
               fullscreen
               style={{ backgroundColor: "black" }}
-              className="flex justify-center items-center"
+              className="flex flex-col justify-center items-center"
             >
-              <p className="text-white">LOADING</p>
+              <img src={selectedCar.logo} width={250} height={250} />
             </Html>
           }
         >
-          <M3 color={color} />
+          <SupraRZ color={color} />
         </Suspense>
       ) : (
         ""
       )}
       <Floor />
 
-      <Html
-        fullscreen
-        className="flex flex-row justify-between border absolute"
-      >
-        <Top />
-        <div className="flex flex-col outline outline-white">
+      <Html fullscreen className="flex flex-col justify-end items-end absolute">
+        {/* <Top /> */}
+        <div className="flex flex-col outline outline-white p-2">
           <div className="text-white flex flex-col">
             <p className="text-white">
-              <span className="font-bold text-xl">
+              <span className="font-bold text-xl text-center">
                 {selectedCar.manufacturer} {selectedCar.model}
+                {color.name ? <span> in {color.name}</span> : ""}
               </span>
             </p>
+            <p className="text-white">{selectedCar.description}</p>
             <div className="flex flex-col">
               {cars.map((car, index) => (
                 <button key={index} onClick={() => setSelectedCar(car)}>
-                  {car.manufacturer}
+                  {car.manufacturer} {car.model}
                 </button>
               ))}
             </div>
           </div>
           <div>
-            <p className="text-white font-bold text-xl">{color.name}</p>
-            <p className="text-white">{selectedCar.description}</p>
-            <ul>
-              {selectedCar.colors.map((color, index) => (
-                <li
-                  key={index}
-                  style={{ backgroundColor: color.hexCode }}
-                  className="w-full cursor-pointer"
-                  onClick={() => setColor(color)}
-                >
-                  {color.name}
-                </li>
-              ))}
-            </ul>
+            {selectedCar.colors.map((color, index) => (
+              <button
+                key={index}
+                style={{ backgroundColor: color.hexCode }}
+                className="p-5 cursor-pointer"
+                onClick={() => setColor(color)}
+              />
+            ))}
           </div>
         </div>
-        <Bottom />
+        {/* <Bottom /> */}
       </Html>
     </>
   );

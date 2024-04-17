@@ -16,9 +16,9 @@ const App = () => {
             <Html
               fullscreen
               style={{ backgroundColor: "black" }}
-              className="flex justify-center items-center"
+              className="flex flex-col justify-center items-center"
             >
-              <p className="text-white">LOADING</p>
+              <p className="text-white">Welcome!</p>
             </Html>
           }
         >
