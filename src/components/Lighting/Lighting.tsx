@@ -64,7 +64,7 @@ const Lighting = () => {
     <>
       <group name="lights">
         {/* lighting for testing/development */}
-        <ambientLight intensity={0.75} />
+        <ambientLight intensity={1} />
 
         <directionalLight
           intensity={spotlightParams.directionalLightIntensity}
@@ -78,7 +78,7 @@ const Lighting = () => {
           shadow-mapSize={[shadowResolution, shadowResolution]}
         />
 
-        {/* <SpotLight
+        <SpotLight
           color={spotlightParams.topSpotlightColor}
           intensity={spotlightParams.topSpotlightIntensity}
           distance={spotlightParams.topSpotlightDistance}
@@ -92,7 +92,7 @@ const Lighting = () => {
           castShadow
           shadow-bias={shadowBias}
           shadow-mapSize={[shadowResolution, shadowResolution]}
-        /> */}
+        />
       </group>
     </>
   );

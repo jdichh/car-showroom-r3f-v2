@@ -1,28 +1,21 @@
 import { Suspense, lazy, useEffect, useState } from "react";
 import { Html } from "@react-three/drei";
-import { bmwLogo_2, cars } from "../../lib/cars";
+import { cars } from "../../lib/cars";
 import Floor from "../Model/Floor/Floor";
+import alfaLogo from "/logos/alfa.webp";
 
-// import { M3Touring } from "./Car/m3_touring/Model";
-// import { NineEleven } from "./Car/911_gt3rs/Model";
-// import { SL63 } from "./Car/sl63/Model";
-// import { C8 } from "./Car/c8/Model";
-
-const C8 = lazy(() =>
-  import("./Car/c8/Model").then(({ C8 }) => ({ default: C8 }))
+const Giulia = lazy(() =>
+  import("./Car/giulia_gtam/Model").then(({ Giulia }) => ({ default: Giulia }))
 );
-const M3Touring = lazy(() =>
-  import("./Car/m3_touring/Model").then(({ M3Touring }) => ({
-    default: M3Touring,
+const F12 = lazy(() =>
+  import("./Car/f12/Model").then(({ F12 }) => ({
+    default: F12,
   }))
 );
-const NineEleven = lazy(() =>
-  import("./Car/911_gt3rs/Model").then(({ NineEleven }) => ({
-    default: NineEleven,
+const AventadorSV = lazy(() =>
+  import("./Car/aventador_sv/Model").then(({ AventadorSV }) => ({
+    default: AventadorSV,
   }))
-);
-const SL63 = lazy(() =>
-  import("./Car/sl63/Model").then(({ SL63 }) => ({ default: SL63 }))
 );
 
 type CarColorProps = {
@@ -68,11 +61,11 @@ const ModelView = () => {
   });
 
   const [selectedCar, setSelectedCar] = useState<SelectedCarProps>({
-    manufacturer: "BMW",
-    model: "M3 Competition Touring",
+    manufacturer: "Alfa Romeo",
+    model: "Giulia GTAm",
     description: "",
     colors: [],
-    logo: bmwLogo_2,
+    logo: alfaLogo,
   });
 
   useEffect(() => {
@@ -97,21 +90,17 @@ const ModelView = () => {
         <Loader selectedCar={selectedCar} />
       ) : (
         <>
-          {selectedCar.manufacturer === "BMW" ? (
+          {selectedCar.manufacturer === "Alfa Romeo" ? (
             <Suspense fallback={<Loader selectedCar={selectedCar} />}>
-              <M3Touring color={color} />
+              <Giulia color={color} />
             </Suspense>
-          ) : selectedCar.manufacturer === "Porsche" ? (
+          ) : selectedCar.manufacturer === "Lamborghini" ? (
             <Suspense fallback={<Loader selectedCar={selectedCar} />}>
-              <NineEleven color={color} />
+              <AventadorSV color={color} />
             </Suspense>
-          ) : selectedCar.manufacturer === "Mercedes-AMG" ? (
+          ) : selectedCar.manufacturer === "Ferrari" ? (
             <Suspense fallback={<Loader selectedCar={selectedCar} />}>
-              <SL63 color={color} />
-            </Suspense>
-          ) : selectedCar.manufacturer === "Chevrolet" ? (
-            <Suspense fallback={<Loader selectedCar={selectedCar} />}>
-              <C8 color={color} />
+              <F12 color={color} />
             </Suspense>
           ) : (
             ""
