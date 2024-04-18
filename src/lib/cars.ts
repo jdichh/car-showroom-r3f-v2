@@ -10,96 +10,172 @@ export const cars = [
   {
     logo: bmwLogo,
     manufacturer: "BMW",
-    model: "M3 Coupé",
+    model: "M3 Competition Touring",
     description: "test bmw description",
     colors: [
       {
         name: "Alpine White",
-        hexCode: "#EDEBE8",
+        hexCode: "#C4C4C4",
       },
       {
-        name: "Carbon Black",
-        hexCode: "#1A1412",
+        name: "Black Sapphire",
+        hexCode: "#060606",
       },
       {
-        name: "Imola Red",
-        hexCode: "#B72C24",
+        name: "Brooklyn Grey",
+        hexCode: "#585F61",
       },
       {
-        name: "Laguna Seca Blue",
-        hexCode: "#63A7F4",
+        name: "Isle of Man Green",
+        hexCode: "#083521",
       },
       {
-        name: "Phoenix Yellow",
-        hexCode: "#E4D676",
+        name: "Portimao Blue",
+        hexCode: "#445C9A",
       },
       {
-        name: "Titanium Silver",
-        hexCode: "#CBD1D6",
-      },
-    ],
-  },
-  {
-    logo: nissanLogo,
-    manufacturer: "Nissan",
-    model: "Skyline GT-R (R32)",
-    description: "test nissan description",
-    colors: [
+        name: "Sao Paulo Yellow",
+        hexCode: "#AAAB1E",
+      },  
       {
-        name: "Black",
-        hexCode: "#202020",
+        name: "Techno Violet",
+        hexCode: "#63048B",
       },
       {
-        name: "Crystal White",
-        hexCode: "#C5C5BD",
-      },
-      {
-        name: "Dark Blue",
-        hexCode: "#181831",
-      },
-      {
-        name: "Grayish Blue",
-        hexCode: "#8B8B94",
-      },
-      {
-        name: "Gun Gray",
-        hexCode: "#393929",
-      },
-      {
-        name: "Red",
-        hexCode: "#621020",
+        name: "Toronto Red",
+        hexCode: "#8F1402",
       },
     ],
   },
   {
     logo: toyotaLogo,
-    manufacturer: "Toyota",
-    model: "Supra RZ",
-    description: "test toyota description",
+    manufacturer: "Chevrolet",
+    model: "Corvette C8 Stingray",
+    description: "test chevy description",
     colors: [
       {
+        name: "Accelerate Yellow",
+        hexCode: "#EBE434",
+      },
+      {
+        name: "Arctic White",
+        hexCode: "#FFFFFF",
+      },
+      {
         name: "Black",
-        hexCode: "#202020",
+        hexCode: "#020202",
       },
       {
-        name: "Blue Mica Metallic",
-        hexCode: "#18296A",
+        name: "Elkheart Lake Blue",
+        hexCode: "#3B568E",
       },
       {
-        name: "Grayish Green Mica",
-        hexCode: "#7B7B7B",
+        name: "Sebring Orange",
+        hexCode: "#FF5E00",
       },
       {
-        name: "Super Bright Yellow",
-        hexCode: "#FFFF00",
+        name: "Shadow Grey",
+        hexCode: "#595953",
       },
       {
-        name: "Super Red",
-        hexCode: "#830820",
+        name: "Switchblade Silver",
+        hexCode: "#E0DDD2",
       },
       {
-        name: "Super White",
-        hexCode: "#CDCDBD",
+        name: "Torch Red",
+        hexCode: "#C2211A",
+      },
+      {
+        name: "Zeus Bronze",
+        hexCode: "#4A3A2B",
+      },
+    ],
+  },
+  {
+    logo: nissanLogo,
+    manufacturer: "Porsche",
+    model: "911 GT3 RS",
+    description: "test porsche description",
+    colors: [
+      {
+        name: "Arctic Grey",
+        hexCode: "#6A6C70",
+      },
+      {
+        name: "Black",
+        hexCode: "#000000",
+      },
+      {
+        name: "Gentian Blue",
+        hexCode: "#0D0793",
+      },
+      {
+        name: "Guards Red",
+        hexCode: "#CC0033",
+      },
+      {
+        name: "GT Silver",
+        hexCode: "#CCCCCC",
+      },
+      {
+        name: "Ice Grey",
+        hexCode: "#DFE2E9",
+      },
+      {
+        name: "Lava Orange",
+        hexCode: "#FF4200",
+      },
+      {
+        name: "Racing Yellow",
+        hexCode: "#F4F100",
+      },
+      {
+        name: "Shark Blue",
+        hexCode: "#2491E4",
+      },
+      {
+        name: "White",
+        hexCode: "#EFEFEF",
+      },
+    ],
+  },
+  {
+    logo: nissanLogo,
+    manufacturer: "Mercedes-AMG",
+    model: "SL63",
+    description: "test merc description",
+    colors: [
+      {
+        name: "Alpine Grey",
+        hexCode: "#99989E",
+      },
+      {
+        name: "Hyper Blue",
+        hexCode: "#2D7F92",
+      },
+      {
+        name: "Monza Grey",
+        hexCode: "#5E5C5F",
+      },
+      {
+        name: "Obsidian Black",
+        hexCode: "#040403",
+      },
+      {
+        name: "Opalite White",
+        hexCode: "#B2B2B2",
+      },
+      {
+        name: "Patagonia Red",
+        hexCode: "#DB2437",
+      },
+      {
+        name: "Selenite Grey",
+        hexCode: "#404546",
+      },
+      {
+        name: "Spectral Blue",
+        hexCode: "#465570",
       },
     ],
   },
