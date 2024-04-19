@@ -4,16 +4,16 @@ import { Canvas } from "@react-three/fiber";
 import { Html, useProgress } from "@react-three/drei";
 import { Suspense } from "react";
 import Experience from "./components/Experience/Experience";
-import Menu from "./components/Menu/Menu";
+import Landing from "./components/UI/Landing/Landing";
 
 type MenuContextTypes = {
-  isInMenu: boolean;
-  setIsInMenu: (value: boolean) => void;
+  isInLandingMenu: boolean;
+  setIsInLandingMenu: (value: boolean) => void;
 };
 
 export const MenuContext = createContext<MenuContextTypes>({
-  isInMenu: true,
-  setIsInMenu: () => {},
+  isInLandingMenu: true,
+  setIsInLandingMenu: () => {},
 });
 
 function Loader() {
@@ -26,19 +26,19 @@ function Loader() {
 }
 
 const App = () => {
-  const [isInMenu, setIsInMenu] = useState(true);
+  const [isInLandingMenu, setIsInLandingMenu] = useState(true);
 
   return (
     <>
-      <MenuContext.Provider value={{ isInMenu, setIsInMenu }}>
+      <MenuContext.Provider value={{ isInLandingMenu, setIsInLandingMenu }}>
         <Canvas
           shadows
           style={{ background: "#000" }}
           eventSource={document.getElementById("root") as HTMLElement}
         >
-          {isInMenu ? (
+          {isInLandingMenu ? (
             <Suspense fallback={<Loader />}>
-              <Menu />
+              <Landing />
             </Suspense>
           ) : (
             <Suspense fallback={<Loader />}>

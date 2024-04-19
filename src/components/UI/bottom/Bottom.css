@@ -1,0 +1,33 @@
+.main-container {
+  @apply flex flex-col max-h-[11.5rem] h-full text-white bg-black/20 backdrop-blur;
+}
+
+.car-information {
+  @apply grid grid-cols-4 px-14 pt-4 gap-x-4 h-full;
+}
+
+.detail-container {
+  @apply flex justify-between items-start text-white/60;
+}
+
+.detail {
+  @apply flex w-full justify-between border-b-2;
+}
+
+.slider {
+    @apply pb-8 overflow-hidden whitespace-nowrap text-white/90;
+}
+
+.sliding-text {
+    @apply text-lg inline-block;
+    animation: slide 70s linear infinite;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(35%);
+    }
+    100% {
+      transform: translateX(-100%); 
+    }
+  }
