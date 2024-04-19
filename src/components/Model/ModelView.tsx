@@ -2,7 +2,8 @@ import { Suspense, lazy, useEffect, useState } from "react";
 import { Html } from "@react-three/drei";
 import { cars } from "../../lib/cars";
 import Floor from "../Model/Floor/Floor";
-import alfaLogo from "/logos/alfa.webp";
+import Bottom from "../UI/bottom/Bottom";
+import Top from "../UI/top/Top";
 
 const Giulia = lazy(() =>
   import("./Car/giulia_gtam/Model").then(({ Giulia }) => ({ default: Giulia }))
@@ -61,11 +62,11 @@ const ModelView = () => {
   });
 
   const [selectedCar, setSelectedCar] = useState<SelectedCarProps>({
-    manufacturer: "Alfa Romeo",
-    model: "Giulia GTAm",
-    description: "",
-    colors: [],
-    logo: alfaLogo,
+    manufacturer: cars[0].manufacturer,
+    model: cars[0].model,
+    description: cars[0].description,
+    colors: cars[0].colors,
+    logo: cars[0].logo,
   });
 
   useEffect(() => {
@@ -77,7 +78,7 @@ const ModelView = () => {
       setIsLoading(false);
 
       setSelectedCar(selectedCar);
-    }, 2000);
+    }, 500);
 
     if (selectedCar.colors.length > 0) {
       setColor(selectedCar.colors[0]);
@@ -86,6 +87,7 @@ const ModelView = () => {
 
   return (
     <>
+      <Floor />
       {isLoading || isModelLoading ? (
         <Loader selectedCar={selectedCar} />
       ) : (
@@ -106,42 +108,44 @@ const ModelView = () => {
             ""
           )}
 
-          <Floor />
-          <Html
-            fullscreen
-            className="flex flex-col justify-end items-end absolute"
-          >
-            {/* <Top /> */}
-            <div className="flex flex-col outline outline-white p-2">
-              <div className="text-white flex flex-col">
-                <p className="text-white">
-                  <span className="font-bold text-xl text-center">
-                    {selectedCar.manufacturer} {selectedCar.model}
-                    {color.name ? <span> in {color.name}</span> : ""}
-                  </span>
-                </p>
-                <p className="text-white">{selectedCar.description}</p>
-                <div className="flex flex-col">
-                  {cars.map((car, index) => (
-                    <button key={index} onClick={() => setSelectedCar(car)}>
-                      {car.manufacturer} {car.model}
-                    </button>
-                  ))}
+          
+            <Html fullscreen className="border border-yellow-600">
+              <main className="max-w-[1920px] mx-auto border border-red-800 h-full flex flex-col justify-between">
+                <Top />
+                <div className="flex flex-colp-2">
+                  <div className="text-white flex flex-col">
+                    <p className="text-white">
+                      <span className="font-bold text-xl text-center">
+                        {selectedCar.manufacturer} {selectedCar.model}
+                        {color.name ? <span> in {color.name}</span> : ""}
+                      </span>
+                    </p>
+                    <p className="text-white">{selectedCar.description}</p>
+                    <div className="flex flex-col">
+                      {cars.map((car, index) => (
+                        <button key={index} onClick={() => setSelectedCar(car)}>
+                          {car.manufacturer} {car.model}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    {selectedCar.colors.map((color, index) => (
+                      <button
+                        key={index}
+                        style={{ backgroundColor: color.hexCode }}
+                        className="p-5 cursor-pointer"
+                        onClick={() => setColor(color)}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
-              <div>
-                {selectedCar.colors.map((color, index) => (
-                  <button
-                    key={index}
-                    style={{ backgroundColor: color.hexCode }}
-                    className="p-5 cursor-pointer"
-                    onClick={() => setColor(color)}
-                  />
-                ))}
-              </div>
-            </div>
-            {/* <Bottom /> */}
-          </Html>
+                <Bottom />
+              </main>
+              
+            </Html>
+            
+          
         </>
       )}
     </>

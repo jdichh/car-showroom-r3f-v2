@@ -9,6 +9,8 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
+    Ferrari_F12berlinetta_2014_Wheel_1Combined3DWheel_3DWheel_f: THREE.Mesh
+    Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta004: THREE.Mesh
     Ferrari_F12berlinetta_2014Base_Geo_lodA: THREE.Mesh
     Ferrari_F12berlinetta_2014Engine_Geo_lodA: THREE.Mesh
     Ferrari_F12berlinetta_2014Grille1_Geo_lodA: THREE.Mesh
@@ -23,16 +25,16 @@ type GLTFResult = GLTF & {
     Ferrari_F12berlinetta_2014SeatBelt_Geo_lodA: THREE.Mesh
     Ferrari_F12berlinetta_2014Window_Geo_lodA: THREE.Mesh
     Ferrari_F12berlinetta_2014RearEmissions: THREE.Mesh
-    Ferrari_F8Tributo_2020_Wheel_2ACombined3DWheel_3DWheel_front_L_: THREE.Mesh
-    Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta: THREE.Mesh
-    Ferrari_F8Tributo_2020_Wheel_2ACombined3DWheel_3DWheel_fron: THREE.Mesh
+    Ferrari_F12berlinetta_2014_Wheel_1Combined3DWheel_3DWheel_front: THREE.Mesh
     Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta001: THREE.Mesh
-    Ferrari_F8Tributo_2020_Wheel_2ACombined3DWheel_3DWheel_fron001: THREE.Mesh
-    Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta002: THREE.Mesh
-    Ferrari_F8Tributo_2020_Wheel_2ACombined3DWheel_3DWheel_fron002: THREE.Mesh
+    Ferrari_F12berlinetta_2014_Wheel_1Combined3DWheel_3DWheel_f001: THREE.Mesh
     Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta003: THREE.Mesh
+    Ferrari_F12berlinetta_2014_Wheel_1Combined3DWheel_3DWheel_f002: THREE.Mesh
+    Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta002: THREE.Mesh
   }
   materials: {
+    Wheel: THREE.MeshPhysicalMaterial
+    ['Caliper.011']: THREE.MeshStandardMaterial
     Paint2: THREE.MeshStandardMaterial
     Engine: THREE.MeshStandardMaterial
     Grille1: THREE.MeshStandardMaterial
@@ -45,16 +47,12 @@ type GLTFResult = GLTF & {
     Seatbelt: THREE.MeshStandardMaterial
     Glass: THREE.MeshStandardMaterial
     RearEmission: THREE.MeshStandardMaterial
-    Wheel: THREE.MeshPhysicalMaterial
-    ['Caliper.001']: THREE.MeshStandardMaterial
-    ['Wheel.002']: THREE.MeshPhysicalMaterial
     ['Caliper.003']: THREE.MeshStandardMaterial
-    ['Wheel.004']: THREE.MeshPhysicalMaterial
-    ['Caliper.004']: THREE.MeshStandardMaterial
-    ['Wheel.005']: THREE.MeshPhysicalMaterial
-    ['Caliper.005']: THREE.MeshStandardMaterial
+    ['Caliper.006']: THREE.MeshStandardMaterial
+    ['Caliper.010']: THREE.MeshStandardMaterial
   }
 }
+
 
 export function F12(props: any) {
   const { nodes, materials } = useGLTF('model/f12.glb') as GLTFResult
@@ -71,7 +69,24 @@ export function F12(props: any) {
 
 
   return (
-    <group {...props} dispose={null} scale={4} position={[0, -1.26, 0]} rotation={[0,-1,0]}>
+    <group {...props} dispose={null} scale={4} position={[0, -1.15, 0]} rotation={[0,-1,0]}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Ferrari_F12berlinetta_2014_Wheel_1Combined3DWheel_3DWheel_f.geometry}
+        material={materials.Wheel}
+        position={[-0.777, 0.224, -1.363]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={-1}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta004.geometry}
+          material={materials['Caliper.011']}
+          position={[0.007, 0.155, 0]}
+          rotation={[-Math.PI, 0, 0]}
+        />
+      </mesh>
       <mesh
         castShadow
         receiveShadow
@@ -173,65 +188,48 @@ export function F12(props: any) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Ferrari_F8Tributo_2020_Wheel_2ACombined3DWheel_3DWheel_front_L_.geometry}
+        geometry={nodes.Ferrari_F12berlinetta_2014_Wheel_1Combined3DWheel_3DWheel_front.geometry}
         material={materials.Wheel}
-        position={[0.795, 0.24, 1.357]}
+        position={[0.777, 0.224, -1.363]}
         rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta.geometry}
-          material={materials['Caliper.001']}
-          position={[-0.021, -0.181, 0]}
-        />
-      </mesh>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Ferrari_F8Tributo_2020_Wheel_2ACombined3DWheel_3DWheel_fron.geometry}
-        material={materials['Wheel.002']}
-        position={[-0.795, 0.24, -1.362]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={-1}>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta001.geometry}
           material={materials['Caliper.003']}
-          position={[-0.013, 0.177, 0]}
+          position={[0.007, 0.155, 0]}
           rotation={[-Math.PI, 0, 0]}
         />
       </mesh>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Ferrari_F8Tributo_2020_Wheel_2ACombined3DWheel_3DWheel_fron001.geometry}
-        material={materials['Wheel.004']}
-        position={[-0.795, 0.24, 1.357]}
+        geometry={nodes.Ferrari_F12berlinetta_2014_Wheel_1Combined3DWheel_3DWheel_f001.geometry}
+        material={materials.Wheel}
+        position={[-0.777, 0.224, 1.354]}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={-1}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta002.geometry}
-          material={materials['Caliper.004']}
-          position={[-0.021, -0.181, 0]}
+          geometry={nodes.Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta003.geometry}
+          material={materials['Caliper.006']}
+          position={[0, -0.167, 0]}
         />
       </mesh>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Ferrari_F8Tributo_2020_Wheel_2ACombined3DWheel_3DWheel_fron002.geometry}
-        material={materials['Wheel.005']}
-        position={[0.795, 0.24, -1.362]}
+        geometry={nodes.Ferrari_F12berlinetta_2014_Wheel_1Combined3DWheel_3DWheel_f002.geometry}
+        material={materials.Wheel}
+        position={[0.777, 0.224, 1.354]}
         rotation={[Math.PI / 2, 0, 0]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta003.geometry}
-          material={materials['Caliper.005']}
-          position={[-0.013, 0.177, 0]}
-          rotation={[-Math.PI, 0, 0]}
+          geometry={nodes.Ferrari_F12berlinetta_2014CombinedCalliperBodyExotic6_Insta002.geometry}
+          material={materials['Caliper.010']}
+          position={[0, -0.167, 0]}
         />
       </mesh>
     </group>
