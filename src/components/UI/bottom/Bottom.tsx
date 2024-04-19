@@ -3,7 +3,7 @@ import "./Bottom.css";
 
 const Bottom = (selectedCar: SelectedCarProps) => {
   return (
-    <div className="main-container">
+    <section className="main-container">
       <div className="car-information">
         <div className="car-information-container">
           <p className="detail">
@@ -57,7 +57,7 @@ const Bottom = (selectedCar: SelectedCarProps) => {
       <div className="slider">
         <p className="sliding-text">{selectedCar.description}</p>
       </div>
-    </div>
+    </section>
   );
 };
 

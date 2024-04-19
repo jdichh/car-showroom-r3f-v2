@@ -7,6 +7,7 @@ export type SelectedCarProps = {
   logo: string;
   manufacturer: string;
   model: string;
+  year: string;
   colors: CarColorProps[];
   displacement: string;
   maxPower: string;

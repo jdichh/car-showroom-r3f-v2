@@ -10,6 +10,7 @@ export const cars = [
     logo: alfaLogo,
     manufacturer: "Alfa Romeo",
     model: "Giulia GTAm",
+    year: "2020",
     colors: [
       {
         name: "Alpine White",
@@ -46,6 +47,7 @@ export const cars = [
     logo: ferrariLogo,
     manufacturer: "Ferrari",
     model: "F12berlinetta",
+    year: "2012",
     colors: [
       {
         name: "Red",
@@ -91,6 +93,7 @@ export const cars = [
     logo: lamboLogo,
     manufacturer: "Lamborghini",
     model: "Aventador SV",
+    year: "2015",
     colors: [
       {
         name: "Accelerate Yellow",
