@@ -1,11 +1,11 @@
 import Lighting from "../Lighting/Lighting";
-import Camera from "../Camera/Camera";
 import ModelView from "../Model/ModelView";
+import { PerspectiveCamera } from "@react-three/drei";
 
 const Experience = () => {
   return (
     <>
-      <Camera />
+      <PerspectiveCamera makeDefault position={[0, 2.5, 40]} fov={20} />
       <Lighting />
       <ModelView />
     </>

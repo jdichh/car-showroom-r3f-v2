@@ -16,7 +16,7 @@ export const MenuContext = createContext<MenuContextTypes>({
   setIsInLandingMenu: () => {},
 });
 
-function Loader() {
+const Loader = () => {
   const { active, progress, errors, item, loaded, total } = useProgress();
   return (
     <Html center className="w-screen flex flex-col justify-center items-center">

@@ -1,5 +1,5 @@
 .main-container {
-  @apply flex flex-col max-h-[11.5rem] h-full text-white bg-black/20 backdrop-blur;
+  @apply flex flex-col max-h-[11.5rem] h-full text-white bg-black/20 backdrop-blur pointer-events-none;
 }
 
 .car-information {
@@ -20,12 +20,12 @@
 
 .sliding-text {
     @apply text-lg inline-block;
-    animation: slide 70s linear infinite;
+    animation: slide 120s linear infinite;
   }
 
   @keyframes slide {
     0% {
-      transform: translateX(35%);
+      transform: translateX(28%);
     }
     100% {
       transform: translateX(-100%); 
