@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 html, body, #root {
-    @apply w-screen h-screen overflow-hidden;
+    @apply w-screen h-screen overflow-hidden select-none;
 }

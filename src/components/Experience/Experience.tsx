@@ -5,7 +5,7 @@ import { PerspectiveCamera } from "@react-three/drei";
 const Experience = () => {
   return (
     <>
-      <PerspectiveCamera makeDefault position={[0, 2.5, 40]} fov={20} />
+      <PerspectiveCamera makeDefault position={[0, 2, 27]} fov={35}/>
       <Lighting />
       <ModelView />
     </>

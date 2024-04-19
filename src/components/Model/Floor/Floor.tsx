@@ -24,7 +24,7 @@ const Floor = () => {
     tex.repeat.set(scale, scale);
   });
 
-  const material = new THREE.MeshPhysicalMaterial({
+  const material = new THREE.MeshStandardMaterial({
     aoMap: aoMap,
     aoMapIntensity: 1,
     map: colorMap,
@@ -33,7 +33,7 @@ const Floor = () => {
     normalMap: normGlMap,
     normalMapType: THREE.TangentSpaceNormalMap,
     roughnessMap: roughnessMap,
-    roughness: 1,
+    roughness: 0.7,
   });
 
   return (
@@ -43,7 +43,7 @@ const Floor = () => {
       receiveShadow
       castShadow
       rotation-x={-Math.PI / 2}
-      position-y={-2.5}
+      position-y={-3}
     />
   );
 };

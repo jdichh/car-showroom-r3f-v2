@@ -51,7 +51,7 @@ export const cars = [
     colors: [
       {
         name: "Red",
-        hexCode: "#FF0000",
+        hexCode: "#C4C4C4",
       },
       {
         name: "Arctic White",
@@ -92,12 +92,12 @@ export const cars = [
   {
     logo: lamboLogo,
     manufacturer: "Lamborghini",
-    model: "Aventador SV",
-    year: "2015",
+    model: "Huracan",
+    year: "2014",
     colors: [
       {
         name: "Accelerate Yellow",
-        hexCode: "#EBE434",
+        hexCode: "#C4C4C4",
       },
       {
         name: "Arctic White",
@@ -127,5 +127,30 @@ export const cars = [
     km/h braking distance of just 30 m. This model was to be a limited edition 
     with a production run of only 600 cars worldwide, but an open top LP 750-4 
     SV roadster was later sold in a limited production run of 500 cars.`,
+  },
+  {
+    logo: lamboLogo,
+    manufacturer: "Porsche",
+    model: "918 Spyder",
+    year: "2013",
+    colors: [
+      {
+        name: "Accelerate Yellow",
+        hexCode: "#C4C4C4",
+      },
+      {
+        name: "Arctic White",
+        hexCode: "#FFFFFF",
+      },
+    ],
+    displacement: "6,498 cc",
+    maxPower: "739 BHP @ 8,400rpm",
+    torque: "507 lb-ft",
+    drivetrain: "4WD",
+    length: "4,835 mm",
+    width: "2,030 mm",
+    height: "1,136 mm",
+    weight: "1,525 kg",
+    description: `918`,
   },
 ];

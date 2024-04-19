@@ -8,8 +8,13 @@ export const F12 = lazy(() =>
     default: F12,
   }))
 );
-export const AventadorSV = lazy(() =>
-  import("../../components/Model/Car/aventador_sv/Model").then(({ AventadorSV }) => ({
-    default: AventadorSV,
+export const Huracan = lazy(() =>
+  import("../../components/Model/Car/huracan/Model").then(({ Huracan }) => ({
+    default: Huracan,
+  }))
+);
+export const Porsche918 = lazy(() =>
+  import("../../components/Model/Car/918/Model").then(({ Porsche918 }) => ({
+    default: Porsche918,
   }))
 );

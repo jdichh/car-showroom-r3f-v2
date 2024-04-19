@@ -69,7 +69,7 @@ export function F12(props: any) {
 
 
   return (
-    <group {...props} dispose={null} scale={4} position={[0, -1.15, 0]} rotation={[0,-1,0]}>
+    <group {...props} dispose={null} scale={4} position={[0, -1.66, 0]}>
       <mesh
         castShadow
         receiveShadow

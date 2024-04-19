@@ -39,10 +39,10 @@ type GLTFResult = GLTF & {
   }
   materials: {
     Lights: THREE.MeshStandardMaterial
-    Plate: THREE.MeshStandardMaterial
-    Glass: THREE.MeshStandardMaterial
-    Paint: THREE.MeshStandardMaterial
-    Paint2: THREE.MeshStandardMaterial
+    Plate: THREE.MeshPhysicalMaterial
+    Glass: THREE.MeshPhysicalMaterial
+    Paint: THREE.MeshPhysicalMaterial
+    Paint2: THREE.MeshPhysicalMaterial
     Interior: THREE.MeshStandardMaterial
     Interior2: THREE.MeshStandardMaterial
     Grille1: THREE.MeshStandardMaterial
@@ -50,14 +50,10 @@ type GLTFResult = GLTF & {
     Grille3: THREE.MeshStandardMaterial
     Grille4: THREE.MeshStandardMaterial
     Grille5: THREE.MeshStandardMaterial
-    Grille6: THREE.MeshStandardMaterial
-    Badge: THREE.MeshStandardMaterial
+    Grille6: THREE.MeshPhysicalMaterial
+    Badge: THREE.MeshPhysicalMaterial
     Wheel: THREE.MeshPhysicalMaterial
     Caliper: THREE.MeshStandardMaterial
-    ['Wheel.001']: THREE.MeshPhysicalMaterial
-    ['Wheel.002']: THREE.MeshPhysicalMaterial
-    ['Wheel.003']: THREE.MeshPhysicalMaterial
-    ['Caliper.003']: THREE.MeshStandardMaterial
     RearLights: THREE.MeshStandardMaterial
   }
 }
@@ -75,9 +71,8 @@ export function Giulia(props: any) {
     });
   }, [materials, props]);
 
-
   return (
-    <group {...props} dispose={null} scale={4} position={[0, -1.153, 0]} rotation={[0,-1,0]}>
+    <group {...props} dispose={null} scale={4} position={[0, -1.67, 0]}>
       <mesh
         castShadow
         receiveShadow
@@ -223,7 +218,7 @@ export function Giulia(props: any) {
         castShadow
         receiveShadow
         geometry={nodes.AlfaRomeo_GiuliaGTAm_2021_Wheel_1Combined3DWheel_3DWheel_Fr.geometry}
-        material={materials['Wheel.001']}
+        material={materials.Wheel}
         position={[-0.702, 0.2, 1.499]}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={-1}>
@@ -239,7 +234,7 @@ export function Giulia(props: any) {
         castShadow
         receiveShadow
         geometry={nodes.AlfaRomeo_GiuliaGTAm_2021_Wheel_1Combined3DWheel_3DWheel_Fr001.geometry}
-        material={materials['Wheel.002']}
+        material={materials.Wheel}
         position={[-0.726, 0.2, -1.328]}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={-1}>
@@ -255,14 +250,14 @@ export function Giulia(props: any) {
         castShadow
         receiveShadow
         geometry={nodes.AlfaRomeo_GiuliaGTAm_2021_Wheel_1Combined3DWheel_3DWheel_Fr002.geometry}
-        material={materials['Wheel.003']}
+        material={materials.Wheel}
         position={[0.702, 0.2, 1.499]}
         rotation={[Math.PI / 2, 0, 0]}>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.AlfaRomeo_GiuliaGTAmReward_2021_CallipersCombinedCalliperEx002.geometry}
-          material={materials['Caliper.003']}
+          material={materials.Caliper}
           position={[-0.007, 0, 0]}
         />
       </mesh>

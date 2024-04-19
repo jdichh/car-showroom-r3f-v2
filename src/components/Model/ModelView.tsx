@@ -3,9 +3,12 @@ import { SelectedCarProps } from "../../lib/types/types";
 import { Html, OrbitControls } from "@react-three/drei";
 import { cars } from "../../lib/cars";
 
-import { AventadorSV } from "../../lib/modelImports/modelImports";
-import { F12 } from "../../lib/modelImports/modelImports";
-import { Giulia } from "../../lib/modelImports/modelImports";
+import {
+  Porsche918,
+  F12,
+  Giulia,
+  Huracan,
+} from "../../lib/modelImports/modelImports";
 
 import Floor from "../Model/Floor/Floor";
 import Bottom from "../UI/Bottom/Bottom";
@@ -48,14 +51,16 @@ const ModelView = () => {
 
     setTimeout(() => {
       setIsLoading(false);
-      setSelectedCar(selectedCar);
       resetCameraPosition();
+      setSelectedCar(selectedCar);
     }, 500);
 
     if (selectedCar.colors.length > 0) {
       setColor(selectedCar.colors[0]);
     }
   }, [selectedCar]);
+
+  const devCamera = true;
 
   return (
     <>
@@ -67,11 +72,11 @@ const ModelView = () => {
             makeDefault
             enablePan={false}
             autoRotate
-            autoRotateSpeed={0.9}
+            autoRotateSpeed={0.7}
             minPolarAngle={0.5}
             maxPolarAngle={Math.PI - 1.6}
-            enableZoom={false}
-            enableRotate={false}
+            enableZoom={devCamera}
+            enableRotate={devCamera}
             ref={orbitControlsRef}
           />
           {selectedCar.manufacturer === "Alfa Romeo" ? (
@@ -80,11 +85,15 @@ const ModelView = () => {
             </Suspense>
           ) : selectedCar.manufacturer === "Lamborghini" ? (
             <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
-              <AventadorSV color={color} />
+              <Huracan color={color} />
             </Suspense>
           ) : selectedCar.manufacturer === "Ferrari" ? (
             <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
               <F12 color={color} />
+            </Suspense>
+          ) : selectedCar.manufacturer === "Porsche" ? (
+            <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
+              <Porsche918 color={color} />
             </Suspense>
           ) : (
             ""
@@ -92,11 +101,14 @@ const ModelView = () => {
           <Floor />
           <Html fullscreen className={`${isLoading ? "invisible" : "visible"}`}>
             <main className="max-w-[1920px] mx-auto h-full flex flex-col justify-between">
-              
-              <section className="flex p-4 justify-center outline outline-blue-600 text-red-500 font-bold">
+              <section className="flex p-2 justify-center backdrop-blur bg-black/50 gap-3">
                 {cars.map((car, index) =>
                   car.manufacturer !== selectedCar.manufacturer ? (
-                    <button key={index} onClick={() => setSelectedCar(car)}>
+                    <button
+                      key={index}
+                      className="hover:scale-110 active:scale-95 hover:bg-white/30 transition-all outline outline-1 outline-white/50 rounded-sm py-3 px-6"
+                      onClick={() => setSelectedCar(car)}
+                    >
                       <img
                         src={car.logo}
                         alt={`${car.manufacturer} ${car.model}`}
@@ -112,34 +124,33 @@ const ModelView = () => {
 
               <section
                 id="middle"
-                className="text-white h-full outline outline-purple-700 outline-2 p-14 flex flex-col justify-between"
+                className="text-white h-full p-14 flex flex-col justify-between"
               >
-                <div className="flex justify-between items-center outline">
+                <div className="flex justify-between items-center">
                   <img src={selectedCar.logo} height={90} width={90} />
                   <div>
-                    <div className="flex gap-1 border border-red-500">
+                    <div className="flex gap-1">
                       {selectedCar.colors.map((color, index) => (
                         <button
                           key={index}
                           style={{ backgroundColor: color.hexCode }}
-                          className="p-5 cursor-pointer rounded-md"
+                          className="p-5 cursor-pointer rounded-sm"
                           onClick={() => setColor(color)}
                         />
                       ))}
                     </div>
                   </div>
                 </div>
-                <hgroup className="flex flex-col px-14 border border-blue-500">
+                <hgroup className="flex flex-col px-14">
                   <h2>{selectedCar.manufacturer}</h2>
                   <h3>{selectedCar.model}</h3>
                   <h4>{selectedCar.year}</h4>
                 </hgroup>
-                <div className="border border-blue-500 flex flex-col items-end">
+                <div className="flex flex-col items-end">
                     <p>PP</p>
                     <p>220,000</p>
                 </div>
               </section>
-
               <Bottom {...selectedCar} />
             </main>
           </Html>
