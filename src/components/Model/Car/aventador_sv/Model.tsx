@@ -34,6 +34,7 @@ type GLTFResult = GLTF & {
     Lamborghini_AventadorLP7504Superveloce_2015_Wheel_1ACombine002: THREE.Mesh
     Lamborghini_AventadorLP7504Superveloce_2015CombinedCalliper002: THREE.Mesh
     Lamborghini_AventadorLP7504Superveloce_2015Parking001: THREE.Mesh
+    Lamborghini_AventadorLP7504Superveloce_2015RearLights: THREE.Mesh
   }
   materials: {
     Wheel: THREE.MeshPhysicalMaterial
@@ -57,6 +58,7 @@ type GLTFResult = GLTF & {
     ['BodyPaint.002']: THREE.MeshPhysicalMaterial
     ['BodyPaint.003']: THREE.MeshPhysicalMaterial
     ['ParkingBrake.001']: THREE.MeshStandardMaterial
+    RearLights: THREE.MeshStandardMaterial
   }
 }
 
@@ -74,15 +76,14 @@ export function AventadorSV(props: any) {
   }, [materials, props]);
 
   return (
-    <group {...props} dispose={null} scale={4} position={[0, -1.05, 0]} rotation={[0,-1,0]}>
+    <group {...props} dispose={null} scale={4} position={[0, -1.09, 0]} rotation={[0,-1,0]}>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Lamborghini_AventadorLP7504Superveloce_2015_Wheel_1ACombined3DW.geometry}
         material={materials.Wheel}
         position={[0.81, 0.201, -1.44]}
-        rotation={[Math.PI / 2, 0, 0]}
-        scale={1.05}>
+        rotation={[Math.PI / 2, 0, 0]}>
         <mesh
           castShadow
           receiveShadow
@@ -245,7 +246,7 @@ export function AventadorSV(props: any) {
         material={materials.Wheel}
         position={[-0.81, 0.201, -1.44]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={-1.05}>
+        scale={-1}>
         <mesh
           castShadow
           receiveShadow
@@ -263,6 +264,13 @@ export function AventadorSV(props: any) {
           rotation={[0.436, 0, 0]}
         />
       </mesh>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Lamborghini_AventadorLP7504Superveloce_2015RearLights.geometry}
+        material={materials.RearLights}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
     </group>
   )
 }

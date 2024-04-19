@@ -35,6 +35,7 @@ type GLTFResult = GLTF & {
     AlfaRomeo_GiuliaGTAmReward_2021_CallipersCombinedCalliperEx: THREE.Mesh
     AlfaRomeo_GiuliaGTAm_2021_Wheel_1Combined3DWheel_3DWheel_Fr002: THREE.Mesh
     AlfaRomeo_GiuliaGTAmReward_2021_CallipersCombinedCalliperEx002: THREE.Mesh
+    AlfaRomeo_GiuliaGTAm_2021RearLights: THREE.Mesh
   }
   materials: {
     Lights: THREE.MeshStandardMaterial
@@ -57,6 +58,7 @@ type GLTFResult = GLTF & {
     ['Wheel.002']: THREE.MeshPhysicalMaterial
     ['Wheel.003']: THREE.MeshPhysicalMaterial
     ['Caliper.003']: THREE.MeshStandardMaterial
+    RearLights: THREE.MeshStandardMaterial
   }
 }
 
@@ -75,7 +77,7 @@ export function Giulia(props: any) {
 
 
   return (
-    <group {...props} dispose={null} scale={4} position={[0, -1.05, 0]} rotation={[0,-1,0]}>
+    <group {...props} dispose={null} scale={4} position={[0, -1.153, 0]} rotation={[0,-1,0]}>
       <mesh
         castShadow
         receiveShadow
@@ -264,6 +266,13 @@ export function Giulia(props: any) {
           position={[-0.007, 0, 0]}
         />
       </mesh>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.AlfaRomeo_GiuliaGTAm_2021RearLights.geometry}
+        material={materials.RearLights}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
     </group>
   )
 }
