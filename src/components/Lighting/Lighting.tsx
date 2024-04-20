@@ -5,8 +5,8 @@ const Lighting = () => {
   const lightIntensity = 1000;
   const lightDistance = 50;
   const shadowResolution = 1024;
-  const shadowBias = -0.0007;
-  const spotlightHeight = 3;
+  const shadowBias = -0.00065;
+  const spotlightHeight = 10;
   const spotlightPenumbra = 1;
 
   const spotlightParams = {

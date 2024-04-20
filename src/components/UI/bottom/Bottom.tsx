@@ -7,49 +7,49 @@ const Bottom = (selectedCar: SelectedCarProps) => {
       <div className="car-information">
         <div className="car-information-container">
           <p className="detail">
-            <span>Displacement</span>
+            <span className="detail-text">Displacement</span>
             <span className="detail-number">{selectedCar.displacement}</span>
           </p>
         </div>
         <div className="car-information-container">
           <p className="detail">
-            <span>Max. Power</span>
+            <span className="detail-text">Max. Power</span>
             <span className="detail-number">{selectedCar.maxPower}</span>
           </p>
         </div>
         <div className="car-information-container">
           <span className="detail">
-            <span>Max. Torque</span>
+            <span className="detail-text">Max. Torque</span>
             <span className="detail-number">{selectedCar.torque}</span>
           </span>
         </div>
         <div className="car-information-container">
           <p className="detail">
-            <span>Drivetrain</span>
+            <span className="detail-text">Drivetrain</span>
             <span className="detail-number">{selectedCar.drivetrain}</span>
           </p>
         </div>
         <div className="car-information-container">
           <p className="detail">
-            <span>Length</span>
+            <span className="detail-text">Length</span>
             <span className="detail-number">{selectedCar.length}</span>
           </p>
         </div>
         <div className="car-information-container">
           <p className="detail">
-            <span>Width</span>
+            <span className="detail-text">Width</span>
             <span className="detail-number">{selectedCar.width}</span>
           </p>
         </div>
         <div className="car-information-container">
           <p className="detail">
-            <span>Height</span>
+            <span className="detail-text">Height</span>
             <span className="detail-number">{selectedCar.height}</span>
           </p>
         </div>
         <div className="car-information-container">
           <p className="detail">
-            <span>Weight</span>
+            <span className="detail-text">Weight</span>
             <span className="detail-number">{selectedCar.weight}</span>
           </p>
         </div>

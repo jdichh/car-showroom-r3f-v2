@@ -1,0 +1,31 @@
+#top {
+    @apply flex p-2 justify-center backdrop-blur bg-black/40 gap-3;
+}
+
+.car-selection {
+    @apply hover:scale-110 active:scale-95 hover:bg-white/30 transition-all outline outline-1 outline-white/50 rounded-sm py-3 px-6;
+}
+
+#middle {
+    @apply text-white h-full p-14 flex flex-col justify-between;
+}
+
+.current-car {
+    @apply flex flex-col px-14;
+}
+
+.logo-and-paint-container {
+    @apply flex justify-between items-center;
+}
+
+.paint-sample-container {
+    @apply flex flex-col items-end;
+}
+
+.paint-samples {
+    @apply flex gap-1;
+}
+
+.paint-samples-button {
+    @apply p-5 cursor-pointer rounded-sm;
+}

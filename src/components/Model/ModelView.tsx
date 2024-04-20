@@ -2,12 +2,15 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { SelectedCarProps } from "../../lib/types/types";
 import { Html, OrbitControls } from "@react-three/drei";
 import { cars } from "../../lib/cars";
+import "./ModelView.css"
 
 import {
   Porsche918,
   F12,
   Giulia,
   Huracan,
+  Viper,
+  LFA,
 } from "../../lib/modelImports/modelImports";
 
 import Floor from "../Model/Floor/Floor";
@@ -48,10 +51,10 @@ const ModelView = () => {
 
   useEffect(() => {
     setIsLoading(true);
+    resetCameraPosition();
 
     setTimeout(() => {
       setIsLoading(false);
-      resetCameraPosition();
       setSelectedCar(selectedCar);
     }, 500);
 
@@ -60,7 +63,13 @@ const ModelView = () => {
     }
   }, [selectedCar]);
 
-  const devCamera = true;
+  const [isUIVisible, setIsUIVisible] = useState(true);
+
+  const toggleUI = () => {
+    setIsUIVisible(!isUIVisible);
+  };
+
+  const devCamera = false;
 
   return (
     <>
@@ -73,10 +82,10 @@ const ModelView = () => {
             enablePan={false}
             autoRotate
             autoRotateSpeed={0.7}
-            minPolarAngle={0.5}
+            minPolarAngle={1.15}
             maxPolarAngle={Math.PI - 1.6}
             enableZoom={devCamera}
-            enableRotate={devCamera}
+            enableRotate={true}
             ref={orbitControlsRef}
           />
           {selectedCar.manufacturer === "Alfa Romeo" ? (
@@ -95,25 +104,40 @@ const ModelView = () => {
             <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
               <Porsche918 color={color} />
             </Suspense>
+          ) : selectedCar.manufacturer === "Dodge" ? (
+            <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
+              <Viper color={color} />
+            </Suspense>
+          ) : selectedCar.manufacturer === "Lexus" ? (
+            <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
+              <LFA color={color} />
+            </Suspense>
           ) : (
             ""
           )}
           <Floor />
-          <Html fullscreen className={`${isLoading ? "invisible" : "visible"}`}>
-            <main className="max-w-[1920px] mx-auto h-full flex flex-col justify-between">
-              <section className="flex p-2 justify-center backdrop-blur bg-black/50 gap-3">
+          <Html fullscreen>
+            {/* <button onClick={() => toggleUI()} className="text-white absolute z-40">Hide UI</button> */}
+            <main
+              className={`${
+                isLoading || isUIVisible === false
+                  ? "invisible"
+                  : "visible max-w-[1920px] mx-auto h-full flex flex-col justify-between"
+              }`}
+            >
+              <section id="top">
                 {cars.map((car, index) =>
                   car.manufacturer !== selectedCar.manufacturer ? (
                     <button
                       key={index}
-                      className="hover:scale-110 active:scale-95 hover:bg-white/30 transition-all outline outline-1 outline-white/50 rounded-sm py-3 px-6"
+                      className="car-selection"
                       onClick={() => setSelectedCar(car)}
                     >
                       <img
                         src={car.logo}
                         alt={`${car.manufacturer} ${car.model}`}
-                        height={40}
-                        width={40}
+                        height={35}
+                        width={35}
                       />
                     </button>
                   ) : (
@@ -122,34 +146,33 @@ const ModelView = () => {
                 )}
               </section>
 
-              <section
-                id="middle"
-                className="text-white h-full p-14 flex flex-col justify-between"
-              >
-                <div className="flex justify-between items-center">
-                  <img src={selectedCar.logo} height={90} width={90} />
-                  <div>
-                    <div className="flex gap-1">
+              <section id="middle">
+                <div className="logo-and-paint-container">
+                  <img
+                    src={selectedCar.logo}
+                    height={100}
+                    width={selectedCar.manufacturer === "Dodge" ? 200 : 100}
+                  />
+                  <div className="paint-sample-container">
+                    <div className="paint-samples">
                       {selectedCar.colors.map((color, index) => (
                         <button
                           key={index}
                           style={{ backgroundColor: color.hexCode }}
-                          className="p-5 cursor-pointer rounded-sm"
+                          className="paint-samples-button"
                           onClick={() => setColor(color)}
                         />
                       ))}
                     </div>
+                    <p className="mt-2">{color.name}</p>
                   </div>
                 </div>
-                <hgroup className="flex flex-col px-14">
+                <hgroup className="current-car">
                   <h2>{selectedCar.manufacturer}</h2>
                   <h3>{selectedCar.model}</h3>
                   <h4>{selectedCar.year}</h4>
                 </hgroup>
-                <div className="flex flex-col items-end">
-                    <p>PP</p>
-                    <p>220,000</p>
-                </div>
+                <div />
               </section>
               <Bottom {...selectedCar} />
             </main>
@@ -157,7 +180,6 @@ const ModelView = () => {
         </>
       )}
       {/* <Top /> */}
-      {/* {color.name ? <span> in {color.name}</span> : ""} */}
     </>
   );
 };

@@ -9,8 +9,6 @@ import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
   nodes: {
-    Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front_L_I: THREE.Mesh
-    Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Insta: THREE.Mesh
     Porsche_918Spyder_2015Kit1_Badge_Geo_lodA: THREE.Mesh
     Porsche_918Spyder_2015Kit1_Base_Geo_lodA: THREE.Mesh
     Porsche_918Spyder_2015Kit1_Carbon1_Geo_lodA: THREE.Mesh
@@ -27,30 +25,34 @@ type GLTFResult = GLTF & {
     Porsche_918Spyder_2015Kit1_SeatBelt_Geo_lodA: THREE.Mesh
     Porsche_918Spyder_2015Kit1_Window_Geo_lodA: THREE.Mesh
     Porsche_918Spyder_2015Kit1_RearLights: THREE.Mesh
-    Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front: THREE.Mesh
-    Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Instance1: THREE.Mesh
     Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front001: THREE.Mesh
     Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Insta001: THREE.Mesh
-    Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front002: THREE.Mesh
+    Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front004: THREE.Mesh
+    Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Insta003: THREE.Mesh
+    Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front005: THREE.Mesh
     Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Insta002: THREE.Mesh
+    Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front002: THREE.Mesh
+    Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Insta004: THREE.Mesh
   }
   materials: {
-    Wheel: THREE.MeshPhysicalMaterial
-    Caliper: THREE.MeshStandardMaterial
-    Badge: THREE.MeshStandardMaterial
-    BodyPaint2: THREE.MeshStandardMaterial
+    Badge: THREE.MeshPhysicalMaterial
+    BodyPaint2: THREE.MeshPhysicalMaterial
     Engine: THREE.MeshStandardMaterial
-    Grille1: THREE.MeshStandardMaterial
+    Grille1: THREE.MeshPhysicalMaterial
     Grille2: THREE.MeshStandardMaterial
     Grille3: THREE.MeshStandardMaterial
     Interior: THREE.MeshStandardMaterial
     Interior2: THREE.MeshStandardMaterial
     Lights: THREE.MeshStandardMaterial
-    Plate: THREE.MeshStandardMaterial
-    BodyPaint: THREE.MeshStandardMaterial
+    Plate: THREE.MeshPhysicalMaterial
+    BodyPaint: THREE.MeshPhysicalMaterial
     Seatbelt: THREE.MeshStandardMaterial
-    Glass: THREE.MeshStandardMaterial
+    Glass: THREE.MeshPhysicalMaterial
     RearLights: THREE.MeshStandardMaterial
+    Wheel: THREE.MeshPhysicalMaterial
+    Caliper: THREE.MeshPhysicalMaterial
+    ['Wheel.003']: THREE.MeshPhysicalMaterial
+    ['Caliper.003']: THREE.MeshPhysicalMaterial
   }
 }
 
@@ -69,21 +71,6 @@ export function Porsche918(props: any) {
 
   return (
     <group {...props} dispose={null} scale={4} position={[0, -1.57, 0]}>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front_L_I.geometry}
-        material={materials.Wheel}
-        position={[0.792, 0.209, 1.283]}
-        rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Insta.geometry}
-          material={materials.Caliper}
-          position={[-0.001, -0.185, 0]}
-        />
-      </mesh>
       <mesh
         castShadow
         receiveShadow
@@ -199,21 +186,6 @@ export function Porsche918(props: any) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front.geometry}
-        material={materials.Wheel}
-        position={[0.792, 0.209, -1.459]}
-        rotation={[Math.PI / 2, 0, 0]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Instance1.geometry}
-          material={materials.Caliper}
-          position={[-0.001, -0.185, 0]}
-        />
-      </mesh>
-      <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front001.geometry}
         material={materials.Wheel}
         position={[-0.792, 0.209, 1.283]}
@@ -224,13 +196,13 @@ export function Porsche918(props: any) {
           receiveShadow
           geometry={nodes.Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Insta001.geometry}
           material={materials.Caliper}
-          position={[-0.001, -0.185, 0]}
+          position={[0.024, -0.162, 0]}
         />
       </mesh>
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front002.geometry}
+        geometry={nodes.Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front004.geometry}
         material={materials.Wheel}
         position={[-0.792, 0.209, -1.459]}
         rotation={[-Math.PI / 2, 0, 0]}
@@ -238,9 +210,41 @@ export function Porsche918(props: any) {
         <mesh
           castShadow
           receiveShadow
+          geometry={nodes.Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Insta003.geometry}
+          material={materials.Caliper}
+          position={[0.024, 0.162, 0]}
+          rotation={[0, 0, Math.PI]}
+        />
+      </mesh>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front005.geometry}
+        material={materials.Wheel}
+        position={[0.792, 0.209, -1.459]}
+        rotation={[Math.PI / 2, 0, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
           geometry={nodes.Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Insta002.geometry}
           material={materials.Caliper}
-          position={[-0.001, -0.185, 0]}
+          position={[0.024, 0.162, 0]}
+          rotation={[0, 0, Math.PI]}
+        />
+      </mesh>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Porsche_918Spyder_2015_Wheel_1Combined3DWheel_3DWheel_front002.geometry}
+        material={materials['Wheel.003']}
+        position={[0.792, 0.209, 1.283]}
+        rotation={[Math.PI / 2, 0, 0]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Porsche_918SpyderGold_2015CombinedCalliperBodyExotic6_Insta004.geometry}
+          material={materials['Caliper.003']}
+          position={[0.024, -0.162, 0]}
         />
       </mesh>
     </group>
