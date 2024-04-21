@@ -57,7 +57,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Porsche918(props: any) {
-  const { nodes, materials } = useGLTF('model/918.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('models/918.glb') as GLTFResult
 
   useEffect(() => {
     // car paint
@@ -251,4 +251,4 @@ export function Porsche918(props: any) {
   )
 }
 
-useGLTF.preload('model/918.glb')
+useGLTF.preload('models/918.glb')

@@ -10,7 +10,7 @@ import { Html, OrbitControls } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { cars } from "../../lib/cars";
 import { SelectedCarProps } from "../../lib/types/types";
-import "./ModelView.css";
+import "./Scene.css";
 
 import {
   F12,
@@ -21,31 +21,22 @@ import {
   Viper,
 } from "../../lib/models/ModelImports";
 
-import LoadingLogo from "../Loading/Loading";
-import Floor from "../Model/Floor/Floor";
+import CarSwitchTransition from "../CarSwitchTransition/CarSwitchTransition";
+import Floor from "./Floor/Floor";
 import Bottom from "../UI/Bottom/Bottom";
 
-const [isUIVisible, setIsUIVisible] = useState(true);
-const toggleUI = () => {
-  setIsUIVisible(!isUIVisible);
-};
-
-const orbitControlsRef = useRef<any>(null);
-const resetCameraPosition = () => {
-  const orbitControls = orbitControlsRef.current;
-  if (orbitControls) {
-    orbitControls.reset();
-  }
-};
-
-const ModelView = () => {
+const Scene = () => {
   const devCamera = true;
+
   const car1 = cars[0];
+
   const [isLoading, setIsLoading] = useState(false);
+
   const [color, setColor] = useState({
     name: "Alpine White",
     hexCode: "#C4C4C4",
   });
+
   const [selectedCar, setSelectedCar] = useState<SelectedCarProps>({
     logo: car1.logo,
     manufacturer: car1.manufacturer,
@@ -62,6 +53,19 @@ const ModelView = () => {
     weight: car1.weight,
     description: car1.description,
   });
+
+  const [isUIVisible, setIsUIVisible] = useState(true);
+  const toggleUI = () => {
+    setIsUIVisible(!isUIVisible);
+  };
+
+  const orbitControlsRef = useRef<any>(null);
+  const resetCameraPosition = () => {
+    const orbitControls = orbitControlsRef.current;
+    if (orbitControls) {
+      orbitControls.reset();
+    }
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -80,7 +84,7 @@ const ModelView = () => {
   return (
     <>
       {isLoading ? (
-        <LoadingLogo selectedCar={selectedCar} />
+        <CarSwitchTransition selectedCar={selectedCar} />
       ) : (
         <>
           <OrbitControls
@@ -97,27 +101,39 @@ const ModelView = () => {
 
           {/* organize this!!! */}
           {selectedCar.manufacturer === "Alfa Romeo" ? (
-            <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
+            <Suspense
+              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
+            >
               <Giulia color={color} />
             </Suspense>
           ) : selectedCar.manufacturer === "Lamborghini" ? (
-            <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
+            <Suspense
+              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
+            >
               <Huracan color={color} />
             </Suspense>
           ) : selectedCar.manufacturer === "Ferrari" ? (
-            <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
+            <Suspense
+              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
+            >
               <F12 color={color} />
             </Suspense>
           ) : selectedCar.manufacturer === "Porsche" ? (
-            <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
+            <Suspense
+              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
+            >
               <Porsche918 color={color} />
             </Suspense>
           ) : selectedCar.manufacturer === "Dodge" ? (
-            <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
+            <Suspense
+              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
+            >
               <Viper color={color} />
             </Suspense>
           ) : selectedCar.manufacturer === "Lexus" ? (
-            <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
+            <Suspense
+              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
+            >
               <LFA color={color} />
             </Suspense>
           ) : (
@@ -133,6 +149,7 @@ const ModelView = () => {
                   : "visible max-w-[1920px] mx-auto h-full flex flex-col justify-between"
               }`}
             >
+              {/* componetize sections */}
               <section id="top">
                 <div className="car-selection-container">
                   {cars.map((car, index) =>
@@ -187,6 +204,7 @@ const ModelView = () => {
                 </hgroup>
                 <div />
               </section>
+
               <Bottom {...selectedCar} />
             </main>
           </Html>
@@ -197,4 +215,4 @@ const ModelView = () => {
   );
 };
 
-export default ModelView;
+export default Scene;

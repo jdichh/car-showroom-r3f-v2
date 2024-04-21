@@ -65,7 +65,7 @@ type GLTFResult = GLTF & {
 }
 
 export function Viper(props: any) {
-  const { nodes, materials } = useGLTF('model/viper.glb') as GLTFResult
+  const { nodes, materials } = useGLTF('models/viper.glb') as GLTFResult
 
   useEffect(() => {
     // car paint
@@ -288,4 +288,4 @@ export function Viper(props: any) {
   )
 }
 
-useGLTF.preload('model/viper.glb')
+useGLTF.preload('models/viper.glb')
