@@ -84,7 +84,7 @@ export function Huracan(props: any) {
   }, [materials, props]);
 
   return (
-    <group {...props} dispose={null} scale={4} position={[0, -2.16, 0]}>
+    <group {...props} dispose={null} scale={4} position={[0, -2.175, 0]}>
       <mesh
         castShadow
         receiveShadow

@@ -11,7 +11,7 @@ const Loader = () => {
   return (
     <Html
       center
-      className="w-screen h-screen p-8 flex flex-col justify-end items-end"
+      className="w-screen h-screen p-8 flex flex-col justify-center items-center"
     >
       <p className="text-white text-xl">{progress.toFixed(0)}%</p>
     </Html>
@@ -26,7 +26,7 @@ const App = () => {
       <MenuContext.Provider value={{ isInLandingMenu, setIsInLandingMenu }}>
         <Canvas
           shadows
-          style={{ background: "#040404" }}
+          style={{ background: "#080706" }}
           eventSource={document.getElementById("root") as HTMLElement}
         >
           {isInLandingMenu ? (

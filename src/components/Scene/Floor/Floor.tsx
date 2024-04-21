@@ -37,14 +37,16 @@ const Floor = () => {
   });
 
   return (
-    <Plane
-      args={[planeWidth, planeHeight]}
-      material={material}
-      receiveShadow
-      castShadow
-      rotation-x={-Math.PI / 2}
-      position-y={-2.83}
-    />
+    <>
+      <Plane
+        args={[planeWidth, planeHeight]}
+        material={material}
+        receiveShadow
+        castShadow
+        rotation-x={-Math.PI / 2}
+        position-y={-2.83}
+      />
+    </>
   );
 };
 

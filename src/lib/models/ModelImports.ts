@@ -15,9 +15,14 @@ export const Huracan = lazy(() =>
     default: Huracan,
   }))
 );
-export const Porsche918 = lazy(() =>
-  import("../../components/Scene/Car/918/Model").then(({ Porsche918 }) => ({
-    default: Porsche918,
+export const GTR = lazy(() =>
+  import("../../components/Scene/Car/gtr/Model").then(({ GTR }) => ({
+    default: GTR,
+  }))
+);
+export const Porsche911 = lazy(() =>
+  import("../../components/Scene/Car/911gt3rs/Model").then(({ Porsche911 }) => ({
+    default: Porsche911,
   }))
 );
 export const Viper = lazy(() =>

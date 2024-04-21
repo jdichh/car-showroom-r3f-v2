@@ -14,10 +14,11 @@ import "./Scene.css";
 
 import {
   F12,
+  GTR,
   Giulia,
   Huracan,
   LFA,
-  Porsche918,
+  Porsche911,
   Viper,
 } from "../../lib/models/ModelImports";
 
@@ -39,6 +40,7 @@ const Scene = () => {
 
   const [selectedCar, setSelectedCar] = useState<SelectedCarProps>({
     logo: car1.logo,
+    country: car1.country,
     manufacturer: car1.manufacturer,
     model: car1.model,
     year: car1.year,
@@ -93,7 +95,7 @@ const Scene = () => {
             autoRotate
             autoRotateSpeed={0.7}
             minPolarAngle={1.15}
-            maxPolarAngle={Math.PI - 1.6}
+            maxPolarAngle={Math.PI - 1.51}
             enableZoom={devCamera}
             enableRotate={true}
             ref={orbitControlsRef}
@@ -122,7 +124,7 @@ const Scene = () => {
             <Suspense
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
-              <Porsche918 color={color} />
+              <Porsche911 color={color} />
             </Suspense>
           ) : selectedCar.manufacturer === "Dodge" ? (
             <Suspense
@@ -135,6 +137,12 @@ const Scene = () => {
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
               <LFA color={color} />
+            </Suspense>
+          ) : selectedCar.manufacturer === "Nissan" ? (
+            <Suspense
+              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
+            >
+              <GTR color={color} />
             </Suspense>
           ) : (
             ""
@@ -198,7 +206,16 @@ const Scene = () => {
                   </div>
                 </div>
                 <hgroup className="current-car font-fjalla uppercase">
-                  <h2 className="text-2xl">{selectedCar.manufacturer}</h2>
+                  <div className="flex items-center gap-2">
+                    <img
+                      src={selectedCar.country}
+                      alt={selectedCar.country}
+                      width={25}
+                      height={25}
+                    />
+                    <h2 className="text-2xl">{selectedCar.manufacturer} </h2>
+                  </div>
+
                   <h3 className="text-7xl">{selectedCar.model}</h3>
                   <h4 className="text-2xl">{selectedCar.year}</h4>
                 </hgroup>

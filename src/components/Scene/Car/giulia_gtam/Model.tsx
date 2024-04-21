@@ -73,7 +73,7 @@ export function Giulia(props: any) {
   }, [materials, props]);
 
   return (
-    <group {...props} dispose={null} scale={4} position={[0, -1.67, 0]}>
+    <group {...props} dispose={null} scale={4} position={[0, -1.7, 0]}>
       <mesh
         castShadow
         receiveShadow

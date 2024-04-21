@@ -55,11 +55,8 @@ type GLTFResult = GLTF & {
     CarbonFiber: THREE.MeshPhysicalMaterial
     ['Material.002']: THREE.MeshStandardMaterial
     Lights: THREE.MeshStandardMaterial
-    ['Caliper.002']: THREE.MeshStandardMaterial
     ['Wheels.001']: THREE.MeshPhysicalMaterial
-    ['Caliper.004']: THREE.MeshStandardMaterial
     ['Wheels.008']: THREE.MeshPhysicalMaterial
-    ['Caliper.005']: THREE.MeshStandardMaterial
     RearLightCovers: THREE.MeshPhysicalMaterial
   }
 }
@@ -78,7 +75,7 @@ export function Viper(props: any) {
   }, [materials, props]);
 
   return (
-    <group {...props} dispose={null} scale={4} position={[0, -1.45, 0]}>
+    <group {...props} dispose={null} scale={4} position={[0, -1.48, 0]}>
       <mesh
         castShadow
         receiveShadow
@@ -226,7 +223,7 @@ export function Viper(props: any) {
           castShadow
           receiveShadow
           geometry={nodes.Dodge_ViperGTS_2015_CallipersCombinedCalliperExotic4Callipe002.geometry}
-          material={materials['Caliper.002']}
+          material={materials.Caliper}
           position={[-0.016, 0.006, -0.007]}
           rotation={[2.88, 0, 0]}
           scale={-1}
@@ -250,7 +247,7 @@ export function Viper(props: any) {
           castShadow
           receiveShadow
           geometry={nodes.Dodge_ViperGTS_2015_CallipersCombinedCalliperExotic4Callipe001.geometry}
-          material={materials['Caliper.004']}
+          material={materials.Caliper}
           position={[-0.016, 0.006, -0.007]}
           rotation={[-0.262, 0, 0]}
         />
@@ -259,14 +256,14 @@ export function Viper(props: any) {
         castShadow
         receiveShadow
         geometry={nodes.Dodge_ViperGTS_2015_Wheel_2Combined3DWheel_3DWheel_Front_L_004.geometry}
-        material={materials['Wheels.008']}
+        material={materials.Wheels}
         position={[0.767, 0.16, -1.265]}
         rotation={[Math.PI / 2, 0, 0]}>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.Dodge_ViperGTS_2015_CallipersCombinedCalliperExotic4Callipe003.geometry}
-          material={materials['Caliper.005']}
+          material={materials.Caliper}
           position={[-0.011, 0, 0]}
         />
         <mesh

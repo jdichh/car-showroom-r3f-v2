@@ -5,6 +5,7 @@ export type CarColorProps = {
 
 export type SelectedCarProps = {
   logo: string;
+  country: string;
   manufacturer: string;
   model: string;
   year: string;

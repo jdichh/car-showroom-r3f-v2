@@ -2,12 +2,13 @@ import { Lightformer, SpotLight } from "@react-three/drei";
 
 const Lighting = () => {
   const white = "#FFFFFF";
-  const lightIntensity = 450;
-  const lightDistance = 50;
+  const lightIntensity = 1000;
+  const lightDistance = 60;
   const shadowResolution = 1024;
   const shadowBias = -0.00065;
   const spotlightHeight = 10;
   const spotlightPenumbra = 1;
+  const spotlightAngle = 1;
 
   const spotlightParams = {
     directionalLightIntensity: 0.05,
@@ -16,8 +17,8 @@ const Lighting = () => {
     directionalLightZ: 0,
 
     topSpotlightColor: white,
-    topSpotlightIntensity: lightIntensity,
-    topSpotlightAngle: 2.38,
+    topSpotlightIntensity: 300,
+    topSpotlightAngle: 2.5,
     topSpotlightPenumbra: spotlightPenumbra,
     topSpotlightDistance: 45,
     topSpotlightX: 0,
@@ -26,7 +27,7 @@ const Lighting = () => {
 
     frontSpotlightColor: white,
     frontSpotlightIntensity: lightIntensity,
-    frontSpotlightAngle: 1.3,
+    frontSpotlightAngle: spotlightAngle,
     frontSpotlightPenumbra: spotlightPenumbra,
     frontSpotlightDistance: lightDistance,
     frontSpotlightX: 0,
@@ -35,7 +36,7 @@ const Lighting = () => {
 
     rearSpotlightColor: white,
     rearSpotlightIntensity: lightIntensity,
-    rearSpotlightAngle: 1.5,
+    rearSpotlightAngle: spotlightAngle,
     rearSpotlightPenumbra: spotlightPenumbra,
     rearSpotlightDistance: lightDistance,
     rearSpotlightX: 0,
@@ -44,7 +45,7 @@ const Lighting = () => {
 
     rightSpotlightColor: white,
     rightSpotlightIntensity: lightIntensity,
-    rightSpotlightAngle: 1,
+    rightSpotlightAngle: spotlightAngle,
     rightSpotlightPenumbra: spotlightPenumbra,
     rightSpotlightDistance: lightDistance,
     rightSpotlightX: -30,
@@ -53,7 +54,7 @@ const Lighting = () => {
 
     leftSpotlightColor: white,
     leftSpotlightIntensity: lightIntensity,
-    leftSpotlightAngle: 1,
+    leftSpotlightAngle: spotlightAngle,
     leftSpotlightPenumbra: spotlightPenumbra,
     leftSpotlightDistance: lightDistance,
     leftSpotlightX: 30,
@@ -64,14 +65,13 @@ const Lighting = () => {
   return (
     <>
       <Lightformer
-        form="rect"
-        position={[0, 10, 0]}
+        form="circle"
+        position={[0, 12, 0]}
         rotation={[1.57, 0, 0]}
-        scale={[15, 25, 0]}
+        scale={[20, 20, 0]}
       />
       <group name="lights">
-        {/* lighting for testing/development */}
-        <ambientLight intensity={0.1} />
+        <ambientLight intensity={0.05} />
 
         <directionalLight
           intensity={spotlightParams.directionalLightIntensity}
@@ -80,7 +80,6 @@ const Lighting = () => {
             spotlightParams.directionalLightY,
             spotlightParams.directionalLightZ,
           ]}
-          castShadow
           shadow-bias={shadowBias}
           shadow-mapSize={[shadowResolution, shadowResolution]}
         />
@@ -96,9 +95,9 @@ const Lighting = () => {
             spotlightParams.topSpotlightY,
             spotlightParams.topSpotlightZ,
           ]}
-          castShadow
           shadow-bias={shadowBias}
           shadow-mapSize={[shadowResolution, shadowResolution]}
+          decay={1.7}
         />
 
         <SpotLight
@@ -112,7 +111,6 @@ const Lighting = () => {
             spotlightParams.frontSpotlightY,
             spotlightParams.frontSpotlightZ,
           ]}
-          castShadow
           shadow-bias={shadowBias}
           shadow-mapSize={[shadowResolution, shadowResolution]}
         />
@@ -128,7 +126,6 @@ const Lighting = () => {
             spotlightParams.rearSpotlightY,
             spotlightParams.rearSpotlightZ,
           ]}
-          castShadow
           shadow-bias={shadowBias}
           shadow-mapSize={[shadowResolution, shadowResolution]}
         />
@@ -144,7 +141,6 @@ const Lighting = () => {
             spotlightParams.leftSpotlightY,
             spotlightParams.leftSpotlightZ,
           ]}
-          castShadow
           shadow-bias={shadowBias}
           shadow-mapSize={[shadowResolution, shadowResolution]}
         />
@@ -160,7 +156,6 @@ const Lighting = () => {
             spotlightParams.rightSpotlightY,
             spotlightParams.rightSpotlightZ,
           ]}
-          castShadow
           shadow-bias={shadowBias}
           shadow-mapSize={[shadowResolution, shadowResolution]}
         />

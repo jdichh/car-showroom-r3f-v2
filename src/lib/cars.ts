@@ -1,5 +1,6 @@
 import bmwLogo from "/logos/bmw_logo.webp";
 import toyotaLogo from "/logos/toyota_logo.webp";
+import nissanLogo from "/logos/nissan.webp";
 import lexusLogo from "/logos/lexus.webp";
 import alfaLogo from "/logos/alfa.webp";
 import lamboLogo from "/logos/lambo.webp";
@@ -7,17 +8,19 @@ import ferrariLogo from "/logos/ferrari.webp";
 import porscheLogo from "/logos/porsche.webp";
 import dodgeLogo from "/logos/dodge.webp"
 
+import italy from "/countryflags/it.svg"
+import japan from "/countryflags/jp.svg"
+import usa from "/countryflags/us.svg"
+import germany from "/countryflags/de.svg"
+
 export const cars = [
   {
     logo: alfaLogo,
+    country: italy,
     manufacturer: "Alfa Romeo",
     model: "Giulia GTAm",
     year: "2020",
     colors: [
-      {
-        name: "Verde Montreal",
-        hexCode: "#007241",
-      },
       {
         name: "Bianco Trofeo",
         hexCode: "#DFECF7",
@@ -25,6 +28,10 @@ export const cars = [
       {
         name: "Rosso GTA",
         hexCode: "#AD002C",
+      },
+      {
+        name: "Verde Montreal",
+        hexCode: "#007241",
       },
     ],
     displacement: "2,891 cc",
@@ -51,6 +58,7 @@ export const cars = [
   },
   {
     logo: dodgeLogo,
+    country: usa,
     manufacturer: "Dodge",
     model: "Viper GTS",
     year: "2013",
@@ -120,13 +128,14 @@ export const cars = [
   },
   {
     logo: ferrariLogo,
+    country: italy,
     manufacturer: "Ferrari",
     model: "F12berlinetta",
     year: "2012",
     colors: [
       {
         name: "Argento Nurburgring",
-        hexCode: "#756D62",
+        hexCode: "#CACBE",
       },
       {
         name: "Bianco Avus",
@@ -210,6 +219,7 @@ export const cars = [
   },
   {
     logo: lamboLogo,
+    country: italy,
     manufacturer: "Lamborghini",
     model: "Huracán",
     year: "2015",
@@ -292,53 +302,50 @@ export const cars = [
   },
   {
     logo: lexusLogo,
+    country: japan,
     manufacturer: "Lexus",
     model: "LFA",
     year: "2010",
     colors: [
       {
-        name: "Arancio Borealis",
-        hexCode: "#FBA400",
+        name: "Black",
+        hexCode: "#232325",
       },
       {
-        name: "Bianco Monocerus",
-        hexCode: "#EDEDED",
+        name: "Metallic Silver",
+        hexCode: "#979CA0",
       },
       {
-        name: "Blu Caelum",
-        hexCode: "#054AE3",
+        name: "Pearl Blue",
+        hexCode: "#2C33A8",
       },
       {
-        name: "Grigio Lynx",
-        hexCode: "#707176",
+        name: "Pearl Brown",
+        hexCode: "#654C38",
       },
       {
-        name: "Grigio Nimbus",
-        hexCode: "#6B7278",
+        name: "Pearl Gray",
+        hexCode: "#64686B",
       },
       {
-        name: "Giallo Inti",
-        hexCode: "#FED136",
+        name: "Pearl Red",
+        hexCode: "#903233",
       },
       {
-        name: "Nero Helene",
-        hexCode: "#151618",
+        name: "Pearl White",
+        hexCode: "#C6CBD1",
       },
       {
-        name: "Nero Nemesis",
-        hexCode: "#312F30",
+        name: "Pearl Yellow",
+        hexCode: "#C6B533",
       },
       {
-        name: "Nero Noctis",
-        hexCode: "#292927",
+        name: "Red",
+        hexCode: "#C90102",
       },
       {
-        name: "Rosso Mars",
-        hexCode: "#D40000",
-      },
-      {
-        name: "Verde Mantis",
-        hexCode: "#7DC23B",
+        name: "Whitest White",
+        hexCode: "#EBF0F4",
       },
     ],
     displacement: "4,805 cc",
@@ -376,80 +383,123 @@ export const cars = [
     and production of the LFA is limited to only 500 units.`,
   },
   {
-    logo: porscheLogo,
-    manufacturer: "Porsche",
-    model: "918 Spyder",
-    year: "2013",
+    logo: nissanLogo,
+    country: japan,
+    manufacturer: "Nissan",
+    model: "GT-R",
+    year: "2017",
     colors: [
       {
-        name: "Basalt Black Metallic",
-        hexCode: "#3D3D3D",
+        name: "Blaze Metallic",
+        hexCode: "#D2660F",
       },
       {
-        name: "Black",
-        hexCode: "#000001",
+        name: "Deep Blue Pearl",
+        hexCode: "#111A33",
       },
       {
-        name: "Dark Blue Metallic",
-        hexCode: "#202A38",
+        name: "Gun Metallic",
+        hexCode: "#424746",
       },
       {
-        name: "Guards Red",
-        hexCode: "#ED1E24",
+        name: "Jet Black Pearl",
+        hexCode: "#08090B",
+      },
+      {
+        name: "Pearl White",
+        hexCode: "#F0F0EB",
+      },
+      {
+        name: "Solid Red",
+        hexCode: "#58000E",
+      },
+      {
+        name: "Super Silver Metallic",
+        hexCode: "#A5A6A8",
+      },
+    ],
+    displacement: "3,799 cc",
+    maxPower: "565 BHP @ 6,800 rpm",
+    torque: "467 lb-ft",
+    drivetrain: "4WD",
+    length: "4,710 mm",
+    width: "1,895 mm",
+    height: "1,370 mm",
+    weight: "1,700 kg",
+    description: `The Nissan GT-R was announced at the New York International 
+    Auto Show in April 2016. For the R35 GT-R, this was the biggest update since 
+    its release in 2007. This is a GT-R, a luxury Japanese sports car. When you 
+    look at the advancements in detail, you can see the extent to which Nissan 
+    has gone to polish the model. The exterior changes do not just involve looks; 
+    they balance air resistance, downforce, and cooling performance at a high 
+    level. On the front is Nissan's signature design: the V motion. The rigidity 
+    of the engine hood has been raised to suppress deformation at ultra high 
+    speeds, and the new front spoiler achieves high levels of downforce. The 
+    interior has also been changed greatly. There is high quality, craftsman 
+    stitched leather for the instrument panel. The paddle shift is now fixed to 
+    the steering wheel, allowing a higher steering angle from which a driver can 
+    shift without letting go, for better control. All the equipment is wrapped 
+    around the driver to cater to their every need, from every angle. The maximum 
+    output of the 3.8 L V6 twin turbo engine, built individually and by hand, 
+    has been raised to 565 BHP / 6,800 rpm, with a maximum torque of 467 lb-ft 
+    (64.6 kgfm). Combined with the improved 6-speed dual clutch transmission, 
+    it provides smoother acceleration through mid to high speed ranges. 
+    Of course, to be considered the world's best handling car, the cornering 
+    performance has also been improved. This is a car that personifies a 
+    Japanese sports car, as can be seen in its 'Deep Evolution'.`,
+  },
+  {
+    logo: porscheLogo,
+    country: germany,
+    manufacturer: "Porsche",
+    model: "911 GT3 RS (991)",
+    year: "2016",
+    colors: [
+      {
+        name: "Lava Orange",
+        hexCode: "#FF2600",
       },
       {
         name: "GT Silver Metallic",
         hexCode: "#706F6B",
       },
       {
-        name: "Liquid Metal Chrome Blue",
-        hexCode: "#9FABBB",
-      },
-      {
-        name: "Liquid Metal Silver",
-        hexCode: "#B0B5BB",
-      },
-      {
-        name: "Meteor Grey Metallic",
-        hexCode: "#000006",
-      },
-      {
-        name: "Racing Yellow",
-        hexCode: "#F5DA31",
-      },
-      {
-        name: "Rhodium Silver Metallic",
-        hexCode: "#BFC1BD",
-      },
-      {
-        name: "Sapphire Blue Metallic",
-        hexCode: "#025593",
+        name: "Ultraviolet",
+        hexCode: "#5F4B8B",
       },
       {
         name: "White",
         hexCode: "#C4C8CB",
       },
     ],
-    displacement: "4,593 cc",
-    maxPower: "875 BHP @ 8,700 rpm",
-    torque: "944 lb-ft",
-    drivetrain: "AWD",
-    length: "4,645 mm",
-    width: "1,940 mm",
-    height: "1,168 mm",
-    weight: "1,674 kg",
-    description: `"This super sports car represents the first plug-in hybrid 
-    flagship from the famed German car maker." Introduced by Porsche in 2013, 
-    the 918 Spyder succeeded the Carrera GT as the company's flagship model 
-    and was its first road-going supercar to feature a hybrid powerplant. Based 
-    on the powertrain of the RS Spyder prototype race car, the 918 Spyder's 
-    drive system takes a 599.6 HP 4.6-liter V-8, mounted amidships, and mates 
-    it with a single electric motor at the rear. The combined output totals a 
-    whopping 886 ps*, enabling the 918 to reach 100 km/h in just 2.6 seconds, 
-    200km/h in 7.2 and 300km/h in just 19.9, when equipped with the Weissach 
-    Package that reduces the car's curb weight from 3691 lbs to 3602 lbs. The 
-    918 Spyder, of which only 918 examples were made, claimed a top speed of 
-    350 km/h and lapped the famed Nürburgring Nordschleife in 6 minutes and 57 
-    seconds.`,
+    displacement: "3,996 cc",
+    maxPower: "491 BHP @ 8,250 rpm",
+    torque: "340 lb-ft",
+    drivetrain: "RWD",
+    length: "4,545 mm",
+    width: "1,900 mm",
+    height: "1,290 mm",
+    weight: "1,420 kg",
+    description: `Since the Type 996, the name "GT3" had been given to Porsche 
+    911 road cars with a strong emphasis on motorsports, developed with FIA GT3 
+    race regulations in mind. For the 996 and the later 997, there exists a 
+    "GT3 RS", which further refines the GT3 and improves its performance. At 
+    the 2015 Geneva Motor Show, the successor to these, the Type 991 GT3 RS 
+    was announced. The model is said to be based on the Type 991 GT3, but on the 
+    inside it is something that looks like it has been developed from scratch 
+    using all the know-how they have gathered over the years. The body takes the 
+    widest 911 Turbo model, with track widths in the front and rear widened even 
+    further. The roof is made of magnesium, the front fenders and bonnet/engine 
+    lid are carbon fibre. The rear and rear side windows are acrylic, giving a 
+    total weight reduction of 10 kg. Aerodynamic parts have also been updated. 
+    The front spoiler is even lower and wider, and the rear wing stands much 
+    higher and is larger. Behind the front fenders are air outlets for drawing 
+    air out from under the car. As a result, the downforce is more than double 
+    that of a standard 911. The engine takes the 3.8-litre engine of the GT3 and
+     extends its stroke, making it 4.0 litres in displacement. The tuned engine 
+     now produces 24 BHP / 2.0 kgfm more, at 493 BHP / 46.9 kgfm. And the 
+     dampers, springs and stabilisers for both the front and rear have been 
+     newly developed for this car. As a result, the car lapped the Nürburgring 
+     at 7 minutes 20 seconds, a full 5 seconds faster than the base 911 GT3.`,
   },
 ];
