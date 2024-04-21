@@ -22,8 +22,8 @@ import {
 } from "../../lib/models/ModelImports";
 
 import CarSwitchTransition from "../CarSwitchTransition/CarSwitchTransition";
+import CarDetails from "../UI/CarDetails/CarDetails";
 import Floor from "./Floor/Floor";
-import Bottom from "../UI/Bottom/Bottom";
 
 const Scene = () => {
   const devCamera = true;
@@ -172,7 +172,7 @@ const Scene = () => {
                   )}
                 </div>
                 <button onClick={() => toggleUI()} className="toggle-ui-btn">
-                  Hide UI
+                  {isUIVisible === false ? "Show UI" : "Hide UI"}
                 </button>
               </section>
 
@@ -205,7 +205,7 @@ const Scene = () => {
                 <div />
               </section>
 
-              <Bottom {...selectedCar} />
+              <CarDetails {...selectedCar} />
             </main>
           </Html>
         </>

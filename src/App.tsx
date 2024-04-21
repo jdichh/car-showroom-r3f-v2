@@ -3,7 +3,7 @@ import { Html, useProgress } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
 import Experience from "./components/Experience/Experience";
-import Landing from "./components/UI/Landing/Landing";
+import LandingMenu from "./components/UI/LandingMenu/LandingMenu";
 import { MenuContext } from "./lib/contexts/MenuContext";
 
 const Loader = () => {
@@ -31,7 +31,7 @@ const App = () => {
         >
           {isInLandingMenu ? (
             <Suspense fallback={<Loader />}>
-              <Landing />
+              <LandingMenu />
             </Suspense>
           ) : (
             <Suspense fallback={<Loader />}>

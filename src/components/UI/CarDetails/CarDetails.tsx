@@ -1,7 +1,7 @@
 import { SelectedCarProps } from "../../../lib/types/types";
-import "./Bottom.css";
+import "./CarDetails.css";
 
-const Bottom = (selectedCar: SelectedCarProps) => {
+const CarDetails = (selectedCar: SelectedCarProps) => {
   return (
     <section className="main-container">
       <div className="car-information">
@@ -61,4 +61,4 @@ const Bottom = (selectedCar: SelectedCarProps) => {
   );
 };
 
-export default Bottom;
+export default CarDetails;
