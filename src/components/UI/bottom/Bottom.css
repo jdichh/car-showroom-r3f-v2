@@ -24,7 +24,7 @@
 
 .sliding-text {
     @apply text-lg inline-block;
-    animation: slide 100s linear infinite;
+    animation: slide 130s linear infinite;
   }
 
 @keyframes slide {

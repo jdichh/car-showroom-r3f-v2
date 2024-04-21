@@ -27,3 +27,13 @@ export type LoaderProps = {
     logo: string;
   };
 };
+
+export type MenuContextTypes = {
+  isInLandingMenu: boolean;
+  setIsInLandingMenu: (value: boolean) => void;
+};
+
+export type UITogglerTypes = {
+  isUIVisible: boolean;
+  setIsUIVisible: (value: boolean) => void;
+}

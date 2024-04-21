@@ -211,7 +211,7 @@ export const cars = [
   {
     logo: lamboLogo,
     manufacturer: "Lamborghini",
-    model: "Huracán LP 610-4",
+    model: "Huracán",
     year: "2015",
     colors: [
       {

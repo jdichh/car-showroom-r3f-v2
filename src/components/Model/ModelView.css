@@ -1,31 +1,47 @@
-#top {
-    @apply flex p-2 justify-center backdrop-blur bg-black/40 gap-3;
+@font-face {
+  font-family: "Fjalla One";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/FjallaOne-Regular.ttf");
 }
 
-.car-selection {
-    @apply hover:scale-110 active:scale-95 hover:bg-white/30 transition-all outline outline-1 outline-white/50 rounded-sm py-3 px-6;
+#top {
+  @apply flex py-3 px-6 justify-between backdrop-blur bg-black/40;
+}
+
+.toggle-ui-btn {
+  @apply text-white/40 hover:text-white/90 hover:scale-105 active:scale-95 hover:bg-white/30 transition-all outline outline-1 outline-white/40 hover:outline-white/90 rounded-sm py-3 px-6;
+  visibility: visible !important;
+}
+
+.car-selection-container {
+  @apply flex gap-2;
+}
+
+.car-selection-btn {
+  @apply hover:scale-110 active:scale-95 hover:bg-white/30 transition-all outline outline-1 outline-white/50 rounded-sm py-3 px-6;
 }
 
 #middle {
-    @apply text-white h-full p-14 flex flex-col justify-between;
+  @apply text-white h-full p-14 flex flex-col justify-between;
 }
 
 .current-car {
-    @apply flex flex-col px-14;
+  @apply flex flex-col px-14 text-white/50 leading-4;
 }
 
 .logo-and-paint-container {
-    @apply flex justify-between items-center;
+  @apply flex justify-between items-center;
 }
 
 .paint-sample-container {
-    @apply flex flex-col items-end;
+  @apply flex flex-col items-end;
 }
 
 .paint-samples {
-    @apply flex gap-1;
+  @apply flex gap-1;
 }
 
 .paint-samples-button {
-    @apply p-5 cursor-pointer rounded-sm;
+  @apply p-5 cursor-pointer rounded-sm hover:scale-110 active:scale-95 transition-all;
 }

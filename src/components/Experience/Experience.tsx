@@ -1,6 +1,6 @@
+import { PerspectiveCamera } from "@react-three/drei";
 import Lighting from "../Lighting/Lighting";
 import ModelView from "../Model/ModelView";
-import { PerspectiveCamera } from "@react-three/drei";
 
 const Experience = () => {
   return (

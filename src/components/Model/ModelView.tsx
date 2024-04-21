@@ -1,24 +1,45 @@
-import { Suspense, useEffect, useRef, useState } from "react";
-import { SelectedCarProps } from "../../lib/types/types";
+/* todos: 
+- organize code (componentize what needs/has to be)
+- car sounds?
+- lighting
+- maybe more cars
+- animations
+*/
+
 import { Html, OrbitControls } from "@react-three/drei";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { cars } from "../../lib/cars";
-import "./ModelView.css"
+import { SelectedCarProps } from "../../lib/types/types";
+import "./ModelView.css";
 
 import {
-  Porsche918,
   F12,
   Giulia,
   Huracan,
-  Viper,
   LFA,
-} from "../../lib/modelImports/modelImports";
+  Porsche918,
+  Viper,
+} from "../../lib/models/ModelImports";
 
+import LoadingLogo from "../Loading/Loading";
 import Floor from "../Model/Floor/Floor";
 import Bottom from "../UI/Bottom/Bottom";
-import Top from "../UI/Top/Top";
-import LoadingLogo from "../Loading/Loading";
+
+const [isUIVisible, setIsUIVisible] = useState(true);
+const toggleUI = () => {
+  setIsUIVisible(!isUIVisible);
+};
+
+const orbitControlsRef = useRef<any>(null);
+const resetCameraPosition = () => {
+  const orbitControls = orbitControlsRef.current;
+  if (orbitControls) {
+    orbitControls.reset();
+  }
+};
 
 const ModelView = () => {
+  const devCamera = true;
   const car1 = cars[0];
   const [isLoading, setIsLoading] = useState(false);
   const [color, setColor] = useState({
@@ -41,13 +62,6 @@ const ModelView = () => {
     weight: car1.weight,
     description: car1.description,
   });
-  const orbitControlsRef = useRef<any>(null);
-  const resetCameraPosition = () => {
-    const orbitControls = orbitControlsRef.current;
-    if (orbitControls) {
-      orbitControls.reset();
-    }
-  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -56,20 +70,12 @@ const ModelView = () => {
     setTimeout(() => {
       setIsLoading(false);
       setSelectedCar(selectedCar);
-    }, 500);
+    }, 3000);
 
     if (selectedCar.colors.length > 0) {
       setColor(selectedCar.colors[0]);
     }
   }, [selectedCar]);
-
-  const [isUIVisible, setIsUIVisible] = useState(true);
-
-  const toggleUI = () => {
-    setIsUIVisible(!isUIVisible);
-  };
-
-  const devCamera = false;
 
   return (
     <>
@@ -88,6 +94,8 @@ const ModelView = () => {
             enableRotate={true}
             ref={orbitControlsRef}
           />
+
+          {/* organize this!!! */}
           {selectedCar.manufacturer === "Alfa Romeo" ? (
             <Suspense fallback={<LoadingLogo selectedCar={selectedCar} />}>
               <Giulia color={color} />
@@ -116,8 +124,8 @@ const ModelView = () => {
             ""
           )}
           <Floor />
+
           <Html fullscreen>
-            {/* <button onClick={() => toggleUI()} className="text-white absolute z-40">Hide UI</button> */}
             <main
               className={`${
                 isLoading || isUIVisible === false
@@ -126,24 +134,29 @@ const ModelView = () => {
               }`}
             >
               <section id="top">
-                {cars.map((car, index) =>
-                  car.manufacturer !== selectedCar.manufacturer ? (
-                    <button
-                      key={index}
-                      className="car-selection"
-                      onClick={() => setSelectedCar(car)}
-                    >
-                      <img
-                        src={car.logo}
-                        alt={`${car.manufacturer} ${car.model}`}
-                        height={35}
-                        width={35}
-                      />
-                    </button>
-                  ) : (
-                    ""
-                  )
-                )}
+                <div className="car-selection-container">
+                  {cars.map((car, index) =>
+                    car.manufacturer !== selectedCar.manufacturer ? (
+                      <button
+                        key={index}
+                        className="car-selection-btn"
+                        onClick={() => setSelectedCar(car)}
+                      >
+                        <img
+                          src={car.logo}
+                          alt={`${car.manufacturer} ${car.model}`}
+                          height={35}
+                          width={35}
+                        />
+                      </button>
+                    ) : (
+                      ""
+                    )
+                  )}
+                </div>
+                <button onClick={() => toggleUI()} className="toggle-ui-btn">
+                  Hide UI
+                </button>
               </section>
 
               <section id="middle">
@@ -167,10 +180,10 @@ const ModelView = () => {
                     <p className="mt-2">{color.name}</p>
                   </div>
                 </div>
-                <hgroup className="current-car">
-                  <h2>{selectedCar.manufacturer}</h2>
-                  <h3>{selectedCar.model}</h3>
-                  <h4>{selectedCar.year}</h4>
+                <hgroup className="current-car font-fjalla uppercase">
+                  <h2 className="text-2xl">{selectedCar.manufacturer}</h2>
+                  <h3 className="text-7xl">{selectedCar.model}</h3>
+                  <h4 className="text-2xl">{selectedCar.year}</h4>
                 </hgroup>
                 <div />
               </section>

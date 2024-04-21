@@ -2,7 +2,7 @@ import { Lightformer, SpotLight } from "@react-three/drei";
 
 const Lighting = () => {
   const white = "#FFFFFF";
-  const lightIntensity = 1000;
+  const lightIntensity = 450;
   const lightDistance = 50;
   const shadowResolution = 1024;
   const shadowBias = -0.00065;
@@ -10,7 +10,7 @@ const Lighting = () => {
   const spotlightPenumbra = 1;
 
   const spotlightParams = {
-    directionalLightIntensity: 0.001,
+    directionalLightIntensity: 0.05,
     directionalLightX: 0,
     directionalLightY: 30,
     directionalLightZ: 0,
@@ -71,7 +71,7 @@ const Lighting = () => {
       />
       <group name="lights">
         {/* lighting for testing/development */}
-        {/* <ambientLight intensity={1} /> */}
+        <ambientLight intensity={0.1} />
 
         <directionalLight
           intensity={spotlightParams.directionalLightIntensity}
