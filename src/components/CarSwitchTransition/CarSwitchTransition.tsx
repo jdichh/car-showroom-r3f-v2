@@ -1,15 +1,15 @@
 import { Html } from "@react-three/drei";
 import { LoaderProps } from "../../lib/types/types";
+import './CarSwitchTransition.css'
 
 const CarSwitchTransition = ({ selectedCar }: LoaderProps) => {
   return (
     <Html
       fullscreen
-      style={{ backgroundColor: "black" }}
-      className="flex flex-col justify-center items-center"
+      style={{ backgroundColor: "#080706" }}
+      className="car-switch-transition"
     >
       <img
-        className={`logo transition-opacity duration-1000 ease-in-out`}
         src={selectedCar.logo}
         width={250}
         height={250}

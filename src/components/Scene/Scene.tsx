@@ -23,12 +23,11 @@ import {
 } from "../../lib/models/ModelImports";
 
 import CarSwitchTransition from "../CarSwitchTransition/CarSwitchTransition";
+import { maxDistance } from "../Experience/Experience";
 import CarDetails from "../UI/CarDetails/CarDetails";
 import Floor from "./Floor/Floor";
 
 const Scene = () => {
-  const devCamera = true;
-
   const car1 = cars[0];
 
   const [isLoading, setIsLoading] = useState(false);
@@ -95,10 +94,12 @@ const Scene = () => {
             autoRotate
             autoRotateSpeed={0.7}
             minPolarAngle={1.15}
-            maxPolarAngle={Math.PI - 1.51}
-            enableZoom={devCamera}
+            maxPolarAngle={Math.PI - 1.55}
+            enableZoom={true}
             enableRotate={true}
             ref={orbitControlsRef}
+            minDistance={20}
+            maxDistance={maxDistance + 2}
           />
 
           {/* organize this!!! */}
@@ -147,14 +148,15 @@ const Scene = () => {
           ) : (
             ""
           )}
+
           <Floor />
 
           <Html fullscreen>
             <main
               className={`${
                 isLoading || isUIVisible === false
-                  ? "invisible"
-                  : "visible max-w-[1920px] mx-auto h-full flex flex-col justify-between"
+                  ? "invisible ui-invisible-animation"
+                  : "ui-visible-animation visible max-w-[2560px] mx-auto h-full flex flex-col justify-between"
               }`}
             >
               {/* componetize sections */}

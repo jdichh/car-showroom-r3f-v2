@@ -2,6 +2,7 @@ import { Plane } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 import { TextureLoader } from "three";
+import { SpotlightProp } from "./Spotlight";
 
 const Floor = () => {
   const [aoMap, colorMap, disMap, normGlMap, roughnessMap] = useLoader(
@@ -42,10 +43,13 @@ const Floor = () => {
         args={[planeWidth, planeHeight]}
         material={material}
         receiveShadow
-        castShadow
         rotation-x={-Math.PI / 2}
         position-y={-2.83}
       />
+      <SpotlightProp position={[0,-2.3,-37]} rotation={[0,0,0]} />
+      <SpotlightProp position={[0,-2.3,37]} rotation={[0,Math.PI,0]} />
+      <SpotlightProp position={[37,-2.3,0]} rotation={[0,Math.PI * 5.5,0]} />
+      <SpotlightProp position={[-37,-2.3,0]} rotation={[0,Math.PI * 2.5,0]} />
     </>
   );
 };

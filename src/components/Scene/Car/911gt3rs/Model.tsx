@@ -79,8 +79,9 @@ export function Porsche911(props: any) {
         receiveShadow
         geometry={nodes.Porsche_911GT3RS_2016_Wheel_1Combined3DWheel_3DWheel_front_L_In.geometry}
         material={materials.Wheels}
-        position={[0.756, 0.368, 1.223]}
-        rotation={[Math.PI / 2, 0, 0]}>
+        position={[0.788, 0.368, 1.223]}
+        rotation={[Math.PI / 2, 0, 0]}
+        scale={[0.8, 1, 1]}>
         <mesh
           castShadow
           receiveShadow
@@ -239,9 +240,9 @@ export function Porsche911(props: any) {
         receiveShadow
         geometry={nodes.Porsche_911GT3RS_2016_Wheel_1Combined3DWheel_3DWheel_front_002.geometry}
         material={materials['Wheels.003']}
-        position={[-0.756, 0.368, 1.223]}
+        position={[-0.788, 0.368, 1.223]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={-1}>
+        scale={[-0.8, -1, -1]}>
         <mesh
           castShadow
           receiveShadow

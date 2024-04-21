@@ -23,15 +23,15 @@ export const cars = [
     colors: [
       {
         name: "Bianco Trofeo",
-        hexCode: "#DFECF7",
+        hexCode: "#FFFFFF",
       },
       {
         name: "Rosso GTA",
-        hexCode: "#AD002C",
+        hexCode: "#CD212A",
       },
       {
         name: "Verde Montreal",
-        hexCode: "#007241",
+        hexCode: "#008C45",
       },
     ],
     displacement: "2,891 cc",
@@ -85,15 +85,15 @@ export const cars = [
       },
       {
         name: "Viper Bright White",
-        hexCode: "#F6FAED",
+        hexCode: "#EEF2E6",
       },
       {
         name: "Viper GTS Blue",
-        hexCode: "#184F9C",
+        hexCode: "#174D97",
       },
       {
         name: "Viper Race Yellow",
-        hexCode: "#FFC44E",
+        hexCode: "#F5DF00",
       },
     ],
     displacement: "8,382 cc",
@@ -135,7 +135,7 @@ export const cars = [
     colors: [
       {
         name: "Argento Nurburgring",
-        hexCode: "#CACBE",
+        hexCode: "#CACBCE",
       },
       {
         name: "Bianco Avus",
@@ -452,7 +452,7 @@ export const cars = [
     logo: porscheLogo,
     country: germany,
     manufacturer: "Porsche",
-    model: "911 GT3 RS (991)",
+    model: "911 GT3 RS",
     year: "2016",
     colors: [
       {

@@ -2,11 +2,11 @@ import { Lightformer, SpotLight } from "@react-three/drei";
 
 const Lighting = () => {
   const white = "#FFFFFF";
-  const lightIntensity = 1000;
+  const lightIntensity = 1600;
   const lightDistance = 60;
   const shadowResolution = 1024;
   const shadowBias = -0.00065;
-  const spotlightHeight = 10;
+  const spotlightHeight = 5;
   const spotlightPenumbra = 1;
   const spotlightAngle = 1;
 
@@ -32,7 +32,7 @@ const Lighting = () => {
     frontSpotlightDistance: lightDistance,
     frontSpotlightX: 0,
     frontSpotlightY: spotlightHeight,
-    frontSpotlightZ: 30,
+    frontSpotlightZ: 34,
 
     rearSpotlightColor: white,
     rearSpotlightIntensity: lightIntensity,
@@ -41,14 +41,14 @@ const Lighting = () => {
     rearSpotlightDistance: lightDistance,
     rearSpotlightX: 0,
     rearSpotlightY: spotlightHeight,
-    rearSpotlightZ: -30,
+    rearSpotlightZ: -34,
 
     rightSpotlightColor: white,
     rightSpotlightIntensity: lightIntensity,
     rightSpotlightAngle: spotlightAngle,
     rightSpotlightPenumbra: spotlightPenumbra,
     rightSpotlightDistance: lightDistance,
-    rightSpotlightX: -30,
+    rightSpotlightX: -34,
     rightSpotlightY: spotlightHeight,
     rightSpotlightZ: 0,
 
@@ -57,19 +57,13 @@ const Lighting = () => {
     leftSpotlightAngle: spotlightAngle,
     leftSpotlightPenumbra: spotlightPenumbra,
     leftSpotlightDistance: lightDistance,
-    leftSpotlightX: 30,
+    leftSpotlightX: 34,
     leftSpotlightY: spotlightHeight,
     leftSpotlightZ: 0,
   };
 
   return (
     <>
-      <Lightformer
-        form="circle"
-        position={[0, 12, 0]}
-        rotation={[1.57, 0, 0]}
-        scale={[20, 20, 0]}
-      />
       <group name="lights">
         <ambientLight intensity={0.05} />
 
@@ -97,7 +91,7 @@ const Lighting = () => {
           ]}
           shadow-bias={shadowBias}
           shadow-mapSize={[shadowResolution, shadowResolution]}
-          decay={1.7}
+          decay={1.75}
         />
 
         <SpotLight

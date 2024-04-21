@@ -7,6 +7,7 @@
 
 #top {
   @apply flex py-3 px-6 justify-between backdrop-blur bg-black/40;
+  animation: fade-down 1s;
 }
 
 .toggle-ui-btn {
@@ -24,6 +25,7 @@
 
 #middle {
   @apply text-white h-full p-14 flex flex-col justify-between;
+  animation: fade-in 1s
 }
 
 .current-car {
@@ -44,4 +46,41 @@
 
 .paint-samples-button {
   @apply p-5 cursor-pointer rounded-sm hover:scale-110 active:scale-95 transition-all;
+}
+
+.ui-invisible-animation {
+  animation: fade-out 0.75s;
+}
+
+.ui-visible-animation {
+  animation: fade-in 0.75s;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
