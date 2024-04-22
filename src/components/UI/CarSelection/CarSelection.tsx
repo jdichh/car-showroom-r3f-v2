@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { cars } from "../../../lib/cars";
 import { UIContext, useCarSelection } from "../../../lib/contexts/contexts";
+import "./CarSelection.css";
 
 const CarSelection = () => {
   const { selectedCar, setSelectedCar } = useCarSelection();

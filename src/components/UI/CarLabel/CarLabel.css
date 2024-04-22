@@ -1,0 +1,60 @@
+@font-face {
+  font-family: "Fjalla One";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/FjallaOne-Regular.ttf");
+}
+
+#middle {
+  @apply text-white h-full p-14 flex flex-col justify-between;
+  animation: fade-in 1s;
+}
+
+.current-car {
+  @apply flex flex-col px-14 text-white/50 leading-4;
+}
+
+.logo-and-paint-container {
+  @apply flex justify-between items-center;
+}
+
+.paint-sample-container {
+  @apply flex flex-col items-end;
+}
+
+.paint-samples {
+  @apply flex gap-1;
+}
+
+.paint-samples-button {
+  @apply p-5 cursor-pointer rounded-sm hover:scale-110 active:scale-95 transition-all;
+}
+
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

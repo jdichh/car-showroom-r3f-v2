@@ -4,6 +4,7 @@ import {
   useCarColorSelection,
   useCarSelection,
 } from "../../../lib/contexts/contexts";
+import "./CarLabel.css";
 
 const CarLabel = () => {
   const { selectedCar, setSelectedCar } = useCarSelection();
