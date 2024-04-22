@@ -161,7 +161,7 @@ const Scene = () => {
               className={`${
                 isLoading || isUIVisible === false
                   ? "invisible ui-invisible-animation"
-                  : "ui-visible-animation visible max-w-[2560px] mx-auto h-full flex flex-col justify-between"
+                  : "visible ui ui-visible-animation"
               }`}
             >
               <CarSelectionContext.Provider

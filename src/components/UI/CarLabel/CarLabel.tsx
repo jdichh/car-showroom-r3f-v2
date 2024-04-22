@@ -32,8 +32,8 @@ const CarLabel = () => {
           <p className="mt-2">{color.name}</p>
         </div>
       </div>
-      <hgroup className="current-car font-fjalla uppercase">
-        <div className="flex items-center gap-2">
+      <hgroup className="current-car-container font-fjalla">
+        <div className="current-car">
           <img
             src={selectedCar.country}
             alt={selectedCar.country}

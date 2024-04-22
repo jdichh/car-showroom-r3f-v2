@@ -1,3 +1,7 @@
+.ui {
+  @apply max-w-[2560px] mx-auto h-full flex flex-col justify-between;
+}
+
 .ui-invisible-animation {
   animation: fade-out 0.75s;
 }

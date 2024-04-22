@@ -10,8 +10,12 @@
   animation: fade-in 1s;
 }
 
+.current-car-container {
+  @apply flex flex-col px-14 text-white/50 leading-4 uppercase;
+}
+
 .current-car {
-  @apply flex flex-col px-14 text-white/50 leading-4;
+  @apply flex items-center gap-2;
 }
 
 .logo-and-paint-container {
