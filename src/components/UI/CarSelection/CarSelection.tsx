@@ -16,6 +16,7 @@ const CarSelection = () => {
               key={index}
               className="car-selection-btn"
               onClick={() => setSelectedCar(car)}
+              aria-label="Change the car color."
             >
               <img
                 src={car.logo}
@@ -30,10 +31,10 @@ const CarSelection = () => {
         )}
       </div>
       <div className="flex gap-2">
-        <button className="ui-btn" onClick={playAudio}>
+        <button className="ui-btn" onClick={playAudio} aria-label="Start engine.">
           Start Up
         </button>
-        <button onClick={toggleUI} className="ui-btn">
+        <button onClick={toggleUI} className="ui-btn" aria-label="Toggle the user interface.">
           {isUIVisible === false ? "Show UI" : "Hide UI"}
         </button>
       </div>

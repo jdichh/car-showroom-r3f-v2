@@ -6,7 +6,8 @@ export type CarManufacturer =
   | "Porsche"
   | "Dodge"
   | "Lexus"
-  | "Nissan";
+  | "Nissan"
+  | "Mercedes-AMG";
 
 export type CarColorProps = {
   name: string;

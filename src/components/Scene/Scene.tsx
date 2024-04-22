@@ -22,6 +22,7 @@ import {
 import "./Scene.css";
 
 import {
+  AMGGTR,
   F12,
   GT350R,
   GTR,
@@ -34,6 +35,7 @@ import {
 
 import CarSwitchTransition from "../CarSwitchTransition/CarSwitchTransition";
 import { maxDistance } from "../Experience/Experience";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import Floor from "./Floor/Floor";
 import ShowcaseUI from "./Showcase/Showcase";
 
@@ -116,6 +118,7 @@ const Scene = () => {
     Dodge: Viper,
     Lexus: LFA,
     Nissan: GTR,
+    "Mercedes-AMG": AMGGTR,
   };
 
   const CarModelComponent =
@@ -142,15 +145,17 @@ const Scene = () => {
           />
 
           {CarModelComponent ? (
-            <Suspense
-              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
-            >
+            <Suspense fallback={<LoadingSpinner />}>
               <CarModelComponent color={color} />
               {selectedCar.sound ? (
                 <PositionalAudio
                   ref={audioRef}
                   url={selectedCar.sound}
-                  position={selectedCar.manufacturer === "Dodge" ? [0, -1, -2] : [0, -1, -9] }
+                  position={
+                    selectedCar.manufacturer === "Dodge"
+                      ? [0, -1, -2]
+                      : [0, -1, -9]
+                  }
                   loop={false}
                   distance={0.7}
                 />
@@ -167,8 +172,7 @@ const Scene = () => {
           {isFloorVisible === true ? <Floor /> : ""}
 
           <Html fullscreen>
- 
-              <ShowcaseUI
+            <ShowcaseUI
               selectedCar={selectedCar}
               setSelectedCar={setSelectedCar}
               isUIVisible={isUIVisible}
@@ -177,7 +181,6 @@ const Scene = () => {
               color={color}
               setColor={setColor}
             />
-     
           </Html>
         </>
       )}

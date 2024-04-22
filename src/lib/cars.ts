@@ -1,4 +1,4 @@
-import bmwLogo from "/logos/bmw_logo.webp";
+import amgLogo from "/logos/amg.webp";
 import fordLogo from "/logos/ford.webp";
 import nissanLogo from "/logos/nissan.webp";
 import lexusLogo from "/logos/lexus.webp";
@@ -21,6 +21,7 @@ import huracanSound from "/audio/carsounds/huracan.mp3";
 import lfaSound from "/audio/carsounds/lfa.mp3";
 import porsche991Sound from "/audio/carsounds/991.mp3";
 import gt350rSound from "/audio/carsounds/gt350r.mp3"
+import amggtrSound from "/audio/carsounds/amggtr.mp3"
 
 export const cars = [
   {
@@ -490,6 +491,70 @@ export const cars = [
     front and 4-pot calipers in the rear, all with varying piston sizes. 0-62 
     mph acceleration is just 3.7 seconds, with a top speed of 201 mph (323 km/h), 
     and production of the LFA is limited to only 500 units.`,
+  },
+  {
+    logo: amgLogo,
+    country: germany,
+    manufacturer: "Mercedes-AMG",
+    model: "GT R",
+    year: "2017",
+    sound: amggtrSound,
+    colors: [
+      {
+        name: "AMG Green Hell",
+        hexCode: "#166804",
+      },
+      {
+        name: "Diamond White Bright",
+        hexCode: "#A8A59F",
+      },
+      {
+        name: "Iridium Silver",
+        hexCode: "#B9C1C1",
+      },
+      {
+        name: "Selenite Grey",
+        hexCode: "#4C5051",
+      },
+      {
+        name: "Magnetite Black",
+        hexCode: "#050506",
+      },
+      {
+        name: "Jupiter Red",
+        hexCode: "#B40000",
+      },
+      {
+        name: "Hyacinth Red Metallic",
+        hexCode: "#610000",
+      },
+      {
+        name: "Brilliant Blue",
+        hexCode: "#04043C",
+      },
+    ],
+    displacement: "3,982 cc",
+    maxPower: "577 BHP @ 6,250 rpm",
+    torque: "516 lb-ft",
+    drivetrain: "RWD",
+    length: "4,547 mm",
+    width: "2,007 mm",
+    height: "1,285 mm",
+    weight: "1,660 kg",
+    description: `"This 'road-legal race car' evokes the image of the 
+    much-celebrated 300SL sports car." The Mercedes AMG GT R made its debut in 
+    2016 as a high performance version of the AMG GT introduced in 2014. While 
+    it was officially designated as a road car, it was in fact a race car in 
+    street-car clothing. The first thing to catch the eye on the AMG GT R were 
+    the vertical accents on the grille, reminiscent of those of the 300SL that 
+    won the 1952 Carrera Panamericana Mexico. Other notable features of the 
+    exterior included IM= the adjustable rear wing and the flared fenders. Under 
+    the sheet metal, many of the car's components were swapped for carbon-fiber 
+    pieces, including the roof, front fenders and torque tube. This car was also 
+    the first Mercedes AMG model with 4-wheel steering. Under the hood, the car's 
+    twin-turbocharged 4.0-liter V-8 was retuned to produce 576.9 HP and 515.7 
+    ft-lb, allowing the AMG GT R to run from 0-100 km/h in a lightning quick 
+    3.6 seconds and reach a top speed of 318 km/h.`,
   },
   {
     logo: nissanLogo,

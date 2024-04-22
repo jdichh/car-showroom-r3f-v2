@@ -40,3 +40,8 @@ export const GT350R = lazy(() =>
     default: GT350R,
   }))
 );
+export const AMGGTR = lazy(() =>
+  import("../../components/Scene/Car/amggtr/Model").then(({ AMGGTR }) => ({
+    default: AMGGTR,
+  }))
+);
