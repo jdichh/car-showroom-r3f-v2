@@ -73,18 +73,18 @@ const Scene = () => {
     }
   };
 
+  // delays for transition
   useEffect(() => {
     setIsLoading(true);
-    resetCameraPosition();
-
-    setTimeout(() => {
-      setIsLoading(false);
-      setSelectedCar(selectedCar);
-    }, 3000);
-
     if (selectedCar.colors.length > 0) {
       setColor(selectedCar.colors[0]);
     }
+    resetCameraPosition();
+
+    setTimeout(() => {
+      setSelectedCar(selectedCar);
+      setIsLoading(false);
+    }, 3000);
   }, [selectedCar]);
 
   return (

@@ -1,11 +1,12 @@
-import { Lightformer, SpotLight } from "@react-three/drei";
+import { SpotLight } from "@react-three/drei";
 
 const Lighting = () => {
   const white = "#FFFFFF";
-  const lightIntensity = 1600;
+  const lightIntensity = 1800;
   const lightDistance = 60;
   const shadowResolution = 1024;
-  const shadowBias = -0.00065;
+  const shadowBias = -0.0009;
+  const shadowBiasOffset = -0.00035;
   const spotlightHeight = 5;
   const spotlightPenumbra = 1;
   const spotlightAngle = 1;
@@ -89,9 +90,9 @@ const Lighting = () => {
             spotlightParams.topSpotlightY,
             spotlightParams.topSpotlightZ,
           ]}
-          shadow-bias={shadowBias}
+          shadow-bias={shadowBias - shadowBiasOffset}
           shadow-mapSize={[shadowResolution, shadowResolution]}
-          decay={1.75}
+          decay={1.6}
         />
 
         <SpotLight

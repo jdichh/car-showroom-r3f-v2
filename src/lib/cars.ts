@@ -170,6 +170,10 @@ export const cars = [
         hexCode: "#A8B8C0",
       },
       {
+        name: "Nero Daytona",
+        hexCode: "#231F1C",
+      },
+      {
         name: "Rosso Scuderia",
         hexCode: "#FF2800",
       },
@@ -180,10 +184,6 @@ export const cars = [
       {
         name: "Rosso Mugello",
         hexCode: "#7A212A",
-      },
-      {
-        name: "Nero Daytona",
-        hexCode: "#231F1C",
       },
     ],
     displacement: "6,262 cc",
