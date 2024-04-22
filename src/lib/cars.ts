@@ -23,15 +23,15 @@ export const cars = [
     colors: [
       {
         name: "Bianco Trofeo",
-        hexCode: "#FFFFFF",
+        hexCode: "#B2B7B8",
       },
       {
         name: "Rosso GTA",
-        hexCode: "#CD212A",
+        hexCode: "#870000",
       },
       {
         name: "Verde Montreal",
-        hexCode: "#008C45",
+        hexCode: "#005E4D",
       },
     ],
     displacement: "2,891 cc",
@@ -135,55 +135,67 @@ export const cars = [
     colors: [
       {
         name: "Argento Nurburgring",
-        hexCode: "#CACBCE",
+        hexCode: "#999C9C",
       },
       {
         name: "Bianco Avus",
-        hexCode: "#F2F3F6",
+        hexCode: "#BBBEB0",
       },
       {
         name: "Blu Abu Dhabi",
-        hexCode: "#2885B5",
+        hexCode: "#002A3B",
+      },
+      {
+        name: "Blu Mirabeau",
+        hexCode: "#1F3C59",
       },
       {
         name: "Blu Pozzi",
-        hexCode: "#2C3970",
+        hexCode: "#050526",
       },
       {
         name: "Blu Tour de France",
-        hexCode: "#2243AA",
+        hexCode: "#001F3D",
       },
       {
         name: "Giallo Modena",
-        hexCode: "#FCE903",
+        hexCode: "#BF9A00",
+      },
+      {
+        name: "Grigio Alloy",
+        hexCode: "#849BA9",
       },
       {
         name: "Grigio Ingrid",
-        hexCode: "#756D62",
+        hexCode: "#5F584C",
       },
       {
         name: "Grigio Silverstone",
-        hexCode: "#585C64",
+        hexCode: "#424341",
       },
       {
         name: "Grigio Titanio",
-        hexCode: "#A8B8C0",
+        hexCode: "#737B7D",
+      },
+      {
+        name: "Nero",
+        hexCode: "#040607"
       },
       {
         name: "Nero Daytona",
-        hexCode: "#231F1C",
-      },
-      {
-        name: "Rosso Scuderia",
-        hexCode: "#FF2800",
+        hexCode: "#121212",
       },
       {
         name: "Rosso Corsa",
-        hexCode: "#D40000",
+        hexCode: "#9E0001",
       },
       {
         name: "Rosso Mugello",
-        hexCode: "#7A212A",
+        hexCode: "#4C0007",
+      },
+      {
+        name: "Rosso Scuderia",
+        hexCode: "#B00000",
       },
     ],
     displacement: "6,262 cc",
@@ -229,12 +241,24 @@ export const cars = [
         hexCode: "#FBA400",
       },
       {
+        name: "Bianco Canopus",
+        hexCode: "#B7B9B7",
+      },
+      {
+        name: "Bianco Icarus",
+        hexCode: "#B7C0BF",
+      },
+      {
         name: "Bianco Monocerus",
-        hexCode: "#EDEDED",
+        hexCode: "#B6BAB8",
       },
       {
         name: "Blu Caelum",
-        hexCode: "#054AE3",
+        hexCode: "#002669",
+      },
+      {
+        name: "Grigio Admetus",
+        hexCode: "#6B685C",
       },
       {
         name: "Grigio Lynx",
@@ -242,11 +266,15 @@ export const cars = [
       },
       {
         name: "Grigio Nimbus",
-        hexCode: "#6B7278",
+        hexCode: "#7F8282",
       },
       {
         name: "Giallo Inti",
-        hexCode: "#FED136",
+        hexCode: "#AA850E",
+      },
+      {
+        name: "Giallo Horus",
+        hexCode: "#947205",
       },
       {
         name: "Nero Helene",
@@ -262,11 +290,11 @@ export const cars = [
       },
       {
         name: "Rosso Mars",
-        hexCode: "#D40000",
+        hexCode: "#BE0001",
       },
       {
         name: "Verde Mantis",
-        hexCode: "#7DC23B",
+        hexCode: "#6BB716",
       },
     ],
     displacement: "5,204 cc",
@@ -337,7 +365,7 @@ export const cars = [
       },
       {
         name: "Pearl Yellow",
-        hexCode: "#C6B533",
+        hexCode: "#F1D343",
       },
       {
         name: "Red",
@@ -390,32 +418,32 @@ export const cars = [
     year: "2017",
     colors: [
       {
-        name: "Blaze Metallic",
-        hexCode: "#D2660F",
+        name: "Aurora Flare Blue Pearl",
+        hexCode: "#000D2C",
       },
       {
-        name: "Deep Blue Pearl",
-        hexCode: "#111A33",
+        name: "Brilliant White Pearl",
+        hexCode: "#BCBEB9",
       },
       {
-        name: "Gun Metallic",
-        hexCode: "#424746",
+        name: "Ultimate Metal Silver",
+        hexCode: "#9BA2A4",
       },
       {
-        name: "Jet Black Pearl",
-        hexCode: "#08090B",
+        name: "Dark Metal Grey",
+        hexCode: "#5A5E61",
       },
       {
-        name: "Pearl White",
-        hexCode: "#F0F0EB",
+        name: "Meteor Flake Black Pearl",
+        hexCode: "#000000",
       },
       {
-        name: "Solid Red",
-        hexCode: "#58000E",
+        name: "Ultimate Shiny Orange",
+        hexCode: "#943E00",
       },
       {
-        name: "Super Silver Metallic",
-        hexCode: "#A5A6A8",
+        name: "Vibrant Red",
+        hexCode: "#620000",
       },
     ],
     displacement: "3,799 cc",
@@ -457,19 +485,19 @@ export const cars = [
     colors: [
       {
         name: "Lava Orange",
-        hexCode: "#FF2600",
+        hexCode: "#BB3C23",
       },
       {
         name: "GT Silver Metallic",
-        hexCode: "#706F6B",
+        hexCode: "#616265",
       },
       {
         name: "Ultraviolet",
-        hexCode: "#5F4B8B",
+        hexCode: "#3C2260",
       },
       {
         name: "White",
-        hexCode: "#C4C8CB",
+        hexCode: "#BDBFB6",
       },
     ],
     displacement: "3,996 cc",

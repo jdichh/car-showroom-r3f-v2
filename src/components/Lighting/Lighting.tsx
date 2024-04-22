@@ -1,13 +1,14 @@
 import { SpotLight } from "@react-three/drei";
 
 const Lighting = () => {
-  const white = "#FFFFFF";
-  const lightIntensity = 1800;
+  const white = "#DCDCDC";
+  const lightIntensity = 2000;
+  const lightIntensityOffset = 1000;
   const lightDistance = 60;
   const shadowResolution = 1024;
   const shadowBias = -0.0009;
   const shadowBiasOffset = -0.00035;
-  const spotlightHeight = 5;
+  const spotlightHeight = 8;
   const spotlightPenumbra = 1;
   const spotlightAngle = 1;
 
@@ -18,7 +19,7 @@ const Lighting = () => {
     directionalLightZ: 0,
 
     topSpotlightColor: white,
-    topSpotlightIntensity: 300,
+    topSpotlightIntensity: lightIntensity - lightIntensityOffset,
     topSpotlightAngle: 2.5,
     topSpotlightPenumbra: spotlightPenumbra,
     topSpotlightDistance: 45,
@@ -92,7 +93,6 @@ const Lighting = () => {
           ]}
           shadow-bias={shadowBias - shadowBiasOffset}
           shadow-mapSize={[shadowResolution, shadowResolution]}
-          decay={1.6}
         />
 
         <SpotLight

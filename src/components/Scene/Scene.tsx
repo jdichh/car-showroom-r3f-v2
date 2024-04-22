@@ -6,7 +6,7 @@
 - animations
 */
 
-import { Html, OrbitControls } from "@react-three/drei";
+import { BakeShadows, Html, OrbitControls } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { cars } from "../../lib/cars";
 import { CarColorProps, SelectedCarProps } from "../../lib/types/types";
@@ -76,13 +76,13 @@ const Scene = () => {
   // delays for transition
   useEffect(() => {
     setIsLoading(true);
+    resetCameraPosition();
+    setSelectedCar(selectedCar);
     if (selectedCar.colors.length > 0) {
       setColor(selectedCar.colors[0]);
     }
-    resetCameraPosition();
 
     setTimeout(() => {
-      setSelectedCar(selectedCar);
       setIsLoading(false);
     }, 3000);
   }, [selectedCar]);
@@ -97,7 +97,7 @@ const Scene = () => {
             makeDefault
             enablePan={false}
             autoRotate
-            autoRotateSpeed={0.7}
+            autoRotateSpeed={0.6}
             minPolarAngle={1.15}
             maxPolarAngle={Math.PI - 1.55}
             enableZoom={true}
@@ -113,42 +113,49 @@ const Scene = () => {
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
               <Giulia color={color} />
+              <BakeShadows />
             </Suspense>
           ) : selectedCar.manufacturer === "Lamborghini" ? (
             <Suspense
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
               <Huracan color={color} />
+              <BakeShadows />
             </Suspense>
           ) : selectedCar.manufacturer === "Ferrari" ? (
             <Suspense
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
               <F12 color={color} />
+              <BakeShadows />
             </Suspense>
           ) : selectedCar.manufacturer === "Porsche" ? (
             <Suspense
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
               <Porsche911 color={color} />
+              <BakeShadows />
             </Suspense>
           ) : selectedCar.manufacturer === "Dodge" ? (
             <Suspense
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
               <Viper color={color} />
+              <BakeShadows />
             </Suspense>
           ) : selectedCar.manufacturer === "Lexus" ? (
             <Suspense
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
               <LFA color={color} />
+              <BakeShadows />
             </Suspense>
           ) : selectedCar.manufacturer === "Nissan" ? (
             <Suspense
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
               <GTR color={color} />
+              <BakeShadows />
             </Suspense>
           ) : (
             ""
@@ -161,7 +168,7 @@ const Scene = () => {
               className={`${
                 isLoading || isUIVisible === false
                   ? "invisible ui-invisible-animation"
-                  : "visible ui ui-visible-animation"
+                  : "visible main-ui-container ui-visible-animation"
               }`}
             >
               <CarSelectionContext.Provider
