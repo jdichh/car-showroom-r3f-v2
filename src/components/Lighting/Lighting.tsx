@@ -2,7 +2,7 @@ import { SpotLight } from "@react-three/drei";
 
 const Lighting = () => {
   const white = "#DCDCDC";
-  const lightIntensity = 2000;
+  const lightIntensity = 2500;
   const lightIntensityOffset = 1000;
   const lightDistance = 60;
   const shadowResolution = 1024;
