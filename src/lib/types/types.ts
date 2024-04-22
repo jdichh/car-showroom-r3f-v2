@@ -3,6 +3,11 @@ export type CarColorProps = {
   hexCode: string;
 };
 
+export type CarProps = {
+  color: CarColorProps;
+  children: React.ReactNode
+}
+
 export type SelectedCarProps = {
   logo: string;
   country: string;
@@ -15,7 +20,7 @@ export type SelectedCarProps = {
   torque: string;
   drivetrain: string;
   length: string;
-  width:string;
+  width: string;
   height: string;
   weight: string;
   description: string;
@@ -34,7 +39,18 @@ export type MenuContextTypes = {
   setIsInLandingMenu: (value: boolean) => void;
 };
 
-export type UITogglerTypes = {
+export type CarSelectionContextTypes = {
+  selectedCar: SelectedCarProps;
+  setSelectedCar: (value: SelectedCarProps) => void;
+};
+
+export type CarColorContextTypes = {
+  color: CarColorProps;
+  setColor: (value: CarColorProps) => void;
+};
+
+export type UIVisibilityContextTypes = {
   isUIVisible: boolean;
   setIsUIVisible: (value: boolean) => void;
-}
+  toggleUI: () => void;
+};

@@ -1,3 +1,5 @@
+// this component contains the extra details/description of the car which is shown on the bottom of the page
+
 import { SelectedCarProps } from "../../../lib/types/types";
 import "./CarDetails.css";
 

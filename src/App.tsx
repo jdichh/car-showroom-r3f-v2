@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useState } from "react";
 import Experience from "./components/Experience/Experience";
 import LandingMenu from "./components/UI/LandingMenu/LandingMenu";
-import { MenuContext } from "./lib/contexts/MenuContext";
+import { MenuContext } from "./lib/contexts/contexts";
 
 const Loader = () => {
   const { progress } = useProgress();

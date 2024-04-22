@@ -9,7 +9,7 @@
 import { Html, OrbitControls } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { cars } from "../../lib/cars";
-import { SelectedCarProps } from "../../lib/types/types";
+import { CarColorProps, SelectedCarProps } from "../../lib/types/types";
 import "./Scene.css";
 
 import {
@@ -22,21 +22,26 @@ import {
   Viper,
 } from "../../lib/models/ModelImports";
 
+import {
+  CarColorContext,
+  CarSelectionContext,
+  UIContext,
+} from "../../lib/contexts/contexts";
 import CarSwitchTransition from "../CarSwitchTransition/CarSwitchTransition";
 import { maxDistance } from "../Experience/Experience";
 import CarDetails from "../UI/CarDetails/CarDetails";
+import CarLabel from "../UI/CarLabel/CarLabel";
+import CarSelection from "../UI/CarSelection/CarSelection";
 import Floor from "./Floor/Floor";
 
 const Scene = () => {
-  const car1 = cars[0];
-
   const [isLoading, setIsLoading] = useState(false);
-
-  const [color, setColor] = useState({
+  const [color, setColor] = useState<CarColorProps>({
     name: "Alpine White",
     hexCode: "#C4C4C4",
   });
 
+  const car1 = cars[0];
   const [selectedCar, setSelectedCar] = useState<SelectedCarProps>({
     logo: car1.logo,
     country: car1.country,
@@ -55,7 +60,7 @@ const Scene = () => {
     description: car1.description,
   });
 
-  const [isUIVisible, setIsUIVisible] = useState(true);
+  const [isUIVisible, setIsUIVisible] = useState<boolean>(true);
   const toggleUI = () => {
     setIsUIVisible(!isUIVisible);
   };
@@ -159,77 +164,25 @@ const Scene = () => {
                   : "ui-visible-animation visible max-w-[2560px] mx-auto h-full flex flex-col justify-between"
               }`}
             >
-              {/* componetize sections */}
-              <section id="top">
-                <div className="car-selection-container">
-                  {cars.map((car, index) =>
-                    car.manufacturer !== selectedCar.manufacturer ? (
-                      <button
-                        key={index}
-                        className="car-selection-btn"
-                        onClick={() => setSelectedCar(car)}
-                      >
-                        <img
-                          src={car.logo}
-                          alt={`${car.manufacturer} ${car.model}`}
-                          height={35}
-                          width={35}
-                        />
-                      </button>
-                    ) : (
-                      ""
-                    )
-                  )}
-                </div>
-                <button onClick={() => toggleUI()} className="toggle-ui-btn">
-                  {isUIVisible === false ? "Show UI" : "Hide UI"}
-                </button>
-              </section>
+              <CarSelectionContext.Provider
+                value={{ selectedCar, setSelectedCar }}
+              >
+                <UIContext.Provider
+                  value={{ isUIVisible, setIsUIVisible, toggleUI }}
+                >
+                  <CarSelection />
+                </UIContext.Provider>
 
-              <section id="middle">
-                <div className="logo-and-paint-container">
-                  <img
-                    src={selectedCar.logo}
-                    height={100}
-                    width={selectedCar.manufacturer === "Dodge" ? 200 : 100}
-                  />
-                  <div className="paint-sample-container">
-                    <div className="paint-samples">
-                      {selectedCar.colors.map((color, index) => (
-                        <button
-                          key={index}
-                          style={{ backgroundColor: color.hexCode }}
-                          className="paint-samples-button"
-                          onClick={() => setColor(color)}
-                        />
-                      ))}
-                    </div>
-                    <p className="mt-2">{color.name}</p>
-                  </div>
-                </div>
-                <hgroup className="current-car font-fjalla uppercase">
-                  <div className="flex items-center gap-2">
-                    <img
-                      src={selectedCar.country}
-                      alt={selectedCar.country}
-                      width={25}
-                      height={25}
-                    />
-                    <h2 className="text-2xl">{selectedCar.manufacturer} </h2>
-                  </div>
-
-                  <h3 className="text-7xl">{selectedCar.model}</h3>
-                  <h4 className="text-2xl">{selectedCar.year}</h4>
-                </hgroup>
-                <div />
-              </section>
+                <CarColorContext.Provider value={{ color, setColor }}>
+                  <CarLabel />
+                </CarColorContext.Provider>
+              </CarSelectionContext.Provider>
 
               <CarDetails {...selectedCar} />
             </main>
           </Html>
         </>
       )}
-      {/* <Top /> */}
     </>
   );
 };

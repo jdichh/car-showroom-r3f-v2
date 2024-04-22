@@ -1,6 +1,6 @@
 import { Html } from "@react-three/drei";
 import { useContext } from "react";
-import { MenuContext } from "../../../lib/contexts/MenuContext";
+import { MenuContext } from "../../../lib/contexts/contexts";
 
 const Landing = () => {
   const { isInLandingMenu, setIsInLandingMenu } = useContext(MenuContext);
