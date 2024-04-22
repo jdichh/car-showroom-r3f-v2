@@ -35,3 +35,8 @@ export const LFA = lazy(() =>
     default: LFA,
   }))
 );
+export const GT350R = lazy(() =>
+  import("../../components/Scene/Car/gt350r/Model").then(({ GT350R }) => ({
+    default: GT350R,
+  }))
+);

@@ -1,5 +1,5 @@
 import bmwLogo from "/logos/bmw_logo.webp";
-import toyotaLogo from "/logos/toyota_logo.webp";
+import fordLogo from "/logos/ford.webp";
 import nissanLogo from "/logos/nissan.webp";
 import lexusLogo from "/logos/lexus.webp";
 import alfaLogo from "/logos/alfa.webp";
@@ -20,6 +20,7 @@ import gtrSound from "/audio/carsounds/gtr.mp3";
 import huracanSound from "/audio/carsounds/huracan.mp3";
 import lfaSound from "/audio/carsounds/lfa.mp3";
 import porsche991Sound from "/audio/carsounds/991.mp3";
+import gt350rSound from "/audio/carsounds/gt350r.mp3"
 
 export const cars = [
   {
@@ -241,6 +242,73 @@ export const cars = [
     is arguably the most revered and recognized company in automotive history.`,
   },
   {
+    logo: fordLogo,
+    country: usa,
+    manufacturer: "Ford",
+    model: "Shelby GT350R",
+    year: "2016",
+    sound: gt350rSound,
+    colors: [
+      {
+        name: "Avalanche Grey",
+        hexCode: "#7A8288",
+      },
+      {
+        name: "Competition Orange",
+        hexCode: "#B25304",
+      },
+      {
+        name: "Deep Impact Blue",
+        hexCode: "#001454",
+      },
+      {
+        name: "Magnetic",
+        hexCode: "#0F0F0F",
+      },
+      {
+        name: "Oxford White",
+        hexCode: "#9F9F9F",
+      },
+      {
+        name: "Race Red",
+        hexCode: "#750000",
+      },
+      {
+        name: "Shadow Black",
+        hexCode: "#000000",
+      },
+      {
+        name: "Triple Yellow",
+        hexCode: "#B28600",
+      },
+    ],
+    displacement: "5,163 cc",
+    maxPower: "526 BHP @ 7,500 rpm",
+    torque: "429 lb-ft",
+    drivetrain: "RWD",
+    length: "4,818 mm",
+    width: "1,928 mm",
+    height: "1,361 mm",
+    weight: "1,658 kg",
+    description: `"This high-performance model of the seventh-generation Mustang 
+    takes its name from a legend." The roots of the Shelby GT350R date back to 
+    1965, when Ford commissioned Carroll Shelby to build a car to compete in the 
+    SCCA (Sports Car Club of America). Based on the first-generation Mustang, 
+    the GT350R was sold as a road car because the SCCA allowed only minor 
+    modifications for its competition cars. Still, the car dominated its class, 
+    gaining instant recognition. Fast forward to 2016, when the Shelby 350R 
+    based on the seventh-generation Mustang, made its debut as road car that 
+    was race ready, like the original model. Its naturally-aspirated 5.2-liter 
+    V-8 was tuned to produce 525.6 HP and 428.9 ft-lb and was mated to a 6-speed 
+    manual transmission. The reinforced chassis featured Ford's MagneRide 
+    suspension system, which detected road conditions and adjusted damping 
+    strength using magnetorheological fluid. Also, to reduce weight, the 2+2 
+    layout of the stock Mustang was converted into that of a two-seater. The 
+    GT350R enjoyed a loyal following and great success, thanks in part to it 
+    exclusivity. It was sold as a special model available through a limited 
+    number of dealers.`,
+  },
+  {
     logo: lamboLogo,
     country: italy,
     manufacturer: "Lamborghini",
@@ -390,8 +458,8 @@ export const cars = [
       },
     ],
     displacement: "4,805 cc",
-    maxPower: "553 BHP @ 8,700 rpm",
-    torque: "365 lb-ft",
+    maxPower: "552 BHP @ 8,700 rpm",
+    torque: "354 lb-ft",
     drivetrain: "RWD",
     length: "4,505 mm",
     width: "1,895 mm",

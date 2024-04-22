@@ -2,6 +2,7 @@ export type CarManufacturer =
   | "Alfa Romeo"
   | "Lamborghini"
   | "Ferrari"
+  | "Ford"
   | "Porsche"
   | "Dodge"
   | "Lexus"

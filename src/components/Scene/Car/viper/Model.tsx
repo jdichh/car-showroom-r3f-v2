@@ -85,7 +85,7 @@ export function Viper(props: any) {
   }, [materials, props]);
 
   return (
-    <group {...props} dispose={null} scale={4} position={[0, -1.48, 0]}>
+    <group {...props} dispose={null} scale={4} position={[0, -1.47, 0]}>
       <mesh
         castShadow
         receiveShadow

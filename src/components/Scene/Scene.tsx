@@ -23,6 +23,7 @@ import "./Scene.css";
 
 import {
   F12,
+  GT350R,
   GTR,
   Giulia,
   Huracan,
@@ -41,9 +42,9 @@ const Scene = () => {
   const [isFloorVisible, setIsFloorVisible] = useState<boolean>(false);
   const audioRef = useRef<any>(null);
 
-  const playAudio = () => {
+  const playAudio = async () => {
     if (audioRef.current) {
-      audioRef.current.setVolume(28);
+      audioRef.current.setVolume(45);
       audioRef.current.play();
     }
   };
@@ -111,6 +112,7 @@ const Scene = () => {
     Lamborghini: Huracan,
     Ferrari: F12,
     Porsche: Porsche911,
+    Ford: GT350R,
     Dodge: Viper,
     Lexus: LFA,
     Nissan: GTR,
@@ -144,12 +146,13 @@ const Scene = () => {
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
               <CarModelComponent color={color} />
-              {selectedCar.sound && isLoading === false ? (
+              {selectedCar.sound ? (
                 <PositionalAudio
                   ref={audioRef}
                   url={selectedCar.sound}
-                  position={selectedCar.manufacturer === "Dodge" ? [0, -1, -2] : [0, -1, -8] }
+                  position={selectedCar.manufacturer === "Dodge" ? [0, -1, -2] : [0, -1, -9] }
                   loop={false}
+                  distance={0.7}
                 />
               ) : (
                 ""
@@ -160,7 +163,7 @@ const Scene = () => {
             ""
           )}
 
-          {/* prevents floor plane from flashing between landing and canvas transition */}
+          {/* prevents floor plane from flashing between the landing page and canvas transition */}
           {isFloorVisible === true ? <Floor /> : ""}
 
           <Html fullscreen>
