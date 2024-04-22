@@ -13,6 +13,14 @@ import japan from "/countryflags/jp.svg"
 import usa from "/countryflags/us.svg"
 import germany from "/countryflags/de.svg"
 
+import viperSound from "/audio/carsounds/viper.mp3";
+import f12Sound from "/audio/carsounds/f12.mp3";
+import gtamSound from "/audio/carsounds/gtam.mp3";
+import gtrSound from "/audio/carsounds/gtr.mp3";
+import huracanSound from "/audio/carsounds/huracan.mp3";
+import lfaSound from "/audio/carsounds/lfa.mp3";
+import porsche991Sound from "/audio/carsounds/991.mp3";
+
 export const cars = [
   {
     logo: alfaLogo,
@@ -20,6 +28,7 @@ export const cars = [
     manufacturer: "Alfa Romeo",
     model: "Giulia GTAm",
     year: "2020",
+    sound: gtamSound,
     colors: [
       {
         name: "Bianco Trofeo",
@@ -62,6 +71,7 @@ export const cars = [
     manufacturer: "Dodge",
     model: "Viper GTS",
     year: "2013",
+    sound: viperSound,
     colors: [
       {
         name: "Adrenaline Red",
@@ -132,6 +142,7 @@ export const cars = [
     manufacturer: "Ferrari",
     model: "F12berlinetta",
     year: "2012",
+    sound: f12Sound,
     colors: [
       {
         name: "Argento Nurburgring",
@@ -234,6 +245,7 @@ export const cars = [
     country: italy,
     manufacturer: "Lamborghini",
     model: "Huracán",
+    sound: huracanSound,
     year: "2015",
     colors: [
       {
@@ -334,6 +346,7 @@ export const cars = [
     manufacturer: "Lexus",
     model: "LFA",
     year: "2010",
+    sound: lfaSound,
     colors: [
       {
         name: "Black",
@@ -416,6 +429,7 @@ export const cars = [
     manufacturer: "Nissan",
     model: "GT-R",
     year: "2017",
+    sound: gtrSound,
     colors: [
       {
         name: "Aurora Flare Blue Pearl",
@@ -482,6 +496,7 @@ export const cars = [
     manufacturer: "Porsche",
     model: "911 GT3 RS",
     year: "2016",
+    sound: porsche991Sound,
     colors: [
       {
         name: "Lava Orange",

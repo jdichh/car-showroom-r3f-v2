@@ -5,7 +5,8 @@ import "./CarSelection.css";
 
 const CarSelection = () => {
   const { selectedCar, setSelectedCar } = useCarSelection();
-  const { isUIVisible, setIsUIVisible, toggleUI } = useContext(UIContext);
+  const { isUIVisible, setIsUIVisible, toggleUI, playAudio } =
+    useContext(UIContext);
   return (
     <section id="top">
       <div className="car-selection-container">
@@ -28,9 +29,14 @@ const CarSelection = () => {
           )
         )}
       </div>
-      <button onClick={toggleUI} className="toggle-ui-btn">
-        {isUIVisible === false ? "Show UI" : "Hide UI"}
-      </button>
+      <div className="flex gap-2">
+        <button className="ui-btn" onClick={playAudio}>
+          Start Up
+        </button>
+        <button onClick={toggleUI} className="ui-btn">
+          {isUIVisible === false ? "Show UI" : "Hide UI"}
+        </button>
+      </div>
     </section>
   );
 };

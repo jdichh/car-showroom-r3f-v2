@@ -6,10 +6,19 @@
 - animations
 */
 
-import { BakeShadows, Html, OrbitControls } from "@react-three/drei";
+import {
+  BakeShadows,
+  Html,
+  OrbitControls,
+  PositionalAudio,
+} from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { cars } from "../../lib/cars";
-import { CarColorProps, SelectedCarProps } from "../../lib/types/types";
+import {
+  CarColorProps,
+  CarManufacturer,
+  SelectedCarProps,
+} from "../../lib/types/types";
 import "./Scene.css";
 
 import {
@@ -22,20 +31,23 @@ import {
   Viper,
 } from "../../lib/models/ModelImports";
 
-import {
-  CarColorContext,
-  CarSelectionContext,
-  UIContext,
-} from "../../lib/contexts/contexts";
 import CarSwitchTransition from "../CarSwitchTransition/CarSwitchTransition";
 import { maxDistance } from "../Experience/Experience";
-import CarDetails from "../UI/CarDetails/CarDetails";
-import CarLabel from "../UI/CarLabel/CarLabel";
-import CarSelection from "../UI/CarSelection/CarSelection";
 import Floor from "./Floor/Floor";
+import ShowcaseUI from "./Showcase/Showcase";
 
 const Scene = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isFloorVisible, setIsFloorVisible] = useState<boolean>(false);
+  const audioRef = useRef<any>(null);
+
+  const playAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.setVolume(28);
+      audioRef.current.play();
+    }
+  };
+
   const [color, setColor] = useState<CarColorProps>({
     name: "Alpine White",
     hexCode: "#C4C4C4",
@@ -48,6 +60,7 @@ const Scene = () => {
     manufacturer: car1.manufacturer,
     model: car1.model,
     year: car1.year,
+    sound: car1.sound,
     colors: car1.colors,
     displacement: car1.displacement,
     maxPower: car1.maxPower,
@@ -76,6 +89,7 @@ const Scene = () => {
   // delays for transition
   useEffect(() => {
     setIsLoading(true);
+    setIsFloorVisible(false);
     resetCameraPosition();
     setSelectedCar(selectedCar);
     if (selectedCar.colors.length > 0) {
@@ -83,9 +97,27 @@ const Scene = () => {
     }
 
     setTimeout(() => {
+      setIsFloorVisible(true);
       setIsLoading(false);
     }, 3000);
   }, [selectedCar]);
+
+  const carModelComponents: {
+    [key in CarManufacturer]: React.LazyExoticComponent<
+      (props: any) => JSX.Element
+    >;
+  } = {
+    "Alfa Romeo": Giulia,
+    Lamborghini: Huracan,
+    Ferrari: F12,
+    Porsche: Porsche911,
+    Dodge: Viper,
+    Lexus: LFA,
+    Nissan: GTR,
+  };
+
+  const CarModelComponent =
+    carModelComponents[selectedCar.manufacturer as CarManufacturer];
 
   return (
     <>
@@ -107,86 +139,42 @@ const Scene = () => {
             maxDistance={maxDistance + 2}
           />
 
-          {/* organize this!!! */}
-          {selectedCar.manufacturer === "Alfa Romeo" ? (
+          {CarModelComponent ? (
             <Suspense
               fallback={<CarSwitchTransition selectedCar={selectedCar} />}
             >
-              <Giulia color={color} />
-              <BakeShadows />
-            </Suspense>
-          ) : selectedCar.manufacturer === "Lamborghini" ? (
-            <Suspense
-              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
-            >
-              <Huracan color={color} />
-              <BakeShadows />
-            </Suspense>
-          ) : selectedCar.manufacturer === "Ferrari" ? (
-            <Suspense
-              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
-            >
-              <F12 color={color} />
-              <BakeShadows />
-            </Suspense>
-          ) : selectedCar.manufacturer === "Porsche" ? (
-            <Suspense
-              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
-            >
-              <Porsche911 color={color} />
-              <BakeShadows />
-            </Suspense>
-          ) : selectedCar.manufacturer === "Dodge" ? (
-            <Suspense
-              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
-            >
-              <Viper color={color} />
-              <BakeShadows />
-            </Suspense>
-          ) : selectedCar.manufacturer === "Lexus" ? (
-            <Suspense
-              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
-            >
-              <LFA color={color} />
-              <BakeShadows />
-            </Suspense>
-          ) : selectedCar.manufacturer === "Nissan" ? (
-            <Suspense
-              fallback={<CarSwitchTransition selectedCar={selectedCar} />}
-            >
-              <GTR color={color} />
+              <CarModelComponent color={color} />
+              {selectedCar.sound && isLoading === false ? (
+                <PositionalAudio
+                  ref={audioRef}
+                  url={selectedCar.sound}
+                  position={selectedCar.manufacturer === "Dodge" ? [0, -1, -2] : [0, -1, -8] }
+                  loop={false}
+                />
+              ) : (
+                ""
+              )}
               <BakeShadows />
             </Suspense>
           ) : (
             ""
           )}
 
-          <Floor />
+          {/* prevents floor plane from flashing between landing and canvas transition */}
+          {isFloorVisible === true ? <Floor /> : ""}
 
           <Html fullscreen>
-            <main
-              className={`${
-                isLoading || isUIVisible === false
-                  ? "invisible ui-invisible-animation"
-                  : "visible main-ui-container ui-visible-animation"
-              }`}
-            >
-              <CarSelectionContext.Provider
-                value={{ selectedCar, setSelectedCar }}
-              >
-                <UIContext.Provider
-                  value={{ isUIVisible, setIsUIVisible, toggleUI }}
-                >
-                  <CarSelection />
-                </UIContext.Provider>
-
-                <CarColorContext.Provider value={{ color, setColor }}>
-                  <CarLabel />
-                </CarColorContext.Provider>
-              </CarSelectionContext.Provider>
-
-              <CarDetails {...selectedCar} />
-            </main>
+ 
+              <ShowcaseUI
+              selectedCar={selectedCar}
+              setSelectedCar={setSelectedCar}
+              isUIVisible={isUIVisible}
+              playAudio={playAudio}
+              toggleUI={toggleUI}
+              color={color}
+              setColor={setColor}
+            />
+     
           </Html>
         </>
       )}

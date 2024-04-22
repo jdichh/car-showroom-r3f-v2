@@ -1,3 +1,12 @@
+export type CarManufacturer =
+  | "Alfa Romeo"
+  | "Lamborghini"
+  | "Ferrari"
+  | "Porsche"
+  | "Dodge"
+  | "Lexus"
+  | "Nissan";
+
 export type CarColorProps = {
   name: string;
   hexCode: string;
@@ -5,8 +14,8 @@ export type CarColorProps = {
 
 export type CarProps = {
   color: CarColorProps;
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 export type SelectedCarProps = {
   logo: string;
@@ -14,6 +23,7 @@ export type SelectedCarProps = {
   manufacturer: string;
   model: string;
   year: string;
+  sound?: string;
   colors: CarColorProps[];
   displacement: string;
   maxPower: string;
@@ -53,4 +63,15 @@ export type UIVisibilityContextTypes = {
   isUIVisible: boolean;
   setIsUIVisible: (value: boolean) => void;
   toggleUI: () => void;
+  playAudio: () => void;
+};
+
+export type ShowcaseUIProps = {
+  selectedCar: SelectedCarProps;
+  setSelectedCar: (selectedCar: SelectedCarProps) => void;
+  isUIVisible: boolean;
+  toggleUI: () => void;
+  playAudio: () => void;
+  color: CarColorProps;
+  setColor: (color: CarColorProps) => void;
 };

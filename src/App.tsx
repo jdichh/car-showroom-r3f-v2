@@ -24,21 +24,19 @@ const App = () => {
   return (
     <>
       <MenuContext.Provider value={{ isInLandingMenu, setIsInLandingMenu }}>
-        <Canvas
-          shadows
-          style={{ background: "#080706" }}
-          eventSource={document.getElementById("root") as HTMLElement}
-        >
-          {isInLandingMenu ? (
-            <Suspense fallback={<Loader />}>
-              <LandingMenu />
-            </Suspense>
-          ) : (
+        {isInLandingMenu ? (
+          <LandingMenu />
+        ) : (
+          <Canvas
+            shadows
+            style={{ background: "#080706" }}
+            eventSource={document.getElementById("root") as HTMLElement}
+          >
             <Suspense fallback={<Loader />}>
               <Experience />
             </Suspense>
-          )}
-        </Canvas>
+          </Canvas>
+        )}
       </MenuContext.Provider>
     </>
   );
