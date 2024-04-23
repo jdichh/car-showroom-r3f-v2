@@ -26,6 +26,7 @@ const CarLabel = () => {
                 style={{ backgroundColor: color.hexCode }}
                 className="paint-samples-button"
                 onClick={() => setColor(color)}
+                aria-label={`Change the current color to ${color.name}.`}
               />
             ))}
           </div>
