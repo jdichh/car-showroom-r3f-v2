@@ -5,6 +5,7 @@ import { Suspense, useState } from "react";
 import Experience from "./components/Experience/Experience";
 import LandingMenu from "./components/UI/LandingMenu/LandingMenu";
 import { MenuContext } from "./lib/contexts/contexts";
+import { Perf } from "r3f-perf";
 
 const Loader = () => {
   const { progress } = useProgress();
@@ -32,7 +33,9 @@ const App = () => {
             style={{ background: "#080706" }}
             eventSource={document.getElementById("root") as HTMLElement}
           >
+             {/* <Perf position={'bottom-right'} /> */}
             <Suspense fallback={<Loader />}>
+             
               <Experience />
             </Suspense>
           </Canvas>
