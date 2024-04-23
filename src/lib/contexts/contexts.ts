@@ -21,6 +21,9 @@ export const UIContext = createContext<UIVisibilityContextTypes>({
   toggleUI: () => {
     console.error("toggleUI() was called without a provider.");
   },
+  playAudio: () => {
+    console.error("playAudio() was called without a provider.");
+  },
 });
 
 export const CarColorContext = createContext<CarColorContextTypes | undefined>(
