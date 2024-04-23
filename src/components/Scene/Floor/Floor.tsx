@@ -10,11 +10,11 @@ const Floor = () => {
   const [aoMap, colorMap, disMap, normGlMap, roughnessMap] = useLoader(
     TextureLoader,
     [
-      "/floor/Concrete033_1K-JPG_AmbientOcclusion.jpg",
-      "/floor/Concrete033_1K-JPG_Color.jpg",
-      "/floor/Concrete033_1K-JPG_Displacement.jpg",
-      "/floor/Concrete033_1K-JPG_NormalGL.jpg",
-      "/floor/Concrete033_1K-JPG_Roughness.jpg",
+      "/floor/Concrete033_1K-JPG_AmbientOcclusion.webp",
+      "/floor/Concrete033_1K-JPG_Color.webp",
+      "/floor/Concrete033_1K-JPG_Displacement.webp",
+      "/floor/Concrete033_1K-JPG_NormalGL.webp",
+      "/floor/Concrete033_1K-JPG_Roughness.webp",
     ]
   );
 
