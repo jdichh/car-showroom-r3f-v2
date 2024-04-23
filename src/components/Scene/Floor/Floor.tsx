@@ -2,7 +2,9 @@ import { Plane } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 import { TextureLoader } from "three";
-import { SpotlightProp } from "./Spotlight";
+import {
+  SpotlightProp
+} from "../../../lib/models/ModelImports";
 
 const Floor = () => {
   const [aoMap, colorMap, disMap, normGlMap, roughnessMap] = useLoader(

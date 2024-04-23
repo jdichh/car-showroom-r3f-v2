@@ -45,3 +45,8 @@ export const AMGGTR = lazy(() =>
     default: AMGGTR,
   }))
 );
+export const SpotlightProp = lazy(() =>
+  import("../../components/Scene/Floor/Spotlight").then(({ SpotlightProp }) => ({
+    default: SpotlightProp,
+  }))
+);

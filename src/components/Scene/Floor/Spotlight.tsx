@@ -6,9 +6,8 @@ Source: https://sketchfab.com/3d-models/simple-studio-light-771d351d2329444fab34
 Title: Simple Studio Light
 */
 
-import * as THREE from 'three'
-import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import * as THREE from 'three'
 import { GLTF } from 'three-stdlib'
 
 type GLTFResult = GLTF & {
