@@ -46,7 +46,7 @@ const Scene = () => {
 
   const playAudio = async () => {
     if (audioRef.current) {
-      audioRef.current.setVolume(45);
+      audioRef.current.setVolume(40);
       audioRef.current.play();
     }
   };

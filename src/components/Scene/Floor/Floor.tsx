@@ -8,11 +8,11 @@ const Floor = () => {
   const [aoMap, colorMap, disMap, normGlMap, roughnessMap] = useLoader(
     TextureLoader,
     [
-      "/floor/Concrete032_1K-JPG_AmbientOcclusion.jpg",
-      "/floor/Concrete032_1K-JPG_Color.jpg",
-      "/floor/Concrete032_1K-JPG_Displacement.jpg",
-      "/floor/Concrete032_1K-JPG_NormalGL.jpg",
-      "/floor/Concrete032_1K-JPG_Roughness.jpg",
+      "/floor/Concrete033_1K-JPG_AmbientOcclusion.jpg",
+      "/floor/Concrete033_1K-JPG_Color.jpg",
+      "/floor/Concrete033_1K-JPG_Displacement.jpg",
+      "/floor/Concrete033_1K-JPG_NormalGL.jpg",
+      "/floor/Concrete033_1K-JPG_Roughness.jpg",
     ]
   );
 
@@ -34,7 +34,7 @@ const Floor = () => {
     normalMap: normGlMap,
     normalMapType: THREE.TangentSpaceNormalMap,
     roughnessMap: roughnessMap,
-    roughness: 0.7,
+    roughness: 1,
   });
 
   return (
