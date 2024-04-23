@@ -1,10 +1,5 @@
 import { lazy } from "react";
 
-export const Giulia = lazy(() =>
-  import("../../components/Scene/Car/giulia_gtam/Model").then(({ Giulia }) => ({
-    default: Giulia,
-  }))
-);
 export const F12 = lazy(() =>
   import("../../components/Scene/Car/f12/Model").then(({ F12 }) => ({
     default: F12,

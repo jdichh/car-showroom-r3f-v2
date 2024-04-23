@@ -12,3 +12,5 @@ body,
   font-weight: 400;
   font-style: normal;
 }
+
+/* using src: url() for poppins does not work somehow, but works for fjalla one at CarLabel.css. */

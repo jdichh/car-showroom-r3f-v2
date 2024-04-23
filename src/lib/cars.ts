@@ -15,7 +15,7 @@ import germany from "/countryflags/de.svg"
 
 import viperSound from "/audio/carsounds/viper.mp3";
 import f12Sound from "/audio/carsounds/f12.mp3";
-import gtamSound from "/audio/carsounds/gtam.mp3";
+import gtamSound from "/audio/carsounds/giuliagtam.mp3";
 import gtrSound from "/audio/carsounds/gtr.mp3";
 import huracanSound from "/audio/carsounds/huracan.mp3";
 import lfaSound from "/audio/carsounds/lfa.mp3";
@@ -24,49 +24,6 @@ import gt350rSound from "/audio/carsounds/gt350r.mp3"
 import amggtrSound from "/audio/carsounds/amggtr.mp3"
 
 export const cars = [
-  {
-    logo: alfaLogo,
-    country: italy,
-    manufacturer: "Alfa Romeo",
-    model: "Giulia GTAm",
-    year: "2020",
-    sound: gtamSound,
-    colors: [
-      {
-        name: "Bianco Trofeo",
-        hexCode: "#B2B7B8",
-      },
-      {
-        name: "Rosso GTA",
-        hexCode: "#870000",
-      },
-      {
-        name: "Verde Montreal",
-        hexCode: "#005E4D",
-      },
-    ],
-    displacement: "2,891 cc",
-    maxPower: "532 BHP @ 6,500 rpm",
-    torque: "442 lb-ft",
-    drivetrain: "RWD",
-    length: "4,669 mm",
-    width: "2,024 mm",
-    height: "1,445 mm",
-    weight: "1,580 kg",
-    description: `"The top-of-the-line model in the Giulia lineup celebrated 110
-    years of Alfa Romeo." In 2020, special editions of the Alfa Romeo Giulia were 
-    introduced to celebrate the 110th anniversary of the historic company. The cars 
-    were called the Giulia GTA and GTAm, which were based on the high-performance
-    Quadrifoglio model. For these cars, the power output of the twin-turbocharged 
-    2.9-liter V-6 was increased to 532.5 HP, while curb weight was reduced by 220 
-    lbs. Also, the front and rear track were widened by 2.0 inches to enhance the 
-    car's stability, while the cars' aerodynamics were significantly enhanced in 
-    the form of new front and rear fenders, as well as other redesigned body parts, 
-    thanks to help from Alfa Romeo's Formula 1 partner, Sauber. The GTAm offers a 
-    more hardcore setup designed for circuit use. In addition to a larger front 
-    splitter and carbon fiber rear wing, a roll-cage was installed and the rear 
-    seats were removed.`,
-  },
   {
     logo: dodgeLogo,
     country: usa,
