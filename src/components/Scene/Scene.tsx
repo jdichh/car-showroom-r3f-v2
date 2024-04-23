@@ -18,7 +18,6 @@ import {
   F12,
   GT350R,
   GTR,
-  Giulia,
   Huracan,
   LFA,
   Porsche911,
@@ -102,7 +101,6 @@ const Scene = () => {
       (props: any) => JSX.Element
     >;
   } = {
-    "Alfa Romeo": Giulia,
     Lamborghini: Huracan,
     Ferrari: F12,
     Porsche: Porsche911,
