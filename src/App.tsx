@@ -31,7 +31,7 @@ const App = () => {
         ) : (
           <Canvas
             shadows
-            style={{ background: "#black" }}
+            style={{ background: "black" }}
             eventSource={document.getElementById("root") as HTMLElement}
           >
             <Suspense fallback={<Loader />}>
