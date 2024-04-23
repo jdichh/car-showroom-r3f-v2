@@ -1,19 +1,26 @@
 import { useContext } from "react";
 import { MenuContext } from "../../../lib/contexts/contexts";
+import "./LandingMenu.css";
+import background from "/images/bg.webp";
 
 const Landing = () => {
   const { isInLandingMenu, setIsInLandingMenu } = useContext(MenuContext);
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center">
-      <h1 className="text-4xl mb-4">Welcome!</h1>
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2"
-        onClick={() => setIsInLandingMenu(false)}
-      >
-        Start
-      </button>
-    </div>
+    <main className="landing-page bg-img">
+      <div className="menu-container fade-in">
+        <hgroup>
+          <h2 className="text-white/50 text-left">Welcome to the</h2>
+          <h1 className="title">Modern Classics Garage</h1>
+          <h2 className="text-white/50">
+            Explore the the classic cars of today.
+          </h2>
+        </hgroup>
+        <button className="ui-btn" onClick={() => setIsInLandingMenu(false)}>
+          Enter
+        </button>
+      </div>
+    </main>
   );
 };
 
