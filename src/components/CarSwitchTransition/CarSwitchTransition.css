@@ -1,9 +1,9 @@
 .car-switch-transition {
   @apply flex flex-col justify-center items-center;
-  animation: fade-in-out 0.75s;
+  animation: fade-in 0.75s;
 }
 
-@keyframes fade-in-out {
+@keyframes fade-in {
   0% {
     opacity: 0;
   }

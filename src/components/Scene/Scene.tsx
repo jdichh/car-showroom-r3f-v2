@@ -1,11 +1,3 @@
-/* todos: 
-- organize code (componentize what needs/has to be)
-- car sounds?
-- lighting
-- maybe more cars
-- animations
-*/
-
 import {
   BakeShadows,
   Html,
@@ -35,7 +27,7 @@ import {
 
 import CarSwitchTransition from "../CarSwitchTransition/CarSwitchTransition";
 import { maxDistance } from "../Experience/Experience";
-import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import Floor from "./Floor/Floor";
 import ShowcaseUI from "./Showcase/Showcase";
 
@@ -44,7 +36,7 @@ const Scene = () => {
   const [isFloorVisible, setIsFloorVisible] = useState<boolean>(false);
   const audioRef = useRef<any>(null);
 
-  const playAudio = async () => {
+  const playAudio = () => {
     if (audioRef.current) {
       audioRef.current.setVolume(40);
       audioRef.current.play();

@@ -9,7 +9,7 @@ const CarSwitchTransition = ({ selectedCar }: LoaderProps) => {
   useEffect(() => {
     setTimeout(() => {
       setPulsateIcon(true);
-    }, 1000);
+    }, 2000);
   }, []);
 
   return (
