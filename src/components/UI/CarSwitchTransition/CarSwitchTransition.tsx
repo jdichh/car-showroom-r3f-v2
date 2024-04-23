@@ -1,6 +1,6 @@
 import { Html } from "@react-three/drei";
 import { useEffect, useState } from "react";
-import { LoaderProps } from "../../lib/types/types";
+import { LoaderProps } from "../../../lib/types/types";
 import "./CarSwitchTransition.css";
 
 const CarSwitchTransition = ({ selectedCar }: LoaderProps) => {

@@ -25,11 +25,11 @@ import {
   Viper,
 } from "../../lib/models/ModelImports";
 
-import CarSwitchTransition from "../CarSwitchTransition/CarSwitchTransition";
+import CarSwitchTransition from "../UI/CarSwitchTransition/CarSwitchTransition";
 import { maxDistance } from "../Experience/Experience";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import Floor from "./Floor/Floor";
-import ShowcaseUI from "./Showcase/Showcase";
+import ShowcaseUI from "../UI/Showcase/Showcase";
 
 const Scene = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);

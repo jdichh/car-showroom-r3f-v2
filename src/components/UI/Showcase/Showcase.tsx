@@ -4,9 +4,9 @@ import {
     UIContext,
 } from "../../../lib/contexts/contexts";
 import { ShowcaseUIProps } from "../../../lib/types/types";
-import CarDetails from "../../UI/CarDetails/CarDetails";
-import CarLabel from "../../UI/CarLabel/CarLabel";
-import CarSelection from "../../UI/CarSelection/CarSelection";
+import CarDetails from "../CarDetails/CarDetails";
+import CarLabel from "../CarLabel/CarLabel";
+import CarSelection from "../CarSelection/CarSelection";
 
 const ShowcaseUI = ({
   selectedCar,
