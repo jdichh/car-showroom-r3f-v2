@@ -16,7 +16,7 @@ const CarSelection = () => {
               key={index}
               className="car-selection-btn"
               onClick={() => setSelectedCar(car)}
-              aria-label="Change the car color."
+              aria-label={`Select the ${car.year} ${car.manufacturer} ${car.model}.`}
             >
               <img
                 src={car.logo}
