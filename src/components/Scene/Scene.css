@@ -1,5 +1,5 @@
 .main-ui-container {
-  @apply max-w-[2560px] mx-auto h-full flex flex-col justify-between;
+  @apply max-w-[1920px] mx-auto h-full flex flex-col justify-between;
 }
 
 .ui-invisible-animation {

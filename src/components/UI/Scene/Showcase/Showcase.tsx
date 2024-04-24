@@ -7,6 +7,8 @@ const Showcase = () => {
   const { isUIVisible, isInShowcaseMenu } = useUIStore();
 
   return (
+    <div className="flex flex-col h-full">
+      <ShowcaseHeader />
     <div
       className={`${
         isUIVisible === false || isInShowcaseMenu === false
@@ -14,9 +16,10 @@ const Showcase = () => {
           : "visible main-ui-container ui-visible-animation"
       }`}
     >
-      <ShowcaseHeader />
+      
       <ShowcaseCarLabel />
       <ShowcaseCarDetails />
+    </div>
     </div>
   );
 };

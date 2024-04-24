@@ -1,6 +1,6 @@
 .showcase-header {
   @apply flex py-3 px-6 justify-between backdrop-blur bg-black/40;
-  animation: fade-down 1s;
+  animation: fade-down 0.5s;
 }
 
 .ui-btn {
