@@ -11,7 +11,7 @@ type ShowcaseProps = {
 
 export const EngineContext = createContext<ShowcaseProps>({
   startEngine: () => {
-    console.error("playAudio() was called without a provider.");
+    console.error("startEngine() was called without a provider.");
   },
 });
 

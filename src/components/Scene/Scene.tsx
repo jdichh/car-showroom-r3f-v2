@@ -5,7 +5,7 @@ import {
   PerspectiveCamera,
   PositionalAudio,
 } from "@react-three/drei";
-import { Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { carModelComponents } from "../../lib/carModelComponents";
 import { CarManufacturer } from "../../lib/types/types";
 import { useCarColorStore } from "../../lib/zustandstores/carColorStore";
@@ -27,12 +27,13 @@ const Scene = () => {
   const { isLoading, setIsLoading } = useLoadingStateStore();
   const { isFloorVisible, setIsFloorVisible } = useFloorStateStore();
   const { selectedCar, setSelectedCar } = useSelectedCarStore();
+  const [isModelReady, setIsModelReady] = useState(false);
 
   const audioRef = useRef<any>(null);
 
   const startEngine = () => {
     if (audioRef.current) {
-      audioRef.current.setVolume(30);
+      audioRef.current.setVolume(32);
       audioRef.current.play();
     }
   };
@@ -49,6 +50,7 @@ const Scene = () => {
   useEffect(() => {
     setIsLoading(true);
     setIsFloorVisible(false);
+    setIsModelReady(false);
     resetCameraPosition();
     setSelectedCar(selectedCar);
     if (selectedCar.colors.length > 0) {
@@ -56,6 +58,7 @@ const Scene = () => {
     }
 
     setTimeout(() => {
+      setIsModelReady(true);
       setIsFloorVisible(true);
       setIsLoading(false);
     }, 3000);
@@ -90,28 +93,29 @@ const Scene = () => {
             maxDistance={maxDistance + 2}
           />
 
-          {CarModelComponent ? (
-            <Suspense fallback={<LoadingSpinner />}>
-              <CarModelComponent color={color} />
-              {selectedCar.sound ? (
-                <PositionalAudio
-                  ref={audioRef}
-                  url={selectedCar.sound}
-                  position={
-                    selectedCar.manufacturer === "Dodge"
-                      ? [0, -1, -2]
-                      : [0, -1, -9]
-                  }
-                  loop={false}
-                  distance={0.7}
-                />
-              ) : (
-                ""
+          {/* isModelReady fixes the unusually high volume level on the first time the engine audio is played*/ }
+          {isModelReady && (
+            <>
+              {CarModelComponent && (
+                <Suspense fallback={<LoadingSpinner />}>
+                  <CarModelComponent color={color} />
+                  {selectedCar.sound && (
+                    <PositionalAudio
+                      ref={audioRef}
+                      url={selectedCar.sound}
+                      position={
+                        selectedCar.manufacturer === "Dodge"
+                          ? [0, -1, -2]
+                          : [0, -1, -9]
+                      }
+                      loop={false}
+                      distance={0.7}
+                    />
+                  )}
+                  <BakeShadows />
+                </Suspense>
               )}
-              <BakeShadows />
-            </Suspense>
-          ) : (
-            ""
+            </>
           )}
 
           {/* prevents floor plane from flashing between the landing page and canvas transition */}
