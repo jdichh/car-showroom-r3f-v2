@@ -5,7 +5,7 @@ const LoadingSpinner = () => {
   return (
     <Html
       center
-      className="w-screen h-screen flex  justify-center items-center"
+      className="flex justify-center items-center w-screen h-screen"
     >
       <div id="loading-container">
         <div id="loading-spinner">

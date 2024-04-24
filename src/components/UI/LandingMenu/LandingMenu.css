@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
 .landing-page {
-  @apply w-screen h-screen flex flex-col items-center justify-between px-2 md:px-16 bg-black;
+  @apply w-screen h-screen flex flex-row items-center justify-between px-2 md:px-16 bg-black;
   background: url("/images/bg.webp");
   background-repeat: no-repeat;
   background-size: cover;

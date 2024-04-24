@@ -2,36 +2,27 @@ import {
   BakeShadows,
   Html,
   OrbitControls,
+  PerspectiveCamera,
   PositionalAudio,
 } from "@react-three/drei";
 import { Suspense, useEffect, useRef } from "react";
+import { carModelComponents } from "../../lib/carModelComponents";
 import { CarManufacturer } from "../../lib/types/types";
-import {
-  AMGGTR,
-  F12,
-  GT350R,
-  GTR,
-  Huracan,
-  LFA,
-  Porsche911,
-  Viper,
-} from "../../lib/models/ModelImports";
 import { useCarColorStore } from "../../lib/zustandstores/carColorStore";
 import { useFloorStateStore } from "../../lib/zustandstores/floorStore";
 import { useLoadingStateStore } from "../../lib/zustandstores/loadingStore";
 import { useSelectedCarStore } from "../../lib/zustandstores/selectedCarStore";
 import { useUIStore } from "../../lib/zustandstores/uiStore";
 import { maxDistance } from "../Experience/Experience";
-import CarSwitchTransition from "../UI/CarSwitchTransition/CarSwitchTransition";
+import Lighting from "../Lighting/Lighting";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
-import SceneLanding from "../UI/SceneLanding/SceneLanding";
-import ShowcaseUI from "../UI/Showcase/Showcase";
+import SceneLanding from "../UI/Scene/SceneLanding/SceneLanding";
+import CarSwitchTransition from "../UI/CarSwitchTransition/CarSwitchTransition";
+import Showcase from "../UI/Scene/Showcase/Showcase";
 import Floor from "./Floor/Floor";
-import "./Scene.css";
-
 
 const Scene = () => {
-  const { isInShowcaseMenu } = useUIStore();
+  const { isInShowcaseMenu, isUIVisible } = useUIStore();
   const { color, setColor } = useCarColorStore();
   const { isLoading, setIsLoading } = useLoadingStateStore();
   const { isFloorVisible, setIsFloorVisible } = useFloorStateStore();
@@ -70,21 +61,6 @@ const Scene = () => {
     }, 3000);
   }, [selectedCar]);
 
-  const carModelComponents: {
-    [key in CarManufacturer]: React.LazyExoticComponent<
-      (props: any) => JSX.Element
-    >;
-  } = {
-    Lamborghini: Huracan,
-    Ferrari: F12,
-    Porsche: Porsche911,
-    Ford: GT350R,
-    Dodge: Viper,
-    Lexus: LFA,
-    Nissan: GTR,
-    "Mercedes-AMG": AMGGTR,
-  };
-
   const CarModelComponent =
     carModelComponents[selectedCar.manufacturer as CarManufacturer];
 
@@ -94,6 +70,12 @@ const Scene = () => {
         <CarSwitchTransition selectedCar={selectedCar} />
       ) : (
         <>
+          <PerspectiveCamera
+            makeDefault
+            position={[0, 2, maxDistance]}
+            fov={25}
+          />
+          <Lighting />
           <OrbitControls
             makeDefault
             enablePan={false}
@@ -136,7 +118,7 @@ const Scene = () => {
           {isFloorVisible === true ? <Floor /> : ""}
 
           <Html fullscreen>
-            {isInShowcaseMenu === true ? <ShowcaseUI /> : <SceneLanding />}
+            {isInShowcaseMenu === true ? <Showcase /> : <SceneLanding />}
           </Html>
         </>
       )}

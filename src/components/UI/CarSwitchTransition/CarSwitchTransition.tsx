@@ -13,11 +13,7 @@ const CarSwitchTransition = ({ selectedCar }: LoaderProps) => {
   }, []);
 
   return (
-    <Html
-      fullscreen
-      style={{ backgroundColor: "#black" }}
-      className="car-switch-transition"
-    >
+    <Html fullscreen className="car-switch-transition">
       <img
         src={selectedCar.logo}
         width={250}

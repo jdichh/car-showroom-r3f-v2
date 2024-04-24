@@ -2,12 +2,10 @@ import { useUIStore } from "../../../lib/zustandstores/uiStore";
 import "./LandingMenu.css";
 
 const Landing = () => {
-  const { isInLandingMenu, setIsInLandingMenu } = useUIStore();
+  const { setIsInLandingMenu } = useUIStore();
 
   return (
     <main className="landing-page bg-img">
-      <div />
-
       <div className="menu-container fade-in">
         <hgroup>
           <h2 className="welcome-text">Welcome to the</h2>
@@ -18,8 +16,6 @@ const Landing = () => {
           Enter
         </button>
       </div>
-
-      <div />
     </main>
   );
 };

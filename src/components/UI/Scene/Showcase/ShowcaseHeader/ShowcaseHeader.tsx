@@ -1,20 +1,20 @@
-import { cars } from "../../../lib/cars";
-import { useEngineSoundStore } from "../../../lib/zustandstores/engineSoundStore";
-import { useSelectedCarStore } from "../../../lib/zustandstores/selectedCarStore";
-import { useUIStore } from "../../../lib/zustandstores/uiStore";
-import "./CarSelection.css";
+import { cars } from "../../../../../lib/cars";
+import { useEngineSoundStore } from "../../../../../lib/zustandstores/engineSoundStore";
+import { useSelectedCarStore } from "../../../../../lib/zustandstores/selectedCarStore";
+import { useUIStore } from "../../../../../lib/zustandstores/uiStore";
+import "./ShowcaseHeader.css";
 
-const CarSelection = () => {
+const ShowcaseHeader = () => {
   const { selectedCar, setSelectedCar } = useSelectedCarStore();
   const { isUIVisible, toggleUI, toggleShowcaseMenu } = useUIStore();
   const { startEngine } = useEngineSoundStore();
-  
+
   const handleStartEngine = () => {
-    startEngine()
-  }
+    startEngine();
+  };
 
   return (
-    <header id="top">
+    <header className="showcase-header">
       <div className="flex gap-2">
         <button
           onClick={toggleShowcaseMenu}
@@ -63,4 +63,4 @@ const CarSelection = () => {
   );
 };
 
-export default CarSelection;
+export default ShowcaseHeader;

@@ -1,0 +1,4 @@
+.scene-landing-header {
+  @apply flex justify-between items-center backdrop-blur bg-black/40 py-3 px-6;
+  animation: fade-down 1s;
+}

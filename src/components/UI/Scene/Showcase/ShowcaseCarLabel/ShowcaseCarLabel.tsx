@@ -1,8 +1,8 @@
 // this component contains the name, model & year of the car
 
-import { useCarColorStore } from "../../../lib/zustandstores/carColorStore";
-import { useSelectedCarStore } from "../../../lib/zustandstores/selectedCarStore";
-import "./CarLabel.css";
+import { useCarColorStore } from "../../../../../lib/zustandstores/carColorStore";
+import { useSelectedCarStore } from "../../../../../lib/zustandstores/selectedCarStore";
+import "./ShowcaseCarLabel.css";
 
 const CarLabel = () => {
   const { selectedCar, setSelectedCar } = useSelectedCarStore();

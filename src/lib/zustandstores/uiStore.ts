@@ -17,7 +17,7 @@ export const useUIStore = create<UITypes>()((set) => ({
   isInShowcaseMenu: false,
   setIsInShowcaseMenu: (isInShowcaseMenu: boolean) => set({ isInShowcaseMenu }),
   isInLandingMenu: true,
-  setIsInLandingMenu: (isInLandingMenu: boolean) => set({isInLandingMenu }),
+  setIsInLandingMenu: (isInLandingMenu: boolean) => set({ isInLandingMenu }),
   toggleShowcaseMenu: () => set((state) => ({ isInShowcaseMenu: !state.isInShowcaseMenu})),
   toggleUI: () => set((state) => ({ isUIVisible: !state.isUIVisible })),
 }));
