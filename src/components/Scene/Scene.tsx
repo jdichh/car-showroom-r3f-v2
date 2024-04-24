@@ -32,7 +32,7 @@ const Scene = () => {
 
   const startEngine = () => {
     if (audioRef.current) {
-      audioRef.current.setVolume(3);
+      audioRef.current.setVolume(30);
       audioRef.current.play();
     }
   };
