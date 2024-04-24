@@ -15,15 +15,14 @@ import { useSelectedCarStore } from "../../lib/zustandstores/selectedCarStore";
 import { useUIStore } from "../../lib/zustandstores/uiStore";
 import { maxDistance } from "../Experience/Experience";
 import Lighting from "../Lighting/Lighting";
+import CarSwitchTransition from "../UI/CarSwitchTransition/CarSwitchTransition";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import SceneLanding from "../UI/Scene/SceneLanding/SceneLanding";
-import CarSwitchTransition from "../UI/CarSwitchTransition/CarSwitchTransition";
 import Showcase from "../UI/Scene/Showcase/Showcase";
 import Floor from "./Floor/Floor";
-import "./Scene.css"
 
 const Scene = () => {
-  const { isInShowcaseMenu, isUIVisible } = useUIStore();
+  const { isInShowcaseMenu } = useUIStore();
   const { color, setColor } = useCarColorStore();
   const { isLoading, setIsLoading } = useLoadingStateStore();
   const { isFloorVisible, setIsFloorVisible } = useFloorStateStore();
@@ -33,7 +32,7 @@ const Scene = () => {
 
   const startEngine = () => {
     if (audioRef.current) {
-      audioRef.current.setVolume(40);
+      audioRef.current.setVolume(3);
       audioRef.current.play();
     }
   };
@@ -119,7 +118,11 @@ const Scene = () => {
           {isFloorVisible === true ? <Floor /> : ""}
 
           <Html fullscreen>
-            {isInShowcaseMenu === true ? <Showcase /> : <SceneLanding />}
+            {isInShowcaseMenu === true ? (
+              <Showcase startEngine={startEngine} />
+            ) : (
+              <SceneLanding />
+            )}
           </Html>
         </>
       )}

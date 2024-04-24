@@ -1,5 +1,6 @@
-import { useEngineSoundStore } from "../../../../../lib/zustandstores/engineSoundStore";
+import { useContext } from "react";
 import { useUIStore } from "../../../../../lib/zustandstores/uiStore";
+import { EngineContext } from "../Showcase";
 import "./ShowcaseHeader.css";
 
 const ShowcaseHeader = () => {
@@ -12,7 +13,7 @@ const ShowcaseHeader = () => {
     setIsInCarSelection,
     setIsInPaintSelection,
   } = useUIStore();
-  const { startEngine } = useEngineSoundStore();
+  const { startEngine } = useContext(EngineContext);
 
   const uiHandler = () => {
     toggleShowcaseMenu();
@@ -22,10 +23,6 @@ const ShowcaseHeader = () => {
     if (isInPaintSelection) {
       setIsInPaintSelection(false);
     }
-  };
-
-  const handleStartEngine = () => {
-    startEngine();
   };
 
   return (
@@ -41,7 +38,7 @@ const ShowcaseHeader = () => {
       </div>
       <div className="flex gap-2">
         <button
-          onClick={handleStartEngine}
+          onClick={startEngine}
           className="ui-btn"
           aria-label="Start engine."
         >
