@@ -19,7 +19,7 @@ const Showcase = ({ startEngine }: ShowcaseProps) => {
   const { isUIVisible, isInShowcaseMenu } = useUIStore();
 
   return (
-    <div className="flex flex-col h-full">
+    <div className="showcase-container">
       <EngineContext.Provider value={{ startEngine }}>
         <ShowcaseHeader />
       </EngineContext.Provider>

@@ -2,6 +2,10 @@
   @apply max-w-[1920px] mx-auto h-full flex flex-col justify-between;
 }
 
+.showcase-container {
+  @apply flex flex-col h-full max-w-[1920px] mx-auto;
+}
+
 .ui-invisible-animation {
   animation: fade-out 0.75s;
 }
