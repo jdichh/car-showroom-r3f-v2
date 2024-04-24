@@ -15,3 +15,8 @@ export type LoaderProps = {
     logo: string;
   };
 };
+
+export type CarColorProps = {
+  name: string;
+  hexCode: string;
+};
