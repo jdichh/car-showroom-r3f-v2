@@ -1,18 +1,47 @@
-import { useContext } from "react";
 import { cars } from "../../../lib/cars";
-import { UIContext, useCarSelection } from "../../../lib/contexts/contexts";
+import { useEngineSoundStore } from "../../../lib/zustandstores/engineSoundStore";
+import { useSelectedCarStore } from "../../../lib/zustandstores/selectedCarStore";
+import { useUIStore } from "../../../lib/zustandstores/uiStore";
 import "./CarSelection.css";
 
 const CarSelection = () => {
-  const { selectedCar, setSelectedCar } = useCarSelection();
-  const { isUIVisible, setIsUIVisible, toggleUI, playAudio } =
-    useContext(UIContext);
+  const { selectedCar, setSelectedCar } = useSelectedCarStore();
+  const { isUIVisible, toggleUI, toggleShowcaseMenu } = useUIStore();
+  const { startEngine } = useEngineSoundStore();
+  
+  const handleStartEngine = () => {
+    startEngine()
+  }
+
   return (
-    <section id="top">
-      <div className="car-selection-container">
+    <header id="top">
+      <div className="flex gap-2">
+        <button
+          onClick={toggleShowcaseMenu}
+          className="ui-btn"
+          aria-label="Toggle the user interface."
+        >
+          Back
+        </button>
+        <button
+          onClick={handleStartEngine}
+          className="ui-btn"
+          aria-label="Start engine."
+        >
+          Start Up
+        </button>
+        <button
+          onClick={toggleUI}
+          className="ui-btn"
+          aria-label="Toggle the user interface."
+        >
+          {isUIVisible === false ? "Show UI" : "Hide UI"}
+        </button>
+      </div>
+      <ol className="car-selection-container">
         {cars.map((car, index) =>
           car.manufacturer !== selectedCar.manufacturer ? (
-            <button
+            <li
               key={index}
               className="car-selection-btn"
               onClick={() => setSelectedCar(car)}
@@ -24,21 +53,13 @@ const CarSelection = () => {
                 height={35}
                 width={35}
               />
-            </button>
+            </li>
           ) : (
             ""
           )
         )}
-      </div>
-      <div className="flex gap-2">
-        <button className="ui-btn" onClick={playAudio} aria-label="Start engine.">
-          Start Up
-        </button>
-        <button onClick={toggleUI} className="ui-btn" aria-label="Toggle the user interface.">
-          {isUIVisible === false ? "Show UI" : "Hide UI"}
-        </button>
-      </div>
-    </section>
+      </ol>
+    </header>
   );
 };
 

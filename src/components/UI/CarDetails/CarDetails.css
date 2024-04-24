@@ -20,30 +20,10 @@
 }
 
 .slider {
-    @apply pb-10 overflow-hidden whitespace-nowrap text-white/90;
+  @apply pb-10 overflow-hidden whitespace-nowrap text-white/90;
 }
 
 .sliding-text {
-    @apply text-lg inline-block;
-    animation: slide 130s linear infinite;
-  }
-
-@keyframes slide {
-  0% {
-    transform: translateX(20%);
-  }
-  100% {
-    transform: translateX(-100%); 
-  }
-}
-
-@keyframes fade-up {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+  @apply text-lg inline-block;
+  animation: slide 130s linear infinite;
 }

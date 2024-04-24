@@ -4,15 +4,8 @@ import {
   OrbitControls,
   PositionalAudio,
 } from "@react-three/drei";
-import { Suspense, useEffect, useRef, useState } from "react";
-import { cars } from "../../lib/cars";
-import {
-  CarColorProps,
-  CarManufacturer,
-  SelectedCarProps,
-} from "../../lib/types/types";
-import "./Scene.css";
-
+import { Suspense, useEffect, useRef } from "react";
+import { CarManufacturer } from "../../lib/types/types";
 import {
   AMGGTR,
   F12,
@@ -23,53 +16,34 @@ import {
   Porsche911,
   Viper,
 } from "../../lib/models/ModelImports";
-
-import CarSwitchTransition from "../UI/CarSwitchTransition/CarSwitchTransition";
+import { useCarColorStore } from "../../lib/zustandstores/carColorStore";
+import { useFloorStateStore } from "../../lib/zustandstores/floorStore";
+import { useLoadingStateStore } from "../../lib/zustandstores/loadingStore";
+import { useSelectedCarStore } from "../../lib/zustandstores/selectedCarStore";
+import { useUIStore } from "../../lib/zustandstores/uiStore";
 import { maxDistance } from "../Experience/Experience";
+import CarSwitchTransition from "../UI/CarSwitchTransition/CarSwitchTransition";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
-import Floor from "./Floor/Floor";
+import SceneLanding from "../UI/SceneLanding/SceneLanding";
 import ShowcaseUI from "../UI/Showcase/Showcase";
+import Floor from "./Floor/Floor";
+import "./Scene.css";
+
 
 const Scene = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isFloorVisible, setIsFloorVisible] = useState<boolean>(false);
+  const { isInShowcaseMenu } = useUIStore();
+  const { color, setColor } = useCarColorStore();
+  const { isLoading, setIsLoading } = useLoadingStateStore();
+  const { isFloorVisible, setIsFloorVisible } = useFloorStateStore();
+  const { selectedCar, setSelectedCar } = useSelectedCarStore();
+
   const audioRef = useRef<any>(null);
 
-  const playAudio = () => {
+  const startEngine = () => {
     if (audioRef.current) {
       audioRef.current.setVolume(40);
       audioRef.current.play();
     }
-  };
-
-  const [color, setColor] = useState<CarColorProps>({
-    name: "Alpine White",
-    hexCode: "#C4C4C4",
-  });
-
-  const car1 = cars[0];
-  const [selectedCar, setSelectedCar] = useState<SelectedCarProps>({
-    logo: car1.logo,
-    country: car1.country,
-    manufacturer: car1.manufacturer,
-    model: car1.model,
-    year: car1.year,
-    sound: car1.sound,
-    colors: car1.colors,
-    displacement: car1.displacement,
-    maxPower: car1.maxPower,
-    torque: car1.torque,
-    drivetrain: car1.drivetrain,
-    length: car1.length,
-    width: car1.width,
-    height: car1.height,
-    weight: car1.weight,
-    description: car1.description,
-  });
-
-  const [isUIVisible, setIsUIVisible] = useState<boolean>(true);
-  const toggleUI = () => {
-    setIsUIVisible(!isUIVisible);
   };
 
   const orbitControlsRef = useRef<any>(null);
@@ -162,15 +136,7 @@ const Scene = () => {
           {isFloorVisible === true ? <Floor /> : ""}
 
           <Html fullscreen>
-            <ShowcaseUI
-              selectedCar={selectedCar}
-              setSelectedCar={setSelectedCar}
-              isUIVisible={isUIVisible}
-              playAudio={playAudio}
-              toggleUI={toggleUI}
-              color={color}
-              setColor={setColor}
-            />
+            {isInShowcaseMenu === true ? <ShowcaseUI /> : <SceneLanding />}
           </Html>
         </>
       )}

@@ -81,12 +81,3 @@
   transform: rotate(330deg);
   animation-delay: 0s;
 }
-
-@keyframes spin {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}

@@ -1,10 +1,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 
 .landing-page {
-  @apply w-screen h-screen flex items-center justify-end md:justify-end md:p-16 bg-black;
+  @apply w-screen h-screen flex flex-col items-center justify-between px-2 md:px-16 bg-black;
   background: url("/images/bg.webp");
   background-repeat: no-repeat;
   background-size: cover;
+}
+.menu-container {
+  @apply flex flex-col justify-center items-center md:items-end p-2 text-center md:text-right gap-8 max-w-[2560px] mx-auto w-full;
+}
+
+
+.welcome-text {
+  @apply text-white/50 text-center sm:text-left;
+}
+
+
+.main-title {
+  @apply text-white/80 text-4xl sm:text-6xl lg:text-7xl uppercase;
+  font-family: "Fjalla One", "sans-setif";
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sub-title {
+  @apply text-white/50 text-center md:text-right mt-8 md:mt-0;
+}
+
+.landing-btn {
+  @apply text-white/40 hover:text-white/80 hover:scale-105 active:scale-95 hover:bg-white/20 transition-all outline outline-1 outline-white/30 hover:outline-white/80 rounded-sm py-3 px-6;
 }
 
 .fade-in {
@@ -13,37 +37,4 @@
 
 .fade-out {
   animation: fade-out 0.5s;
-}
-
-.menu-container {
-  @apply flex flex-col justify-center items-center md:items-end p-2 text-center md:text-right gap-8 max-w-[2560px] mx-auto w-full;
-}
-
-.title {
-  @apply text-white/80 text-4xl md:text-5xl lg:text-7xl uppercase;
-  font-family: "Fjalla One", "sans-setif";
-  font-weight: 400;
-  font-style: normal;
-}
-
-.landing-btn {
-  @apply text-white/40 hover:text-white/80 hover:scale-105 active:scale-95 hover:bg-white/20 transition-all outline outline-1 outline-white/30 hover:outline-white/80 rounded-sm py-3 px-6;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }

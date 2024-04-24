@@ -33,32 +33,3 @@
 .paint-samples-button {
   @apply p-4 cursor-pointer rounded-sm hover:scale-110 active:scale-95 transition-all;
 }
-
-@keyframes fade-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}

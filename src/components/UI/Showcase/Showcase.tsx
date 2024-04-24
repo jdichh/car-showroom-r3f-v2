@@ -1,45 +1,25 @@
-import {
-    CarColorContext,
-    CarSelectionContext,
-    UIContext,
-} from "../../../lib/contexts/contexts";
-import { ShowcaseUIProps } from "../../../lib/types/types";
+import { useSelectedCarStore } from "../../../lib/zustandstores/selectedCarStore";
+import { useUIStore } from "../../../lib/zustandstores/uiStore";
 import CarDetails from "../CarDetails/CarDetails";
 import CarLabel from "../CarLabel/CarLabel";
 import CarSelection from "../CarSelection/CarSelection";
 
-const ShowcaseUI = ({
-  selectedCar,
-  setSelectedCar,
-  isUIVisible,
-  playAudio,
-  toggleUI,
-  color,
-  setColor,
-}: ShowcaseUIProps) => {
+const ShowcaseUI = () => {
+  const { selectedCar } = useSelectedCarStore();
+  const { isUIVisible, isInShowcaseMenu } = useUIStore();
+
   return (
     <main
       className={`${
-        isUIVisible === false
+        isUIVisible === false || isInShowcaseMenu === false
           ? "invisible ui-invisible-animation"
           : "visible main-ui-container ui-visible-animation"
       }`}
     >
-      <CarSelectionContext.Provider value={{ selectedCar, setSelectedCar }}>
-        {/* top part */}
-        <UIContext.Provider
-          value={{ isUIVisible, setIsUIVisible: () => {}, toggleUI, playAudio }}
-        >
-          <CarSelection />
-        </UIContext.Provider>
+      <CarSelection />
 
-        {/* middle part */}
-        <CarColorContext.Provider value={{ color, setColor }}>
-          <CarLabel />
-        </CarColorContext.Provider>
-      </CarSelectionContext.Provider>
+      <CarLabel />
 
-      {/* bottom part */}
       <CarDetails {...selectedCar} />
     </main>
   );
