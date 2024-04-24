@@ -1,12 +1,10 @@
 // this component contains the name, model & year of the car
 
-import { useCarColorStore } from "../../../../../lib/zustandstores/carColorStore";
 import { useSelectedCarStore } from "../../../../../lib/zustandstores/selectedCarStore";
 import "./ShowcaseCarLabel.css";
 
 const CarLabel = () => {
-  const { selectedCar, setSelectedCar } = useSelectedCarStore();
-  const { color, setColor } = useCarColorStore();
+  const { selectedCar } = useSelectedCarStore();
 
   return (
     <section id="middle">
@@ -16,20 +14,6 @@ const CarLabel = () => {
           height={100}
           width={selectedCar.manufacturer === "Dodge" ? 200 : 100}
         />
-        <div className="paint-sample-container">
-          <div className="paint-samples">
-            {selectedCar.colors.map((color, index) => (
-              <button
-                key={index}
-                style={{ backgroundColor: color.hexCode }}
-                className="paint-samples-button"
-                onClick={() => setColor(color)}
-                aria-label={`Change the current color to ${color.name}.`}
-              />
-            ))}
-          </div>
-          <p className="mt-2">{color.name}</p>
-        </div>
       </div>
       <hgroup className="current-car-container font-fjalla">
         <div className="current-car">

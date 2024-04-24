@@ -21,15 +21,3 @@
 .logo-and-paint-container {
   @apply flex justify-between items-center;
 }
-
-.paint-sample-container {
-  @apply flex flex-col items-end;
-}
-
-.paint-samples {
-  @apply flex gap-[0.3rem];
-}
-
-.paint-samples-button {
-  @apply p-4 cursor-pointer rounded-sm hover:scale-110 active:scale-95 transition-all;
-}

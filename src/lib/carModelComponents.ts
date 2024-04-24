@@ -7,7 +7,7 @@ import {
   LFA,
   Porsche911,
   Viper,
-} from "../lib/models/ModelImports";
+} from "./models/ModelImports";
 import { CarManufacturer } from "./types/types";
 
 export const carModelComponents: {

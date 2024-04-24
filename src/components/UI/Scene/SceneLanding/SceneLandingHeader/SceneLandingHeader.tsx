@@ -1,17 +1,11 @@
+import { useCarColorStore } from "../../../../../lib/zustandstores/carColorStore";
 import { useSelectedCarStore } from "../../../../../lib/zustandstores/selectedCarStore";
 import { useUIStore } from "../../../../../lib/zustandstores/uiStore";
 import "./SceneLandingHeader.css";
 
 const SceneLandingHeader = () => {
-  const { isUIVisible, setIsInShowcaseMenu, toggleUI } = useUIStore();
   const { selectedCar } = useSelectedCarStore();
-
-  const resetUIVisibility = () => {
-    setIsInShowcaseMenu(true);
-    if (isUIVisible === false) {
-      toggleUI();
-    }
-  };
+  const { color } = useCarColorStore();
 
   return (
     <header className="scene-landing-header">
@@ -24,12 +18,15 @@ const SceneLandingHeader = () => {
         />
         <p>
           {selectedCar.manufacturer}{" "}
-          <span className="text-white/50">{selectedCar.model}</span>
+          <span className="text-white/50">
+            {selectedCar.model} in {color.name}
+          </span>
         </p>
       </div>
-      <button className="ui-btn" onClick={() => resetUIVisibility()}>
-        Showcase
-      </button>
+      <div>
+        <p className="text-white/30 text-right">Work in Progress.</p>
+        <p className="text-white/30 text-right">Developed by Jason Dichoso.</p>
+      </div>
     </header>
   );
 };

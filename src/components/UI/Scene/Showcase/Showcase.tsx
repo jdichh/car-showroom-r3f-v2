@@ -2,7 +2,6 @@ import { useUIStore } from "../../../../lib/zustandstores/uiStore";
 import ShowcaseCarDetails from "./ShowcaseCarDetails/ShowcaseCarDetails";
 import ShowcaseCarLabel from "./ShowcaseCarLabel/ShowcaseCarLabel";
 import ShowcaseHeader from "./ShowcaseHeader/ShowcaseHeader";
-import "../../../Scene/Scene.css";
 
 const Showcase = () => {
   const { isUIVisible, isInShowcaseMenu } = useUIStore();

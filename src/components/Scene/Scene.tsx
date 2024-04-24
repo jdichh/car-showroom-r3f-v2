@@ -20,6 +20,7 @@ import SceneLanding from "../UI/Scene/SceneLanding/SceneLanding";
 import CarSwitchTransition from "../UI/CarSwitchTransition/CarSwitchTransition";
 import Showcase from "../UI/Scene/Showcase/Showcase";
 import Floor from "./Floor/Floor";
+import "./Scene.css"
 
 const Scene = () => {
   const { isInShowcaseMenu, isUIVisible } = useUIStore();
