@@ -10,7 +10,7 @@ const Landing = () => {
         <hgroup>
           <h2 className="welcome-text">Welcome to the</h2>
           <h1 className="main-title">Modern Classics Garage</h1>
-          <h2 className="sub-title">Explore the classic supercars of today.</h2>
+          <h2 className="sub-title">Explore the classic supercars of the 21st century.</h2>
         </hgroup>
         <button className="ui-btn" onClick={() => setIsInLandingMenu(false)}>
           Enter
