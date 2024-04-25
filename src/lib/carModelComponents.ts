@@ -1,5 +1,5 @@
 import {
-  AMGGTR,
+  SLSAMGBLK,
   F12,
   GT350R,
   GTR,
@@ -7,6 +7,7 @@ import {
   LFA,
   Porsche911,
   Viper,
+  C7ZR1
 } from "./models/ModelImports";
 import { CarManufacturer } from "./types/types";
 
@@ -22,5 +23,6 @@ export const carModelComponents: {
   Dodge: Viper,
   Lexus: LFA,
   Nissan: GTR,
-  "Mercedes-AMG": AMGGTR,
+  "Mercedes-Benz": SLSAMGBLK,
+  Chevrolet: C7ZR1
 };

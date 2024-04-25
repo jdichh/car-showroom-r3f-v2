@@ -6,8 +6,9 @@ export type CarManufacturer =
   | "Dodge"
   | "Lexus"
   | "Nissan"
-  | "Mercedes-AMG";
-  
+  | "Mercedes-Benz"
+  | "Chevrolet";
+
 export type LoaderProps = {
   selectedCar: {
     manufacturer: string;

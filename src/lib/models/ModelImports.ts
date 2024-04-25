@@ -20,6 +20,11 @@ export const Porsche911 = lazy(() =>
     default: Porsche911,
   }))
 );
+export const C7ZR1 = lazy(() =>
+  import("../../components/Scene/Car/c7zr1/Model").then(({ C7ZR1 }) => ({
+    default: C7ZR1,
+  }))
+);
 export const Viper = lazy(() =>
   import("../../components/Scene/Car/viper/Model").then(({ Viper }) => ({
     default: Viper,
@@ -35,9 +40,9 @@ export const GT350R = lazy(() =>
     default: GT350R,
   }))
 );
-export const AMGGTR = lazy(() =>
-  import("../../components/Scene/Car/amggtr/Model").then(({ AMGGTR }) => ({
-    default: AMGGTR,
+export const SLSAMGBLK = lazy(() =>
+  import("../../components/Scene/Car/slsamgblk/Model").then(({ SLSAMGBLK }) => ({
+    default: SLSAMGBLK,
   }))
 );
 export const SpotlightProp = lazy(() =>
