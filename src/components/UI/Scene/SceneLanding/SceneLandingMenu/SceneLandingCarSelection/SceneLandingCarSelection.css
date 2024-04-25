@@ -4,9 +4,9 @@
   }
 
 .car-selection-list {
-    @apply flex flex-row gap-3;
+    @apply flex flex-row gap-2;
   }
   
   .car-selection-btn {
-    @apply flex items-center cursor-pointer hover:scale-110 active:scale-95 hover:bg-white/20 transition-all outline outline-1 outline-white/30 rounded-sm py-2 px-5;
+    @apply flex items-center cursor-pointer hover:scale-110 active:scale-95 hover:bg-white/20 transition-all outline outline-1 outline-white/30 rounded-sm py-2 px-4;
   }
