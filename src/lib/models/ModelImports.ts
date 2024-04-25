@@ -45,6 +45,11 @@ export const SLSAMGBLK = lazy(() =>
     default: SLSAMGBLK,
   }))
 );
+export const ZondaCinque = lazy(() =>
+  import("../../components/Scene/Car/zonda_cinque/Model").then(({ ZondaCinque }) => ({
+    default: ZondaCinque,
+  }))
+);
 export const SpotlightProp = lazy(() =>
   import("../../components/Scene/Floor/Spotlight").then(({ SpotlightProp }) => ({
     default: SpotlightProp,

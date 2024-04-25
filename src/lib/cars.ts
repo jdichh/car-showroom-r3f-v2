@@ -7,6 +7,7 @@ import ferrariLogo from "/logos/ferrari.webp";
 import porscheLogo from "/logos/porsche.webp";
 import dodgeLogo from "/logos/dodge.webp"
 import chevyLogo from "/logos/chevy.webp"
+import paganiLogo from "/logos/pagani.webp"
 
 import italy from "/countryflags/it.svg"
 import japan from "/countryflags/jp.svg"
@@ -22,6 +23,7 @@ import porsche991Sound from "/audio/carsounds/991.mp3";
 import gt350rSound from "/audio/carsounds/gt350r.mp3"
 import slsamgblkSound from "/audio/carsounds/slsamgblk.mp3"
 import c7zr1Sound from "/audio/carsounds/c7zr1.mp3"
+import zondaCinqueSound from "/audio/carsounds/zonda.mp3"
 
 export const cars = [
   {
@@ -692,5 +694,63 @@ export const cars = [
      dampers, springs and stabilisers for both the front and rear have been 
      newly developed for this car. As a result, the car lapped the Nürburgring 
      at 7 minutes 20 seconds, a full 5 seconds faster than the base 911 GT3.`,
+  },
+  {
+    logo: paganiLogo,
+    country: italy,
+    manufacturer: "Pagani",
+    model: "Zonda Cinque",
+    year: "2009",
+    sound: zondaCinqueSound,
+    colors: [
+      {
+        name: "Arancio Saint Tropez",
+        hexCode: "#E9572B",
+      },
+      {
+        name: "Azure",
+        hexCode: "#267BE4",
+      },
+      {
+        name: "Bahrain Yellow",
+        hexCode: "#EAA642",
+      },
+      {
+        name: "Nero",
+        hexCode: "#040404",
+      },
+      {
+        name: "Rosso Dubai",
+        hexCode: "#BB1F20",
+      },
+      {
+        name: "Snow White Pearl",
+        hexCode: "#EFEFEF",
+      },
+    ],
+    displacement: "7,291 cc",
+    maxPower: "678 BHP",
+    torque: "575 lb-ft",
+    drivetrain: "RWD",
+    length: "3,495 mm",
+    width: "2,055 mm",
+    height: "1,151 mm",
+    weight: "1,210 kg",
+    description: `After it built and sold the five Zonda Cinque Coupe, Pagani built another five particular roadster 
+    versions for that and sold them before the carmaker even made the first one. The European regulation prohibited 
+    Pagani from registering a Zonda R for public roads, so their owners had to trailer-them onto a race track. Usually, 
+    the track-ready vehicles were transported that way, regardless if they were registered or not. The idea came when a 
+    Hong Kong dealer persuaded the carmaker to build five units of the Zonda R, but with some comfort and luxury items.
+    At the front, the Zonda Cinque Roadster featured an additional lip spoiler under the apron, which increased the 
+    downforce. On the front fenders, both cars featured air vents to extract the air trapped inside the wheel well, 
+    but on the Cinque was with four transverse carbon-fiber slats. A unique detail for the car was the air intake scoop, 
+    which stood suspended above the cabin like a hook. Inside, the carmaker installed a race-inspired interior with 
+    carbon-fiber seat-frames, trims, and door panels. Since it was still a vehicle designed for road use, Pagani 
+    installed an air-conditioning unit and a sound system on the center stack. The carmaker did not fit the unique, 
+    Alcantara-covered steering wheel with an airbag, but it installed the engine settings button on it. Pagani offered 
+    the five units of the Cinque coupe with a re-tuned 7.3-liter V-12 AMG engine. It was paired to a unique six-speed 
+    sequential gearbox, which the driver could control via the paddle-shifters behind the steering wheel or by the 
+    gear-stick.
+    `,
   },
 ];

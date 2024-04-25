@@ -7,7 +7,8 @@ export type CarManufacturer =
   | "Lexus"
   | "Nissan"
   | "Mercedes-Benz"
-  | "Chevrolet";
+  | "Chevrolet"
+  | "Pagani";
 
 export type LoaderProps = {
   selectedCar: {

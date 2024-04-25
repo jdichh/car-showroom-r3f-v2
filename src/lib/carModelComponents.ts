@@ -7,7 +7,8 @@ import {
   LFA,
   Porsche911,
   Viper,
-  C7ZR1
+  C7ZR1,
+  ZondaCinque
 } from "./models/ModelImports";
 import { CarManufacturer } from "./types/types";
 
@@ -24,5 +25,6 @@ export const carModelComponents: {
   Lexus: LFA,
   Nissan: GTR,
   "Mercedes-Benz": SLSAMGBLK,
-  Chevrolet: C7ZR1
+  Chevrolet: C7ZR1,
+  Pagani: ZondaCinque,
 };
