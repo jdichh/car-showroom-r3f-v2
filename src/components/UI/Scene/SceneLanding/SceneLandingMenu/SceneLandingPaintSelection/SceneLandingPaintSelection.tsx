@@ -5,6 +5,11 @@ import { useCarColorStore } from "../../../../../../lib/zustandstores/carColorSt
 import { useSelectedCarStore } from "../../../../../../lib/zustandstores/selectedCarStore";
 import { useUIStore } from "../../../../../../lib/zustandstores/uiStore";
 import "./SceneLandingPaintSelection.css";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/UI/carousel";
 
 const SceneLandingPaintSelection = () => {
   const { setColor } = useCarColorStore();
@@ -15,22 +20,28 @@ const SceneLandingPaintSelection = () => {
     <>
       {isInPaintSelection ? (
         <>
-          <div className="paint-sample-container">
-          <button onClick={togglePaintSelection} className="ui-btn">
+          <Carousel
+            className="paint-sample-container"
+            opts={{
+              align: "start",
+              dragFree: true,
+            }}
+          >
+            <button onClick={togglePaintSelection} className="ui-btn">
               <IoCaretBackOutline color={iconColor} size={iconSize} />
             </button>
-            <div className="paint-samples">
+            <CarouselContent className="paint-samples gap-2 m-2">
               {selectedCar.colors.map((color, index) => (
-                <button
+                <CarouselItem
                   key={index}
                   style={{ backgroundColor: color.hexCode }}
-                  className="paint-samples-button"
+                  className="basis-1/4 md:basis-1/6 p-5 cursor-pointer rounded-sm hover:scale-110 active:scale-95 transition-all"
                   onClick={() => setColor(color)}
                   aria-label={`Change the current color to ${color.name}.`}
                 />
               ))}
-            </div>
-          </div>
+            </CarouselContent>
+          </Carousel>
         </>
       ) : (
         <button onClick={togglePaintSelection} className="ui-btn">

@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import Experience from "./components/Experience/Experience";
 import LandingMenu from "./components/UI/LandingMenu/LandingMenu";
 import { useUIStore } from "./lib/zustandstores/uiStore";
-import { PerformanceMonitor } from "@react-three/drei";
 
 const App = () => {
   const { isInLandingMenu } = useUIStore();

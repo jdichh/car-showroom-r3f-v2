@@ -98,6 +98,7 @@ const Scene = () => {
             maxPolarAngle={Math.PI - 1.55}
             enableZoom={false}
             enableRotate={true}
+            rotateSpeed={0.6}
             ref={orbitControlsRef}
             minDistance={20}
             maxDistance={maxDistance + 2}
