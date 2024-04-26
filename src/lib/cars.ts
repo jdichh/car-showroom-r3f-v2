@@ -641,61 +641,6 @@ export const cars = [
     Japanese sports car, as can be seen in its 'Deep Evolution'.`,
   },
   {
-    logo: porscheLogo,
-    country: germany,
-    manufacturer: "Porsche",
-    model: "911 GT3 RS",
-    year: "2016",
-    sound: porsche991Sound,
-    colors: [
-      {
-        name: "Lava Orange",
-        hexCode: "#BB3C23",
-      },
-      {
-        name: "GT Silver Metallic",
-        hexCode: "#616265",
-      },
-      {
-        name: "Ultraviolet",
-        hexCode: "#3C2260",
-      },
-      {
-        name: "White",
-        hexCode: "#BDBFB6",
-      },
-    ],
-    displacement: "3,996 cc",
-    maxPower: "491 BHP",
-    torque: "340 lb-ft",
-    drivetrain: "RWD",
-    length: "4,545 mm",
-    width: "1,900 mm",
-    height: "1,290 mm",
-    weight: "1,420 kg",
-    description: `Since the Type 996, the name "GT3" had been given to Porsche 
-    911 road cars with a strong emphasis on motorsports, developed with FIA GT3 
-    race regulations in mind. For the 996 and the later 997, there exists a 
-    "GT3 RS", which further refines the GT3 and improves its performance. At 
-    the 2015 Geneva Motor Show, the successor to these, the Type 991 GT3 RS 
-    was announced. The model is said to be based on the Type 991 GT3, but on the 
-    inside it is something that looks like it has been developed from scratch 
-    using all the know-how they have gathered over the years. The body takes the 
-    widest 911 Turbo model, with track widths in the front and rear widened even 
-    further. The roof is made of magnesium, the front fenders and bonnet/engine 
-    lid are carbon fibre. The rear and rear side windows are acrylic, giving a 
-    total weight reduction of 10 kg. Aerodynamic parts have also been updated. 
-    The front spoiler is even lower and wider, and the rear wing stands much 
-    higher and is larger. Behind the front fenders are air outlets for drawing 
-    air out from under the car. As a result, the downforce is more than double 
-    that of a standard 911. The engine takes the 3.8-litre engine of the GT3 and
-     extends its stroke, making it 4.0 litres in displacement. The tuned engine 
-     now produces 24 BHP / 2.0 kgfm more, at 493 BHP / 46.9 kgfm. And the 
-     dampers, springs and stabilisers for both the front and rear have been 
-     newly developed for this car. As a result, the car lapped the Nürburgring 
-     at 7 minutes 20 seconds, a full 5 seconds faster than the base 911 GT3.`,
-  },
-  {
     logo: paganiLogo,
     country: italy,
     manufacturer: "Pagani",
@@ -753,4 +698,60 @@ export const cars = [
     gear-stick.
     `,
   },
+  {
+    logo: porscheLogo,
+    country: germany,
+    manufacturer: "Porsche",
+    model: "911 GT3 RS",
+    year: "2016",
+    sound: porsche991Sound,
+    colors: [
+      {
+        name: "Lava Orange",
+        hexCode: "#BB3C23",
+      },
+      {
+        name: "GT Silver Metallic",
+        hexCode: "#616265",
+      },
+      {
+        name: "Ultraviolet",
+        hexCode: "#3C2260",
+      },
+      {
+        name: "White",
+        hexCode: "#BDBFB6",
+      },
+    ],
+    displacement: "3,996 cc",
+    maxPower: "491 BHP",
+    torque: "340 lb-ft",
+    drivetrain: "RWD",
+    length: "4,545 mm",
+    width: "1,900 mm",
+    height: "1,290 mm",
+    weight: "1,420 kg",
+    description: `Since the Type 996, the name "GT3" had been given to Porsche 
+    911 road cars with a strong emphasis on motorsports, developed with FIA GT3 
+    race regulations in mind. For the 996 and the later 997, there exists a 
+    "GT3 RS", which further refines the GT3 and improves its performance. At 
+    the 2015 Geneva Motor Show, the successor to these, the Type 991 GT3 RS 
+    was announced. The model is said to be based on the Type 991 GT3, but on the 
+    inside it is something that looks like it has been developed from scratch 
+    using all the know-how they have gathered over the years. The body takes the 
+    widest 911 Turbo model, with track widths in the front and rear widened even 
+    further. The roof is made of magnesium, the front fenders and bonnet/engine 
+    lid are carbon fibre. The rear and rear side windows are acrylic, giving a 
+    total weight reduction of 10 kg. Aerodynamic parts have also been updated. 
+    The front spoiler is even lower and wider, and the rear wing stands much 
+    higher and is larger. Behind the front fenders are air outlets for drawing 
+    air out from under the car. As a result, the downforce is more than double 
+    that of a standard 911. The engine takes the 3.8-litre engine of the GT3 and
+     extends its stroke, making it 4.0 litres in displacement. The tuned engine 
+     now produces 24 BHP / 2.0 kgfm more, at 493 BHP / 46.9 kgfm. And the 
+     dampers, springs and stabilisers for both the front and rear have been 
+     newly developed for this car. As a result, the car lapped the Nürburgring 
+     at 7 minutes 20 seconds, a full 5 seconds faster than the base 911 GT3.`,
+  },
+
 ];

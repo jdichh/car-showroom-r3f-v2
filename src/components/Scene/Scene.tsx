@@ -5,7 +5,7 @@ import {
   PerspectiveCamera,
   PositionalAudio,
 } from "@react-three/drei";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { carModelComponents } from "../../lib/carModelComponents";
 import { CarManufacturer } from "../../lib/types/types";
 import { useCarColorStore } from "../../lib/zustandstores/carColorStore";
@@ -24,21 +24,20 @@ import Floor from "./Floor/Floor";
 const Scene = () => {
   const { isInShowcaseMenu } = useUIStore();
   const { color, setColor } = useCarColorStore();
-  const { isLoading, setIsLoading } = useLoadingStateStore();
+  const { isLoading, setIsLoading, isModelReady, setIsModelReady } = useLoadingStateStore();
   const { isFloorVisible, setIsFloorVisible } = useFloorStateStore();
   const { selectedCar, setSelectedCar } = useSelectedCarStore();
-  const [isModelReady, setIsModelReady] = useState(false);
 
   const audioRef = useRef<any>(null);
+  const orbitControlsRef = useRef<any>(null);
 
   const startEngine = () => {
     if (audioRef.current) {
-      audioRef.current.setVolume(32);
+      audioRef.current.setVolume(25);
       audioRef.current.play();
     }
   };
 
-  const orbitControlsRef = useRef<any>(null);
   const resetCameraPosition = () => {
     const orbitControls = orbitControlsRef.current;
     if (orbitControls) {

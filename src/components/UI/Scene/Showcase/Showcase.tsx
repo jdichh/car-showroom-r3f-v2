@@ -1,9 +1,9 @@
+import { createContext } from "react";
 import { useUIStore } from "../../../../lib/zustandstores/uiStore";
+import "./Showcase.css";
 import ShowcaseCarDetails from "./ShowcaseCarDetails/ShowcaseCarDetails";
 import ShowcaseCarLabel from "./ShowcaseCarLabel/ShowcaseCarLabel";
 import ShowcaseHeader from "./ShowcaseHeader/ShowcaseHeader";
-import "./Showcase.css";
-import { createContext } from "react";
 
 type ShowcaseProps = {
   startEngine: () => void;
