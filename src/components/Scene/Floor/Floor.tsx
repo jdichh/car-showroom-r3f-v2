@@ -2,17 +2,17 @@ import { Plane } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 import { TextureLoader } from "three";
-import { SpotlightProp } from "./Spotlight";
+import { SpotlightProp } from "../../../lib/models/ModelImports";
 
 const Floor = () => {
   const [aoMap, colorMap, disMap, normGlMap, roughnessMap] = useLoader(
     TextureLoader,
     [
-      "/floor/Concrete032_1K-JPG_AmbientOcclusion.jpg",
-      "/floor/Concrete032_1K-JPG_Color.jpg",
-      "/floor/Concrete032_1K-JPG_Displacement.jpg",
-      "/floor/Concrete032_1K-JPG_NormalGL.jpg",
-      "/floor/Concrete032_1K-JPG_Roughness.jpg",
+      "/floor/Concrete033_1K-JPG_AmbientOcclusion.webp",
+      "/floor/Concrete033_1K-JPG_Color.webp",
+      "/floor/Concrete033_1K-JPG_Displacement.webp",
+      "/floor/Concrete033_1K-JPG_NormalGL.webp",
+      "/floor/Concrete033_1K-JPG_Roughness.webp",
     ]
   );
 
@@ -34,8 +34,30 @@ const Floor = () => {
     normalMap: normGlMap,
     normalMapType: THREE.TangentSpaceNormalMap,
     roughnessMap: roughnessMap,
-    roughness: 0.7,
+    roughness: 1,
   });
+
+  const spotlightProps: {
+    position: [number, number, number];
+    rotation: [number, number, number];
+  }[] = [
+    {
+      position: [0, -2.3, -40],
+      rotation: [0, 0, 0],
+    },
+    {
+      position: [0, -2.3, 40],
+      rotation: [0, Math.PI, 0],
+    },
+    {
+      position: [40, -2.3, 0],
+      rotation: [0, Math.PI * 5.5, 0],
+    },
+    {
+      position: [-40, -2.3, 0],
+      rotation: [0, Math.PI * 2.5, 0],
+    },
+  ];
 
   return (
     <>
@@ -46,10 +68,13 @@ const Floor = () => {
         rotation-x={-Math.PI / 2}
         position-y={-2.83}
       />
-      <SpotlightProp position={[0,-2.3,-37]} rotation={[0,0,0]} />
-      <SpotlightProp position={[0,-2.3,37]} rotation={[0,Math.PI,0]} />
-      <SpotlightProp position={[37,-2.3,0]} rotation={[0,Math.PI * 5.5,0]} />
-      <SpotlightProp position={[-37,-2.3,0]} rotation={[0,Math.PI * 2.5,0]} />
+      {spotlightProps.map((spotlight, index) => (
+        <SpotlightProp
+          key={index}
+          position={spotlight.position}
+          rotation={spotlight.rotation}
+        />
+      ))}
     </>
   );
 };

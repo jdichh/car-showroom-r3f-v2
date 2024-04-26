@@ -3,7 +3,7 @@ import { SpotLight } from "@react-three/drei";
 const Lighting = () => {
   const white = "#DCDCDC";
   const lightIntensity = 2500;
-  const lightIntensityOffset = 1000;
+  const lightIntensityOffset = 200;
   const lightDistance = 60;
   const shadowResolution = 1024;
   const shadowBias = -0.0009;
@@ -13,11 +13,6 @@ const Lighting = () => {
   const spotlightAngle = 1;
 
   const spotlightParams = {
-    directionalLightIntensity: 0.05,
-    directionalLightX: 0,
-    directionalLightY: 30,
-    directionalLightZ: 0,
-
     topSpotlightColor: white,
     topSpotlightIntensity: lightIntensity - lightIntensityOffset,
     topSpotlightAngle: 2.5,
@@ -67,19 +62,6 @@ const Lighting = () => {
   return (
     <>
       <group name="lights">
-        <ambientLight intensity={0.05} />
-
-        <directionalLight
-          intensity={spotlightParams.directionalLightIntensity}
-          position={[
-            spotlightParams.directionalLightX,
-            spotlightParams.directionalLightY,
-            spotlightParams.directionalLightZ,
-          ]}
-          shadow-bias={shadowBias}
-          shadow-mapSize={[shadowResolution, shadowResolution]}
-        />
-
         <SpotLight
           color={spotlightParams.topSpotlightColor}
           intensity={spotlightParams.topSpotlightIntensity}

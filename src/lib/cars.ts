@@ -1,12 +1,13 @@
-import amgLogo from "/logos/amg.webp";
+import mercLogo from "/logos/merc.webp";
 import fordLogo from "/logos/ford.webp";
 import nissanLogo from "/logos/nissan.webp";
 import lexusLogo from "/logos/lexus.webp";
-import alfaLogo from "/logos/alfa.webp";
 import lamboLogo from "/logos/lambo.webp";
 import ferrariLogo from "/logos/ferrari.webp";
 import porscheLogo from "/logos/porsche.webp";
 import dodgeLogo from "/logos/dodge.webp"
+import chevyLogo from "/logos/chevy.webp"
+import paganiLogo from "/logos/pagani.webp"
 
 import italy from "/countryflags/it.svg"
 import japan from "/countryflags/jp.svg"
@@ -15,57 +16,83 @@ import germany from "/countryflags/de.svg"
 
 import viperSound from "/audio/carsounds/viper.mp3";
 import f12Sound from "/audio/carsounds/f12.mp3";
-import gtamSound from "/audio/carsounds/gtam.mp3";
 import gtrSound from "/audio/carsounds/gtr.mp3";
 import huracanSound from "/audio/carsounds/huracan.mp3";
 import lfaSound from "/audio/carsounds/lfa.mp3";
 import porsche991Sound from "/audio/carsounds/991.mp3";
 import gt350rSound from "/audio/carsounds/gt350r.mp3"
-import amggtrSound from "/audio/carsounds/amggtr.mp3"
+import slsamgblkSound from "/audio/carsounds/slsamgblk.mp3"
+import c7zr1Sound from "/audio/carsounds/c7zr1.mp3"
+import zondaCinqueSound from "/audio/carsounds/zonda.mp3"
 
 export const cars = [
   {
-    logo: alfaLogo,
-    country: italy,
-    manufacturer: "Alfa Romeo",
-    model: "Giulia GTAm",
-    year: "2020",
-    sound: gtamSound,
+    logo: chevyLogo,
+    country: usa,
+    manufacturer: "Chevrolet",
+    model: "Corvette C7 ZR1",
+    year: "2019",
+    sound: c7zr1Sound,
     colors: [
       {
-        name: "Bianco Trofeo",
-        hexCode: "#B2B7B8",
+        name: "Arctic White",
+        hexCode: "#AAAEAB",
       },
       {
-        name: "Rosso GTA",
-        hexCode: "#870000",
+        name: "Black",
+        hexCode: "#040404",
       },
       {
-        name: "Verde Montreal",
-        hexCode: "#005E4D",
+        name: "Blade Silver Metallic",
+        hexCode: "#7B7E81",
+      },
+      {
+        name: "Ceramic Matrix Grey Metallic",
+        hexCode: "#999C9F",
+      },
+      {
+        name: "Corvette Racing Yellow Tintcoat",
+        hexCode: "#BE9D00",
+      },
+      {
+        name: "Elkhart Lake Blue Metallic",
+        hexCode: "#002C66",
+      },
+      {
+        name: "Long Beach Red Metallic Tintcoat",
+        hexCode: "#490100",
+      },
+      {
+        name: "Sebring Orange Tintcoat",
+        hexCode: "#C04000",
+      },
+      {
+        name: "Shadow Gray Metallic",
+        hexCode: "#1D2125",
+      },
+      {
+        name: "Torch Red",
+        hexCode: "#760702",
       },
     ],
-    displacement: "2,891 cc",
-    maxPower: "532 BHP @ 6,500 rpm",
-    torque: "442 lb-ft",
+    displacement: "6,162 cc",
+    maxPower: "755 BHP",
+    torque: "715 lb-ft",
     drivetrain: "RWD",
-    length: "4,669 mm",
-    width: "2,024 mm",
-    height: "1,445 mm",
-    weight: "1,580 kg",
-    description: `"The top-of-the-line model in the Giulia lineup celebrated 110
-    years of Alfa Romeo." In 2020, special editions of the Alfa Romeo Giulia were 
-    introduced to celebrate the 110th anniversary of the historic company. The cars 
-    were called the Giulia GTA and GTAm, which were based on the high-performance
-    Quadrifoglio model. For these cars, the power output of the twin-turbocharged 
-    2.9-liter V-6 was increased to 532.5 HP, while curb weight was reduced by 220 
-    lbs. Also, the front and rear track were widened by 2.0 inches to enhance the 
-    car's stability, while the cars' aerodynamics were significantly enhanced in 
-    the form of new front and rear fenders, as well as other redesigned body parts, 
-    thanks to help from Alfa Romeo's Formula 1 partner, Sauber. The GTAm offers a 
-    more hardcore setup designed for circuit use. In addition to a larger front 
-    splitter and carbon fiber rear wing, a roll-cage was installed and the rear 
-    seats were removed.`,
+    length: "4,567 mm",
+    width: "1,965 mm",
+    height: "1,232 mm",
+    weight: "1,615 kg",
+    description: `"One of the last of the C7 Corvettes and also the most powerful." The ZR1 is the ultimate-performance 
+    version of the Chevrolet Corvette. The seventh-generation C7 Corvettes already had an impressive lineup that included 
+    the sporty Z51 and the powerful Z06, but in 2018, as the generation neared its end, the mightiest C7 of all was 
+    released in the form of the ZR1. The ZR1 featured a supercharged 6.2-liter V-8 called the LT5. It was similar in 
+    construction to the 649.9 HP LT4 engine in the 206, but a larger supercharger and the addition of GM's first 
+    dual-injection system allowed it to pump out an impressive 754.4 HP and 714.6 ft-lb of torque, which represented a 
+    10-percent increase in output. The car's aerodynamic parts were developed in conjunction with Pratt & Miller 
+    Engineering, known for building racing Corvettes for GT competition. Every component of the car was designed for 
+    performance. For example, two different rear wings were developed for the ZR1, one for maximum speed and the other 
+    for the fast lap times. When the car was optimized for maximum speed, it was capable of reaching 345.8 km/h.`,
   },
   {
     logo: dodgeLogo,
@@ -109,7 +136,7 @@ export const cars = [
       },
     ],
     displacement: "8,382 cc",
-    maxPower: "640 BHP @ 6,150 rpm",
+    maxPower: "640 BHP",
     torque: "600 lb-ft",
     drivetrain: "RWD",
     length: "4,463 mm",
@@ -212,7 +239,7 @@ export const cars = [
       },
     ],
     displacement: "6,262 cc",
-    maxPower: "730 BHP @ 8,250 rpm",
+    maxPower: "730 BHP",
     torque: "509 lb-ft",
     drivetrain: "RWD",
     length: "4,618 mm",
@@ -284,7 +311,7 @@ export const cars = [
       },
     ],
     displacement: "5,163 cc",
-    maxPower: "526 BHP @ 7,500 rpm",
+    maxPower: "526 BHP",
     torque: "429 lb-ft",
     drivetrain: "RWD",
     length: "4,818 mm",
@@ -379,7 +406,7 @@ export const cars = [
       },
     ],
     displacement: "5,204 cc",
-    maxPower: "602 BHP @ 8,000 rpm",
+    maxPower: "602 BHP",
     torque: "413 lb-ft",
     drivetrain: "AWD",
     length: "4,459 mm",
@@ -459,7 +486,7 @@ export const cars = [
       },
     ],
     displacement: "4,805 cc",
-    maxPower: "552 BHP @ 8,700 rpm",
+    maxPower: "552 BHP",
     torque: "354 lb-ft",
     drivetrain: "RWD",
     length: "4,505 mm",
@@ -493,68 +520,58 @@ export const cars = [
     and production of the LFA is limited to only 500 units.`,
   },
   {
-    logo: amgLogo,
+    logo: mercLogo,
     country: germany,
-    manufacturer: "Mercedes-AMG",
-    model: "GT R",
-    year: "2017",
-    sound: amggtrSound,
+    manufacturer: "Mercedes-Benz",
+    model: "SLS AMG Black Series",
+    year: "2013",
+    sound: slsamgblkSound,
     colors: [
       {
-        name: "AMG Green Hell",
-        hexCode: "#166804",
+        name: "AMG Imola Grey",
+        hexCode: "#686C69",
       },
       {
-        name: "Diamond White Bright",
-        hexCode: "#A8A59F",
+        name: "AMG Solarbeam Yellow",
+        hexCode: "#FFD300",
       },
       {
-        name: "Iridium Silver",
-        hexCode: "#B9C1C1",
+        name: "Designo Mystic White",
+        hexCode: "#D8DAC7",
       },
       {
-        name: "Selenite Grey",
-        hexCode: "#4C5051",
+        name: "Iridium Silver Metallic",
+        hexCode: "#C9CDCE",
       },
       {
-        name: "Magnetite Black",
-        hexCode: "#050506",
+        name: "Magno Alanite Grey",
+        hexCode: "#999999",
       },
       {
-        name: "Jupiter Red",
-        hexCode: "#B40000",
+        name: "Mars Red",
+        hexCode: "#7C1022",
       },
       {
-        name: "Hyacinth Red Metallic",
-        hexCode: "#610000",
-      },
-      {
-        name: "Brilliant Blue",
-        hexCode: "#04043C",
+        name: "Obsidian Black Metallic",
+        hexCode: "#0E0E0E",
       },
     ],
-    displacement: "3,982 cc",
-    maxPower: "577 BHP @ 6,250 rpm",
-    torque: "516 lb-ft",
+    displacement: "6,208 cc",
+    maxPower: "622 BHP",
+    torque: "468 lb-ft",
     drivetrain: "RWD",
-    length: "4,547 mm",
-    width: "2,007 mm",
-    height: "1,285 mm",
-    weight: "1,660 kg",
-    description: `"This 'road-legal race car' evokes the image of the 
-    much-celebrated 300SL sports car." The Mercedes AMG GT R made its debut in 
-    2016 as a high performance version of the AMG GT introduced in 2014. While 
-    it was officially designated as a road car, it was in fact a race car in 
-    street-car clothing. The first thing to catch the eye on the AMG GT R were 
-    the vertical accents on the grille, reminiscent of those of the 300SL that 
-    won the 1952 Carrera Panamericana Mexico. Other notable features of the 
-    exterior included IM= the adjustable rear wing and the flared fenders. Under 
-    the sheet metal, many of the car's components were swapped for carbon-fiber 
-    pieces, including the roof, front fenders and torque tube. This car was also 
-    the first Mercedes AMG model with 4-wheel steering. Under the hood, the car's 
-    twin-turbocharged 4.0-liter V-8 was retuned to produce 576.9 HP and 515.7 
-    ft-lb, allowing the AMG GT R to run from 0-100 km/h in a lightning quick 
-    3.6 seconds and reach a top speed of 318 km/h.`,
+    length: "4,638 mm",
+    width: "1,966 mm",
+    height: "1,260 mm",
+    weight: "1,550 kg",
+    description: `The Mercedes-Benz SLS Black Series was revealed in the Los Angeles Auto Show in 2012, and while the 
+    base SLS already boasted impressive performance credentials, this road-legal race car commands attention with its formidable 
+    presence and unmatched performance. With 39 more horsepower, it is now able to put out 622 BHP. Adorned in sleek 
+    lines and sculpted curves, this piece of German automotive engineering epitomizes the marriage of power and elegance. 
+    Its handcrafted V8 engine roars to life with a symphony of raw power, capable of propelling up to 196mph. With 
+    precise handling and aerodynamic prowess, every twist and turn of the track becomes a thrilling dance between man 
+    and machine. The SLS Black Series embodies the essence of racing excellence, inviting drivers to experience the 
+    adrenaline-fueled rush of pure driving ecstasy.`,
   },
   {
     logo: nissanLogo,
@@ -594,7 +611,7 @@ export const cars = [
       },
     ],
     displacement: "3,799 cc",
-    maxPower: "565 BHP @ 6,800 rpm",
+    maxPower: "565 BHP",
     torque: "467 lb-ft",
     drivetrain: "4WD",
     length: "4,710 mm",
@@ -624,6 +641,64 @@ export const cars = [
     Japanese sports car, as can be seen in its 'Deep Evolution'.`,
   },
   {
+    logo: paganiLogo,
+    country: italy,
+    manufacturer: "Pagani",
+    model: "Zonda Cinque",
+    year: "2009",
+    sound: zondaCinqueSound,
+    colors: [
+      {
+        name: "Arancio Saint Tropez",
+        hexCode: "#E9572B",
+      },
+      {
+        name: "Azure",
+        hexCode: "#267BE4",
+      },
+      {
+        name: "Bahrain Yellow",
+        hexCode: "#EAA642",
+      },
+      {
+        name: "Nero",
+        hexCode: "#040404",
+      },
+      {
+        name: "Rosso Dubai",
+        hexCode: "#BB1F20",
+      },
+      {
+        name: "Snow White Pearl",
+        hexCode: "#EFEFEF",
+      },
+    ],
+    displacement: "7,291 cc",
+    maxPower: "678 BHP",
+    torque: "575 lb-ft",
+    drivetrain: "RWD",
+    length: "3,495 mm",
+    width: "2,055 mm",
+    height: "1,151 mm",
+    weight: "1,210 kg",
+    description: `After it built and sold the five Zonda Cinque Coupe, Pagani built another five particular roadster 
+    versions for that and sold them before the carmaker even made the first one. The European regulation prohibited 
+    Pagani from registering a Zonda R for public roads, so their owners had to trailer-them onto a race track. Usually, 
+    the track-ready vehicles were transported that way, regardless if they were registered or not. The idea came when a 
+    Hong Kong dealer persuaded the carmaker to build five units of the Zonda R, but with some comfort and luxury items.
+    At the front, the Zonda Cinque Roadster featured an additional lip spoiler under the apron, which increased the 
+    downforce. On the front fenders, both cars featured air vents to extract the air trapped inside the wheel well, 
+    but on the Cinque was with four transverse carbon-fiber slats. A unique detail for the car was the air intake scoop, 
+    which stood suspended above the cabin like a hook. Inside, the carmaker installed a race-inspired interior with 
+    carbon-fiber seat-frames, trims, and door panels. Since it was still a vehicle designed for road use, Pagani 
+    installed an air-conditioning unit and a sound system on the center stack. The carmaker did not fit the unique, 
+    Alcantara-covered steering wheel with an airbag, but it installed the engine settings button on it. Pagani offered 
+    the five units of the Cinque coupe with a re-tuned 7.3-liter V-12 AMG engine. It was paired to a unique six-speed 
+    sequential gearbox, which the driver could control via the paddle-shifters behind the steering wheel or by the 
+    gear-stick.
+    `,
+  },
+  {
     logo: porscheLogo,
     country: germany,
     manufacturer: "Porsche",
@@ -649,7 +724,7 @@ export const cars = [
       },
     ],
     displacement: "3,996 cc",
-    maxPower: "491 BHP @ 8,250 rpm",
+    maxPower: "491 BHP",
     torque: "340 lb-ft",
     drivetrain: "RWD",
     length: "4,545 mm",
@@ -678,4 +753,5 @@ export const cars = [
      newly developed for this car. As a result, the car lapped the Nürburgring 
      at 7 minutes 20 seconds, a full 5 seconds faster than the base 911 GT3.`,
   },
+
 ];

@@ -1,16 +1,12 @@
-import { PerspectiveCamera } from "@react-three/drei";
-import Lighting from "../Lighting/Lighting";
+import { Suspense } from "react";
 import Scene from "../Scene/Scene";
-
-export const maxDistance = 33
+import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 
 const Experience = () => {
   return (
-    <>
-      <PerspectiveCamera makeDefault position={[0, 2, maxDistance]} fov={25}/>
-      <Lighting />
+    <Suspense fallback={<LoadingSpinner />}>
       <Scene />
-    </>
+    </Suspense>
   );
 };
 
