@@ -34,7 +34,7 @@ const Scene = () => {
 
   const startEngine = () => {
     if (audioRef.current) {
-      audioRef.current.setVolume(30);
+      audioRef.current.setVolume(25);
       audioRef.current.play();
     }
   };
@@ -59,8 +59,8 @@ const Scene = () => {
     }
 
     setTimeout(() => {
-      setIsFloorVisible(true);
       setIsModelReady(true);
+      setIsFloorVisible(true);
       setIsLoading(false);
     }, 3000);
   }, [selectedCar]);
