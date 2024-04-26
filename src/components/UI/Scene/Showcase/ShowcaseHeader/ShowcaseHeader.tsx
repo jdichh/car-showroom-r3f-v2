@@ -2,6 +2,9 @@ import { useContext } from "react";
 import { useUIStore } from "../../../../../lib/zustandstores/uiStore";
 import { EngineContext } from "../Showcase";
 import "./ShowcaseHeader.css";
+import { IoCaretBackOutline } from "react-icons/io5";
+import { iconColor, iconSize } from "../../../../../lib/constants/constants";
+import { BiSolidTachometer } from "react-icons/bi";
 
 const ShowcaseHeader = () => {
   const {
@@ -33,7 +36,7 @@ const ShowcaseHeader = () => {
           className="ui-btn"
           aria-label="Toggle the user interface."
         >
-          Back
+          <IoCaretBackOutline size={iconSize} color={iconColor} />
         </button>
       </div>
       <div className="flex gap-2">
@@ -42,7 +45,7 @@ const ShowcaseHeader = () => {
           className="ui-btn"
           aria-label="Start engine."
         >
-          Start Up
+          <BiSolidTachometer size={iconSize} color={iconColor} />
         </button>
         <button
           onClick={toggleUI}

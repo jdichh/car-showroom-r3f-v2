@@ -16,16 +16,12 @@ const SceneLandingHeader = () => {
           width={20}
           height={20}
         />
-        <p>
+        <p className="text-xs sm:text-base">
           {selectedCar.manufacturer}{" "}
           <span className="text-white/50">
-            {selectedCar.model} in {color.name}
+            {selectedCar.model}{" "}<span className="hidden sm:inline-block">in {color.name}</span>
           </span>
         </p>
-      </div>
-      <div>
-        <p className="text-white/30 text-right">Work in Progress.</p>
-        <p className="text-white/30 text-right">Developed by Jason Dichoso.</p>
       </div>
     </header>
   );

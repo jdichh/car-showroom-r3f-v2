@@ -19,7 +19,7 @@ const Showcase = ({ startEngine }: ShowcaseProps) => {
   const { isUIVisible, isInShowcaseMenu } = useUIStore();
 
   return (
-    <div className="showcase-container">
+    <div className=" main-ui-container">
       <EngineContext.Provider value={{ startEngine }}>
         <ShowcaseHeader />
       </EngineContext.Provider>
@@ -27,7 +27,7 @@ const Showcase = ({ startEngine }: ShowcaseProps) => {
         className={`${
           isUIVisible === false || isInShowcaseMenu === false
             ? "invisible ui-invisible-animation"
-            : "visible main-ui-container ui-visible-animation"
+            : "visible showcase-container ui-visible-animation"
         }`}
       >
         <ShowcaseCarLabel />

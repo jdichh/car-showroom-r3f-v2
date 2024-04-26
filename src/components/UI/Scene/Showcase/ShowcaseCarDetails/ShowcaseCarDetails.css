@@ -1,10 +1,10 @@
 .main-container {
-  @apply flex flex-col max-h-[12rem] h-full text-white bg-black/40 backdrop-blur pointer-events-none text-[1.25rem];
+  @apply flex flex-col justify-center max-h-[3rem] lg:max-h-[12rem] h-full text-[1.25rem] text-white bg-black/40 backdrop-blur pointer-events-none overflow-hidden lg:pb-10;
   animation: fade-up 0.5s;
 }
 
 .car-information {
-  @apply grid grid-cols-4 px-14 pt-5 gap-x-4 h-full;
+  @apply hidden lg:grid grid-cols-4 px-7 xl:px-14 pt-5 gap-x-4 h-full lg:text-lg;
 }
 
 .detail-container {
@@ -20,10 +20,10 @@
 }
 
 .slider {
-  @apply pb-10 overflow-hidden whitespace-nowrap text-white/90;
+  @apply whitespace-nowrap text-white/90;
 }
 
 .sliding-text {
-  @apply text-lg inline-block;
+  @apply text-sm lg:text-lg inline-block;
   animation: slide 130s linear infinite;
 }

@@ -8,12 +8,14 @@ const CarLabel = () => {
 
   return (
     <section id="middle">
-      <div className="logo-and-paint-container">
+      <div className="logo-container">
         <img
           src={selectedCar.logo}
           height={100}
-          width={selectedCar.manufacturer === "Dodge" ? 200 : 100}
+          width={100}
+          className="hidden lg:block"
         />
+        <p className="mobile-car-manu-model">{selectedCar.manufacturer}{" "}<span className="text-white/50">{selectedCar.model}</span></p>
       </div>
       <hgroup className="current-car-container font-fjalla">
         <div className="current-car">

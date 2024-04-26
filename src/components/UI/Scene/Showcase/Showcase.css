@@ -1,9 +1,9 @@
-.main-ui-container {
-  @apply max-w-[1920px] mx-auto h-full flex flex-col justify-between;
+.showcase-container {
+  @apply flex flex-col h-full overflow-hidden;
 }
 
-.showcase-container {
-  @apply flex flex-col h-full max-w-[1920px] mx-auto;
+.main-ui-container {
+  @apply max-w-[2560px] mx-auto h-full flex flex-col justify-between;
 }
 
 .ui-invisible-animation {

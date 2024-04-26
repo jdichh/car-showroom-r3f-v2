@@ -1,10 +1,13 @@
-import { useSelectedCarStore } from "../../../../../../lib/zustandstores/selectedCarStore";
+import { IoCaretBackOutline } from "react-icons/io5";
+import { PiPaintBucketFill } from "react-icons/pi";
+import { iconColor, iconSize } from "../../../../../../lib/constants/constants";
 import { useCarColorStore } from "../../../../../../lib/zustandstores/carColorStore";
+import { useSelectedCarStore } from "../../../../../../lib/zustandstores/selectedCarStore";
 import { useUIStore } from "../../../../../../lib/zustandstores/uiStore";
 import "./SceneLandingPaintSelection.css";
 
 const SceneLandingPaintSelection = () => {
-  const { color, setColor } = useCarColorStore();
+  const { setColor } = useCarColorStore();
   const { selectedCar } = useSelectedCarStore();
   const { isInPaintSelection, togglePaintSelection } = useUIStore();
 
@@ -13,6 +16,9 @@ const SceneLandingPaintSelection = () => {
       {isInPaintSelection ? (
         <>
           <div className="paint-sample-container">
+          <button onClick={togglePaintSelection} className="ui-btn">
+              <IoCaretBackOutline color={iconColor} size={iconSize} />
+            </button>
             <div className="paint-samples">
               {selectedCar.colors.map((color, index) => (
                 <button
@@ -24,14 +30,11 @@ const SceneLandingPaintSelection = () => {
                 />
               ))}
             </div>
-            <button onClick={togglePaintSelection} className="ui-btn">
-              Back
-            </button>
           </div>
         </>
       ) : (
         <button onClick={togglePaintSelection} className="ui-btn">
-          Paint
+          <PiPaintBucketFill color={iconColor} size={iconSize} />
         </button>
       )}
     </>

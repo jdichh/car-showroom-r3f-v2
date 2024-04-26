@@ -8,13 +8,13 @@ import {
 } from "@react-three/drei";
 import { Suspense, useEffect, useRef } from "react";
 import { carModelComponents } from "../../lib/carModelComponents";
+import { maxDistance } from "../../lib/constants/constants";
 import { CarManufacturer } from "../../lib/types/types";
 import { useCarColorStore } from "../../lib/zustandstores/carColorStore";
 import { useFloorStateStore } from "../../lib/zustandstores/floorStore";
 import { useLoadingStateStore } from "../../lib/zustandstores/loadingStore";
 import { useSelectedCarStore } from "../../lib/zustandstores/selectedCarStore";
 import { useUIStore } from "../../lib/zustandstores/uiStore";
-import { maxDistance } from "../Experience/Experience";
 import Lighting from "../Lighting/Lighting";
 import CarSwitchTransition from "../UI/CarSwitchTransition/CarSwitchTransition";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";

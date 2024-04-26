@@ -42,19 +42,19 @@ const Floor = () => {
     rotation: [number, number, number];
   }[] = [
     {
-      position: [0, -2.3, -37],
+      position: [0, -2.3, -40],
       rotation: [0, 0, 0],
     },
     {
-      position: [0, -2.3, 37],
+      position: [0, -2.3, 40],
       rotation: [0, Math.PI, 0],
     },
     {
-      position: [37, -2.3, 0],
+      position: [40, -2.3, 0],
       rotation: [0, Math.PI * 5.5, 0],
     },
     {
-      position: [-37, -2.3, 0],
+      position: [-40, -2.3, 0],
       rotation: [0, Math.PI * 2.5, 0],
     },
   ];
