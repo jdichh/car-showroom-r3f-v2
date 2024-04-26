@@ -23,5 +23,5 @@
 }
 
 .logo-container {
-  @apply flex flex-row items-center justify-start;
+  @apply flex flex-row items-center justify-start gap-4;
 }
