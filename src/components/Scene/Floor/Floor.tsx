@@ -2,9 +2,7 @@ import { Plane } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 import { TextureLoader } from "three";
-import {
-  SpotlightProp
-} from "../../../lib/models/ModelImports";
+import { SpotlightProp } from "../../../lib/models/ModelImports";
 
 const Floor = () => {
   const [aoMap, colorMap, disMap, normGlMap, roughnessMap] = useLoader(
@@ -39,6 +37,28 @@ const Floor = () => {
     roughness: 1,
   });
 
+  const spotlightProps: {
+    position: [number, number, number];
+    rotation: [number, number, number];
+  }[] = [
+    {
+      position: [0, -2.3, -37],
+      rotation: [0, 0, 0],
+    },
+    {
+      position: [0, -2.3, 37],
+      rotation: [0, Math.PI, 0],
+    },
+    {
+      position: [37, -2.3, 0],
+      rotation: [0, Math.PI * 5.5, 0],
+    },
+    {
+      position: [-37, -2.3, 0],
+      rotation: [0, Math.PI * 2.5, 0],
+    },
+  ];
+
   return (
     <>
       <Plane
@@ -48,10 +68,13 @@ const Floor = () => {
         rotation-x={-Math.PI / 2}
         position-y={-2.83}
       />
-      <SpotlightProp position={[0,-2.3,-37]} rotation={[0,0,0]} />
-      <SpotlightProp position={[0,-2.3,37]} rotation={[0,Math.PI,0]} />
-      <SpotlightProp position={[37,-2.3,0]} rotation={[0,Math.PI * 5.5,0]} />
-      <SpotlightProp position={[-37,-2.3,0]} rotation={[0,Math.PI * 2.5,0]} />
+      {spotlightProps.map((spotlight, index) => (
+        <SpotlightProp
+          key={index}
+          position={spotlight.position}
+          rotation={spotlight.rotation}
+        />
+      ))}
     </>
   );
 };
