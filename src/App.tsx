@@ -2,7 +2,6 @@ import { Canvas } from "@react-three/fiber";
 import Experience from "./components/Experience/Experience";
 import LandingMenu from "./components/UI/LandingMenu/LandingMenu";
 import { useUIStore } from "./lib/zustandstores/uiStore";
-import Scene from "./components/Scene/Scene";
 
 const App = () => {
   const { isInLandingMenu } = useUIStore();
@@ -14,6 +13,10 @@ const App = () => {
       ) : (
         <Canvas
           shadows
+          gl={{
+            alpha: true,
+            toneMappingExposure: 0.85
+          }}
           style={{ background: "black" }}
           eventSource={document.getElementById("root") as HTMLElement}
         >

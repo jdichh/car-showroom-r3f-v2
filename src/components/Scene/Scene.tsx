@@ -4,6 +4,7 @@ import {
   OrbitControls,
   PerspectiveCamera,
   PositionalAudio,
+  TrackballControls
 } from "@react-three/drei";
 import { Suspense, useEffect, useRef } from "react";
 import { carModelComponents } from "../../lib/carModelComponents";
@@ -33,7 +34,7 @@ const Scene = () => {
 
   const startEngine = () => {
     if (audioRef.current) {
-      audioRef.current.setVolume(25);
+      audioRef.current.setVolume(30);
       audioRef.current.play();
     }
   };
@@ -77,7 +78,17 @@ const Scene = () => {
             position={[0, 2, maxDistance]}
             fov={25}
           />
+
           <Lighting />
+
+          {/* for smooth zooming */}
+          <TrackballControls
+            noRotate
+            noPan
+            zoomSpeed={0.5}
+            target={[0, 0, 0]}
+          />
+
           <OrbitControls
             makeDefault
             enablePan={false}
@@ -85,14 +96,14 @@ const Scene = () => {
             autoRotateSpeed={0.6}
             minPolarAngle={1.15}
             maxPolarAngle={Math.PI - 1.55}
-            enableZoom={true}
+            enableZoom={false}
             enableRotate={true}
             ref={orbitControlsRef}
             minDistance={20}
             maxDistance={maxDistance + 2}
           />
 
-          {/* isModelReady fixes the unusually high volume level on the first time the engine audio is played*/ }
+          {/* isModelReady fixes the unusually high volume level on the first time the engine audio is played*/}
           {isModelReady && (
             <>
               {CarModelComponent && (
