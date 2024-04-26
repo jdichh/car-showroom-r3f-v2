@@ -34,7 +34,7 @@ const Scene = () => {
 
   const startEngine = () => {
     if (audioRef.current) {
-      audioRef.current.setVolume(25);
+      audioRef.current.setVolume(30);
       audioRef.current.play();
     }
   };
@@ -49,17 +49,18 @@ const Scene = () => {
   // delays for transition
   useEffect(() => {
     setIsLoading(true);
-    setIsFloorVisible(false);
     setIsModelReady(false);
+    setIsFloorVisible(false);
     resetCameraPosition();
     setSelectedCar(selectedCar);
+
     if (selectedCar.colors.length > 0) {
       setColor(selectedCar.colors[0]);
     }
 
     setTimeout(() => {
-      setIsModelReady(true);
       setIsFloorVisible(true);
+      setIsModelReady(true);
       setIsLoading(false);
     }, 3000);
   }, [selectedCar]);
