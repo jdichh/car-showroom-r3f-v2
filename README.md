@@ -1,7 +1,8 @@
 ﻿# Gran Turismo Inspired Car Showroom Scene (v2)
- A car showroom mainly inspired by the one in Gran Turismo Sport, and made with React-Three-Fiber, Shadcn and Zustand. 
- The old version (version 1) which was limited to only 1 car can be found [here.](https://github.com/jdichh/car-showroom-R3F).
- Models were sourced from CSR Racing 2.
+ A car showroom mainly inspired by the one in Gran Turismo Sport, and made with React-Three-Fiber, Shadcn and Zustand. The old version (version 1) which was limited to only 1 car can be found [here](https://github.com/jdichh/car-showroom-R3F). <br/> <br/> Models and textures were sourced from CSR Racing 2 and edited with Blender.
+
+## Demo
+https://github.com/jdichh/car-showroom-r3f-v2/assets/90493623/ea953291-8fb7-43f8-96b1-d621082e7ca2
 
 ## Challenges Faced and How It Was Solved
 <ul>
