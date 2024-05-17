@@ -5,7 +5,7 @@
 
 ## Challenges Faced and How It Was Solved
 <ul>
- <li>Initial state management with React Context (for menu items, car paint states, current car state, etc.), used Zustand instead to simplify</li>
+ <li>State management with React Context (for menu items, car paint states, current car state, etc.), used Zustand instead to simplify</li>
  <li>UI responsiveness, but it is not meant for mobile devices as it can be too performance-heavy for them (I just made the UI responsive in case a user's mobile device can run it properly.)</li>
 </ul>
 
